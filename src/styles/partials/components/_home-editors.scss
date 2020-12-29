@@ -1,0 +1,42 @@
+.home-editors {
+  border-bottom: 1px solid $border-color;
+  padding-bottom: $space-300;
+  padding-left: $space-400;
+  padding-right: $space-400;
+  padding-top: $space-700;
+  position: relative;
+
+  &__heading {
+    color: $gold;
+    margin-bottom: $space-700;
+
+    @include mq($M) {
+      left: $space-600;
+      position: absolute;
+      top: $space-750;
+    }
+
+    @include mq($L) {
+      left: $space-700;
+      top: $space-850;
+    }
+
+    @include mq($XL) {
+      left: $space-800;
+      top: $space-800;
+    }
+  }
+
+  &__list {
+    margin-left: $space-400;
+  }
+
+  &__item {
+    margin-bottom: $space-600;
+  }
+
+  &__link {
+    border: 0;
+    font-size: 1.25rem;
+  }
+}

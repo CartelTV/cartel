@@ -145,9 +145,7 @@ h6 {
 /*
  * Keep line-length to around 45-55 characters.
  */
-p,
-blockquote,
-li {
+p {
   max-width: 40rem;
 }
 
@@ -157,33 +155,29 @@ address {
 
 h1,
 .h1 {
-  font-size: 2.5rem;
-  line-height: 1.25;
+  font-size: 1.75rem;
+  line-height: 1;
 
   @include mq($M) {
-    font-size: 2.75rem;
-    line-height: 1.125;
+    font-size: 1.1875rem;
   }
 
   @include mq($XL) {
-    font-size: 3rem;
-    line-height: 1.05;
+    font-size: 2rem;
   }
 }
 
 h2,
 .h2 {
   font-size: 1.5rem;
-  line-height: 1.15384615;
+  line-height: 1;
 
   @include mq($M) {
     font-size: 1.625rem;
-    line-height: 1.25;
   }
 
   @include mq($XL) {
     font-size: 1.75rem;
-    line-height: 1.25;
   }
 }
 

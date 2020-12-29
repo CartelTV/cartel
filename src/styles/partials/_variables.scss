@@ -1,0 +1,70 @@
+// ===========================================================================
+// ==== VARIABLES
+// ===========================================================================
+
+// RESPONSIVE MEDIA QUERIES
+// ------------------------------------------------------------------------------
+$breakpoint-xs: 18.75em; // 300px
+$breakpoint-s: 30em; // 480px
+$breakpoint-m: 48em; // 768px
+$breakpoint-l: 64em; // 1024px
+$breakpoint-xl: 75em; // 1200px
+$breakpoint-xxl: 90em; // 1440px
+
+$XS: 'min-width:' + $breakpoint-xs;
+$S: 'min-width:' + $breakpoint-s;
+$M: 'min-width:' + $breakpoint-m;
+$L: 'min-width:' + $breakpoint-l;
+$XL: 'min-width:' + $breakpoint-xl;
+$XXL: 'min-width:' + $breakpoint-xxl;
+
+// FONTS
+// ------------------------------------------------------------------------------
+$font-med: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+
+// COLORS
+// ------------------------------------------------------------------------------
+$color-grey-1: rgb(17, 17, 17);
+$color-grey-2: rgb(21, 35, 46);
+// $color-grey-3: rgb(66, 66, 66);
+$color-grey-4: rgb(99, 99, 99);
+$color-grey-5: rgb(112, 112, 112);
+// $color-grey-6: rgb(159, 159, 159);
+// $color-grey-7: rgb(187, 187, 187);
+// $color-grey-2: rgb(222, 222, 222);
+// $color-grey-9: rgb(238, 238, 238);
+
+$white: rgb(255, 255, 255);
+// $black: rgb(0, 0, 0);
+
+$red: #710000;
+$yellow: #f7f71d;
+
+$beige: #ecebe2;
+$gold: #ab9144;
+$aqua: #a5daca;
+
+// COLOR CONFIGS
+// ------------------------------------------------------------------------------
+$bg-clr: $beige;
+$text-clr: $color-grey-2;
+$link-clr: $color-grey-1;
+$link-hover-clr: darken($link-clr, 20%);
+$border-color: $color-grey-5;
+$error: $red;
+$selection: $yellow;
+
+// SPACING
+// ------------------------------------------------------------------------------
+$container-width: 800px;
+$space: 1.5rem;
+
+$space-100: $space / 8;
+$space-200: $space / 4;
+$space-300: $space / 2;
+$space-400: $space * 0.75;
+$space-500: $space;
+$space-600: $space * 1.5;
+$space-700: $space * 2;
+$space-800: $space * 4;
+$space-900: $space * 8;

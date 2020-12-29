@@ -1,0 +1,102 @@
+// ===========================================================================
+// ==== GLOBAL ELEMENTS
+// ===========================================================================
+body {
+  background: $bg-clr;
+  font-family: $font-med;
+}
+
+main,
+footer {
+  p,
+  ul,
+  ol {
+    margin-bottom: $space-500;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul.aligned-list {
+    list-style: disc;
+    margin-left: $space-300;
+
+    li {
+      margin-bottom: $space-300;
+      padding-left: $space-500;
+      text-indent: -$space-500;
+    }
+  }
+
+  a {
+    border-bottom: 1px dashed $link-clr;
+    color: $link-clr;
+    padding-bottom: 2px;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      color: $link-hover-clr;
+    }
+  }
+}
+
+h1,
+.h1,
+h2,
+.h2 {
+  margin-bottom: $space-300;
+}
+
+h3,
+.h3,
+h4,
+.h4 {
+  margin-bottom: 0.25rem;
+}
+
+nav {
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+}
+
+.iframe-container {
+  height: 0;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+
+  &.iframe-container-16x9 {
+    padding-bottom: 56.25%; // for 16x9 windows
+  }
+
+  &.iframe-container-4x3 {
+    padding-bottom: 75%; // for 4x3 windows
+  }
+
+  iframe {
+    border: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.container {
+  padding: 0 $space-300;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $container-width;
+  width: 100%;
+
+  @include mq($L) {
+    max-width: ($container-width * 1.5);
+    padding: 0;
+  }
+}

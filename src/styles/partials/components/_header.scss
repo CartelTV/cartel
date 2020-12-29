@@ -1,0 +1,145 @@
+// ===========================================================================
+// ==== HEADER
+// ===========================================================================
+.header {
+  align-items: center;
+  border: 1px solid $border-color;
+  display: flex;
+  justify-content: space-between;
+  padding: $space-300;
+  padding-left: $space-500;
+  position: relative;
+
+  @include mq($M) {
+    border-bottom: 1px solid $border-color;
+    padding-left: $space-600;
+  }
+
+  @include mq($L) {
+    padding-bottom: $space-700;
+    padding-left: $space-700;
+    padding-right: $space-500;
+    padding-top: $space-700;
+  }
+
+  @include mq($XL) {
+    padding-left: $space-800;
+  }
+
+  &.is-hidden {
+    transform: translateY(-99px);
+
+    @include mq($M) {
+      transform: translateY(0);
+    }
+  }
+
+  &.is-visible {
+    transform: translateY(0);
+  }
+
+  &__logo {
+    max-width: 146px;
+
+    @include mq($M) {
+      max-width: 197px;
+    }
+
+    @include mq($L) {
+      max-width: 375px;
+    }
+
+    @include mq($XL) {
+      max-width: 450px;
+    }
+  }
+
+  &__menu-button {
+    text-transform: uppercase;
+
+    @include mq($M) {
+      display: none;
+    }
+  }
+
+  .nav {
+    background-color: $beige;
+    border: 1px solid $border-color;
+    left: 0;
+    padding-bottom: $space-500;
+    padding-left: $space-500;
+    padding-top: $space-500;
+    position: absolute;
+    transform: translateY(62%);
+    width: 100%;
+
+    @include mq($M) {
+      border: 0;
+      max-width: 350px;
+      padding: 0;
+      position: relative;
+      transform: none;
+    }
+
+    @include mq($L) {
+      max-width: 460px;
+    }
+
+    @include mq($XL) {
+      max-width: 550px;
+    }
+
+    &__list {
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      flex-basis: 50%;
+      margin-bottom: $space-500;
+
+      @include mq($M) {
+        flex-basis: calc(40% - 2.25rem);
+        margin-bottom: 0;
+        margin-right: $space-400;
+
+        // first three items
+        &:nth-child(-n + 3) {
+          margin-bottom: $space-200;
+        }
+
+        // 3rd and 6th items
+        &:nth-child(3n) {
+          flex-basis: 20%;
+          margin-right: 0;
+          text-align: right;
+        }
+      }
+
+      @include mq($L) {
+        margin-right: $space-600;
+
+        &:nth-child(-n + 3) {
+          margin-bottom: $space-300;
+        }
+      }
+    }
+
+    &__link {
+      color: $text-clr;
+      font-size: 1.25rem;
+      font-size: 1rem; // remove when Interstate font is added
+      text-decoration: none;
+      text-transform: uppercase;
+
+      @include mq($M) {
+        font-size: 1rem;
+        font-size: 0.75rem; // remove when Interstate font is added
+      }
+
+      @include mq($L) {
+        font-size: 1.25rem;
+        font-size: 1rem; // remove when Interstate font is added
+      }
+    }
+  }
+}

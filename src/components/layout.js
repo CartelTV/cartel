@@ -1,10 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
 
-import '../styles/main.scss'
+import '../styles/main.scss';
 
-import { Header } from './header'
+import { Header } from './header';
+import { Footer } from './footer';
 
 export const Layout = ({ children }) => (
   <StaticQuery
@@ -26,11 +27,12 @@ export const Layout = ({ children }) => (
         <main className="main" id="main" role="main">
           {children}
         </main>
+        <Footer />
       </React.Fragment>
     )}
   />
-)
+);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};

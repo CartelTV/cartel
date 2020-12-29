@@ -42,7 +42,7 @@ export const Header = ({ siteTitle }) => {
     document.addEventListener('click', handleOutsideClick, false);
 
     // handle showing/hiding nav on scroll up/down
-    const nav = document.querySelector('.header__wrapper');
+    const nav = document.querySelector('.header');
     window.addEventListener('scroll', () =>
       debounce(handleNavVisibility(nav), 1000)
     );

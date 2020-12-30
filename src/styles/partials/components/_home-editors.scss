@@ -6,6 +6,13 @@
   padding-top: $space-700;
   position: relative;
 
+  @include mq($M) {
+    display: flex;
+    padding-bottom: $space-700;
+    padding-right: 0;
+    padding-top: $space-800;
+  }
+
   &__heading {
     color: $gold;
     margin-bottom: $space-700;
@@ -13,30 +20,64 @@
     @include mq($M) {
       left: $space-600;
       position: absolute;
-      top: $space-750;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     @include mq($L) {
       left: $space-700;
-      top: $space-850;
     }
 
     @include mq($XL) {
       left: $space-800;
-      top: $space-800;
     }
   }
 
   &__list {
     margin-left: $space-400;
+
+    @media (min-width: 600px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    @include mq($M) {
+      margin-left: 35%;
+      max-width: 550px;
+      width: 80%;
+    }
+
+    @include mq($M) {
+      margin-left: 33%;
+    }
   }
 
   &__item {
     margin-bottom: $space-600;
+    position: relative;
+
+    @media (min-width: 600px) {
+      flex-basis: 50%;
+    }
   }
 
   &__link {
     border: 0;
     font-size: 1.25rem;
+
+    &:focus,
+    &:hover {
+      &::before {
+        background-color: $aqua;
+        border-radius: 50%;
+        content: '';
+        height: 0.5rem;
+        left: -0.75rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0.5rem;
+      }
+    }
   }
 }

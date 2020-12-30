@@ -1,0 +1,58 @@
+.home-social-feed {
+  padding-bottom: $space-700;
+  padding-left: $space-400;
+  padding-top: $space-700;
+  position: relative;
+
+  @include mq($M) {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  &__heading {
+    color: $gold;
+    margin-bottom: $space-700;
+
+    @include mq($M) {
+      left: $space-600;
+      margin-bottom: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @include mq($L) {
+      left: $space-700;
+    }
+
+    @include mq($XL) {
+      left: $space-800;
+    }
+  }
+
+  &__list {
+    display: flex;
+    overflow-x: scroll;
+
+    @include mq($M) {
+      border-left: 1px solid $border-color;
+      margin-left: 33%;
+      padding-bottom: $space-700;
+      padding-left: $space-700;
+      padding-top: $space-700;
+    }
+  }
+
+  &__item {
+    flex-basis: 215px;
+    margin-right: $space-500;
+    min-width: 215px;
+
+    @include mq($L) {
+      flex-basis: 396px;
+      min-width: 396px;
+    }
+  }
+}

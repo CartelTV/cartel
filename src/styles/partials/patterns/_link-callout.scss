@@ -1,0 +1,36 @@
+.link-callout {
+  border-bottom: 1px solid $border-color;
+  padding: $space-500 $space-400;
+
+  @include mq($M) {
+    padding: $space-600;
+  }
+
+  @include mq($L) {
+    padding: $space-600 $space-700;
+  }
+
+  &__link {
+    align-items: center;
+    display: flex;
+    font-size: 1.25rem;
+    justify-content: space-between;
+
+    @include mq($S) {
+      max-width: 240px;
+    }
+
+    &:focus,
+    &:hover {
+      svg {
+        transform: translateX($space-500);
+      }
+    }
+  }
+
+  &-arrow {
+    height: 24px;
+    transition: transform 0.2s cubic-bezier(0.75, 0.8, 0.8, 1);
+    width: 32px;
+  }
+}

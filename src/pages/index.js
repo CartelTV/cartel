@@ -4,6 +4,8 @@ import { Link } from 'gatsby';
 import { Layout } from '../components/layout';
 import SEO from '../components/seo';
 
+import { LinkCalloutArrow } from '../components/icons/linkCalloutArrow';
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
@@ -126,6 +128,28 @@ const IndexPage = () => (
           <Link className="home-editors__link" to="/">
             Ting Poo
           </Link>
+        </li>
+      </ul>
+    </article>
+
+    <div className="link-callout">
+      <Link className="link-callout__link" to="/">
+        <span>Work</span>
+        <LinkCalloutArrow />
+      </Link>
+    </div>
+
+    <article className="home-social-feed">
+      <h2 className="home-social-feed__heading">The Latest</h2>
+      <ul className="home-social-feed__list">
+        <li className="home-social-feed__item">
+          <img src="https://picsum.photos/id/102/396" alt="" />
+        </li>
+        <li className="home-social-feed__item">
+          <img src="https://picsum.photos/id/103/396" alt="" />
+        </li>
+        <li className="home-social-feed__item">
+          <img src="https://picsum.photos/id/104/396" alt="" />
         </li>
       </ul>
     </article>

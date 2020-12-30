@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 
 import { Layout } from '../components/layout';
 import SEO from '../components/seo';
+import { Image } from '../components/patterns/image';
 
 import { LinkCalloutArrow } from '../components/icons/linkCalloutArrow';
 
@@ -15,7 +16,11 @@ const IndexPage = () => (
       <ul className="home-videos__list">
         <li className="home-videos__item">
           <div className="home-videos__video-wrapper">
-            <img src="https://picsum.photos/id/1011/5472/3648" alt="" />
+            <Image
+              srcSmall="https://picsum.photos/id/1011/5472/3648"
+              alt="Race Day is Still Sacred"
+              lazyLoad
+            />
           </div>
           <div className="home-videos__text-wrapper">
             <p>Track Smith</p>
@@ -24,7 +29,11 @@ const IndexPage = () => (
         </li>
         <li className="home-videos__item">
           <div className="home-videos__video-wrapper">
-            <img src="https://picsum.photos/id/1012/3973/2639" alt="" />
+            <Image
+              srcSmall="https://picsum.photos/id/1012/3973/2639"
+              alt="Race Day is Still Sacred"
+              lazyLoad
+            />
           </div>
           <div className="home-videos__text-wrapper">
             <p>Track Smith</p>
@@ -33,7 +42,11 @@ const IndexPage = () => (
         </li>
         <li className="home-videos__item">
           <div className="home-videos__video-wrapper">
-            <img src="https://picsum.photos/id/1013/4256/2832" alt="" />
+            <Image
+              srcSmall="https://picsum.photos/id/1013/4256/2832"
+              alt="Race Day is Still Sacred"
+              lazyLoad
+            />
           </div>
           <div className="home-videos__text-wrapper">
             <p>Track Smith</p>
@@ -133,7 +146,7 @@ const IndexPage = () => (
     </article>
 
     <div className="link-callout">
-      <Link className="link-callout__link" to="/">
+      <Link className="link-callout__link" to="/work">
         <span>Work</span>
         <LinkCalloutArrow />
       </Link>

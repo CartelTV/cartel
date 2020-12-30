@@ -72,6 +72,7 @@
     position: absolute;
     transform: translateY(62%);
     width: 100%;
+    z-index: 1;
 
     @include mq($M) {
       border: 0;
@@ -128,6 +129,7 @@
       color: $text-clr;
       font-size: 1.25rem;
       font-size: 1rem; // remove when Interstate font is added
+      position: relative;
       text-decoration: none;
       text-transform: uppercase;
 
@@ -139,6 +141,21 @@
       @include mq($L) {
         font-size: 1.25rem;
         font-size: 1rem; // remove when Interstate font is added
+      }
+
+      &:focus,
+      &:hover {
+        &::before {
+          background-color: $aqua;
+          border-radius: 50%;
+          content: '';
+          height: 0.5rem;
+          left: -0.75rem;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 0.5rem;
+        }
       }
     }
   }

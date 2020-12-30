@@ -3,22 +3,22 @@
   padding-bottom: 0;
   padding-left: $space-400;
   padding-right: $space-400;
-  padding-top: $space-700;
   position: relative;
 
   @include mq($M) {
     display: flex;
     justify-content: flex-end;
     padding-right: 0;
-    padding-top: 0;
   }
 
   &__heading {
     color: $gold;
     margin-bottom: $space-700;
+    margin-top: $space-700;
 
     @include mq($M) {
       left: $space-600;
+      margin-top: 0;
       position: absolute;
       top: $space-750;
     }

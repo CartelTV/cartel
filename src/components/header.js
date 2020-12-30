@@ -74,7 +74,7 @@ export const Header = ({ siteTitle }) => {
       >
         <ul className="nav__list">
           <li className="nav__item">
-            <Link to="/" className="nav__link">
+            <Link to="/work" className="nav__link">
               Work
             </Link>
           </li>

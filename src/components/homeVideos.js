@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Image } from './patterns/image';
+
 export const HomeVideos = ({ sectionHeading, videosList }) => (
   <article className="home-videos">
     <h2 className="home-videos__heading">{sectionHeading}</h2>
@@ -8,7 +10,7 @@ export const HomeVideos = ({ sectionHeading, videosList }) => (
       {videosList.map(video => (
         <li className="home-videos__item">
           <div className="home-videos__video-wrapper">
-            <img src={video.thumbnail} alt={video.title} />
+            <Image srcSmall={video.thumbnail} alt={video.title} lazyLoad />
           </div>
           <div className="home-videos__text-wrapper">
             <p>{video.editor}</p>

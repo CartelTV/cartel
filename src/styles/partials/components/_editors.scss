@@ -1,4 +1,4 @@
-.home-editors {
+.editors {
   border-bottom: 1px solid $border-color;
   padding-bottom: $space-300;
   padding-left: $space-400;
@@ -8,8 +8,14 @@
 
   @include mq($M) {
     display: flex;
-    padding-bottom: $space-700;
+    padding-bottom: $space-400;
     padding-right: 0;
+    padding-top: $space-700;
+  }
+
+  @include mq($XL) {
+    padding-bottom: $space-750;
+    padding-left: $space-800;
     padding-top: $space-800;
   }
 
@@ -18,10 +24,14 @@
     margin-bottom: $space-700;
 
     @include mq($M) {
-      left: $space-600;
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      width: 1px;
     }
 
     @include mq($L) {
@@ -41,14 +51,10 @@
       flex-wrap: wrap;
     }
 
-    @include mq($M) {
-      margin-left: 35%;
-      max-width: 550px;
-      width: 80%;
-    }
-
-    @include mq($L) {
-      margin-left: 33%;
+    @include mq($XL) {
+      margin-left: 0;
+      max-width: 1440px;
+      width: 90%;
     }
   }
 
@@ -58,6 +64,23 @@
 
     @media (min-width: 600px) {
       flex-basis: 50%;
+    }
+
+    @include mq($XL) {
+      position: relative;
+
+      &:focus,
+      &:hover {
+        &::after {
+          background-color: $white;
+          content: url('https://picsum.photos/id/1018/300/169');
+          margin-left: $space-600;
+          padding: $space-300;
+          position: absolute;
+          width: calc(300px + 1.5rem);
+          z-index: 1;
+        }
+      }
     }
   }
 

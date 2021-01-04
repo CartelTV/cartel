@@ -1,12 +1,9 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import { Layout } from '../components/layout';
 import SEO from '../components/seo';
 import { LinkCallout } from '../components/patterns/linkCallout';
 import { NineGridVideos } from '../components/patterns/nineGridVideos';
-
-import { LinkCalloutArrow } from '../components/icons/linkCalloutArrow';
 
 const videosList = [
   {

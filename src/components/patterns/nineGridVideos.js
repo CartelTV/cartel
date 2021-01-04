@@ -23,7 +23,6 @@ export const NineGridVideos = ({ videosList }) => {
   return (
     <div className="nine-grid-videos">
       {chunks.map((video, index) => {
-        console.log('video', video);
         if (index % 2) {
           return (
             <div className="nine-grid-videos__row">

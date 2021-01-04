@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import { Layout } from '../components/layout';
 import SEO from '../components/seo';
-import { Image } from '../components/patterns/image';
+import { LinkCallout } from '../components/patterns/linkCallout';
 import { NineGridVideos } from '../components/patterns/nineGridVideos';
 
 import { LinkCalloutArrow } from '../components/icons/linkCalloutArrow';
@@ -56,7 +56,7 @@ const videosList = [
   },
 ];
 
-const SecondPage = () => (
+const Work = () => (
   <Layout>
     <SEO title="Work" />
     <article className="container container--white">
@@ -64,13 +64,8 @@ const SecondPage = () => (
       <NineGridVideos videosList={videosList} />
     </article>
 
-    <div className="link-callout">
-      <Link className="link-callout__link" to="/work">
-        <span>Music Videos</span>
-        <LinkCalloutArrow />
-      </Link>
-    </div>
+    <LinkCallout linkPath="/work" linkText="Music Videos" />
   </Layout>
 );
 
-export default SecondPage;
+export default Work;

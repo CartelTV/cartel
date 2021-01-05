@@ -10,6 +10,10 @@
     padding: $space-600 $space-700;
   }
 
+  @include mq($XL) {
+    padding-left: $space-800;
+  }
+
   &__link {
     align-items: center;
     display: flex;

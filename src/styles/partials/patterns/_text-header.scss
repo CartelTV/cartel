@@ -1,0 +1,49 @@
+.text-header {
+  border-bottom: 1px solid $border-color;
+  padding-bottom: $space-700;
+  padding-top: $space-700;
+  position: relative;
+
+  @include mq($M) {
+    padding-bottom: $space-850;
+    padding-top: $space-850;
+  }
+
+  > .container {
+    @include mq($M) {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__heading {
+    color: $gold;
+    margin-bottom: $space-700;
+
+    @include mq($M) {
+      flex-basis: 33.33333%;
+      left: $space-600;
+      margin-bottom: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @include mq($L) {
+      left: $space-700;
+    }
+
+    @include mq($XL) {
+      left: $space-800;
+    }
+  }
+
+  &__copy {
+    @include mq($M) {
+      flex-basis: 66.66666%;
+      margin-left: 33.33333%;
+      max-width: 30rem;
+    }
+  }
+}

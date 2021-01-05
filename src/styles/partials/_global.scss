@@ -3,7 +3,7 @@
 // ===========================================================================
 body {
   background: $bg-clr;
-  font-family: $font-med;
+  font-family: $font-sans-light;
 }
 
 main,
@@ -91,10 +91,14 @@ nav {
 }
 
 .container {
-  padding: 0 $space-300;
+  padding: 0 $space-500;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+
+  @include mq($XL) {
+    padding: 0 $space-800;
+  }
 
   &--white {
     background-color: $white;

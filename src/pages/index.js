@@ -134,7 +134,7 @@ const IndexPage = () => (
         </li>
         <li className="home-editors__item">
           <Link className="home-editors__link" to="/">
-            Paul O'Reilly
+            Paul O&apos;Reilly
           </Link>
         </li>
         <li className="home-editors__item">
@@ -152,16 +152,16 @@ const IndexPage = () => (
       </Link>
     </div>
 
-    <article className="home-social-feed">
-      <h2 className="home-social-feed__heading">The Latest</h2>
-      <ul className="home-social-feed__list">
-        <li className="home-social-feed__item">
+    <article className="scrollable-cards">
+      <h2 className="scrollable-cards__heading">The Latest</h2>
+      <ul className="scrollable-cards__list">
+        <li className="scrollable-cards__item">
           <img src="https://picsum.photos/id/102/396" alt="" />
         </li>
-        <li className="home-social-feed__item">
+        <li className="scrollable-cards__item">
           <img src="https://picsum.photos/id/103/396" alt="" />
         </li>
-        <li className="home-social-feed__item">
+        <li className="scrollable-cards__item">
           <img src="https://picsum.photos/id/104/396" alt="" />
         </li>
       </ul>

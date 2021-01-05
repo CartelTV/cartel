@@ -21,6 +21,10 @@ $XXL: 'min-width:' + $breakpoint-xxl;
 // FONTS
 // ------------------------------------------------------------------------------
 $font-med: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+$font-sans-light: 'Interstate-Light', $font-med;
+$font-sans-black: 'Interstate-Black', $font-med;
+$font-serif-bold: 'DomaineDisplay-Bold', serif;
+$font-serif-semi: 'DomaineDisplay-Semibold', serif;
 
 // COLORS
 // ------------------------------------------------------------------------------

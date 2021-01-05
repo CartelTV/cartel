@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const HomeSocialFeed = () => (
+export const ScrollableCards = () => (
   <article className="home-social-feed">
     <h2 className="home-social-feed__heading">The Latest</h2>
     <ul className="home-social-feed__list">

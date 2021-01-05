@@ -9,6 +9,7 @@
     position: relative;
 
     @include mq($M) {
+      background-color: $white;
       display: flex;
       padding-bottom: $space-700;
       padding-right: 0;
@@ -16,7 +17,6 @@
     }
 
     @include mq($XL) {
-      background-color: $white;
       padding-bottom: $space-800;
       padding-left: $space-800;
       padding-top: $space-800;

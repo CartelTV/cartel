@@ -1,0 +1,38 @@
+.three-col-grid {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    border-bottom: 1px solid $border-color;
+    flex-basis: 50%;
+
+    @include mq($M) {
+      flex-basis: 33.33333%;
+      padding: $space-600 $space-500 $space-300;
+    }
+
+    @include mq($L) {
+      padding: $space-600 $space-600 $space-300;
+    }
+
+    @include mq($XL) {
+      flex-basis: 25%;
+    }
+
+    &:nth-child(1n),
+    &:nth-child(2n) {
+      border-right: 1px solid $border-color;
+    }
+  }
+
+  &__image-wrapper {
+    background-color: $white;
+    padding: $space-300;
+  }
+
+  &__copy-wrapper {
+    padding: $space-400 $space-300;
+  }
+}

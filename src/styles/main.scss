@@ -9,14 +9,16 @@
 @import 'partials/helpers';
 @import 'partials/patterns/buttons';
 @import 'partials/patterns/link-callout';
+@import 'partials/patterns/three-col-grid';
 @import 'partials/patterns/nine-grid-videos';
 @import 'partials/patterns/editor-grid-videos';
+@import 'partials/patterns/text-header';
 @import 'partials/patterns/video-detail';
 @import 'partials/components/header';
 @import 'partials/components/footer';
 @import 'partials/components/home-videos';
 @import 'partials/components/home-editors';
-@import 'partials/components/home-social-feed';
+@import 'partials/components/scrollable-cards';
 @import 'partials/components/editors';
 @import 'partials/components/editor-detail';
 //@import 'partials/html-linter'; // for development only

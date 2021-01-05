@@ -13,3 +13,39 @@
        url('webfont.ttf')  format('truetype');
   }
 */
+
+@font-face {
+  font-family: 'DomaineDisplay-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url('DomaineDisp-Bold.woff2') format('woff2'),
+    url('DomaineDisp-Bold.woff') format('woff'),
+    url('DomaineDisp-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DomaineDisplay-Semibold';
+  font-style: normal;
+  font-weight: 600;
+  src: url('DomaineDispSemibold.woff2') format('woff2'),
+    url('DomaineDispSemibold.woff') format('woff'),
+    url('DomaineDispSemibold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Interstate-Black';
+  font-style: normal;
+  font-weight: 900;
+  src: url('Interstate-Black.woff2') format('woff2'),
+    url('Interstate-Black.woff') format('woff'),
+    url('Interstate-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Interstate-Light';
+  font-style: normal;
+  font-weight: 300;
+  src: url('Interstate-Light.woff2') format('woff2'),
+    url('Interstate-Light.woff') format('woff'),
+    url('Interstate-Light.ttf') format('truetype');
+}

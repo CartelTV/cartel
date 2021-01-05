@@ -1,0 +1,43 @@
+.editor-grid-videos {
+  background-color: $white;
+
+  @include mq($M) {
+    padding-top: $space-300;
+  }
+
+  &__item {
+    padding-bottom: $space-600;
+    padding-top: $space-300;
+
+    @include mq($M) {
+      padding-bottom: 0;
+    }
+
+    img {
+      filter: grayscale(1);
+      margin-bottom: $space-400;
+      transition: filter 0.2s ease-out;
+
+      @include mq($M) {
+        margin-bottom: $space-300;
+      }
+
+      &:focus,
+      &:hover {
+        filter: grayscale(0);
+      }
+    }
+  }
+
+  &__text {
+    @include mq($M) {
+      font-size: 0.6875rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding-right: $space-200;
+  }
+}

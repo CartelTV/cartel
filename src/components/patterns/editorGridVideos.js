@@ -7,7 +7,7 @@ import { Image } from './image';
 export const EditorGridVideos = ({ videosList }) => (
   <div className="editor-grid-videos">
     <div className="container">
-      <ul>
+      <ul className="editor-grid-videos__list">
         {videosList.map(video => (
           <li className="editor-grid-videos__item">
             <Link to="/">

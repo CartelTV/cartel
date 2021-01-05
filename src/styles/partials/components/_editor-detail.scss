@@ -1,0 +1,97 @@
+.editor-detail {
+  &__header {
+    background-color: $beige;
+    border-bottom: 1px solid $border-color;
+    padding-bottom: $space-300;
+    padding-left: $space-400;
+    padding-right: $space-400;
+    padding-top: $space-700;
+    position: relative;
+
+    @include mq($M) {
+      display: flex;
+      padding-bottom: $space-700;
+      padding-right: 0;
+      padding-top: $space-700;
+    }
+
+    @include mq($XL) {
+      background-color: $white;
+      padding-bottom: $space-800;
+      padding-left: $space-800;
+      padding-top: $space-800;
+    }
+  }
+
+  &__name {
+    color: $gold;
+    margin-bottom: $space-700;
+
+    @include mq($M) {
+      margin-bottom: 0;
+      padding-left: $space-500;
+      padding-right: $space-800;
+    }
+
+    @include mq($XL) {
+      padding-left: 0;
+      padding-right: $space-900;
+    }
+
+    @include mq($XXL) {
+      padding-right: $space-900 * 2;
+    }
+  }
+
+  &__list {
+    margin-left: $space-400;
+
+    @include mq($M) {
+      display: flex;
+    }
+  }
+
+  &__item {
+    margin-bottom: $space-600;
+
+    @include mq($M) {
+      margin-bottom: 0;
+      margin-right: $space-700;
+    }
+  }
+
+  &__link {
+    border: 0;
+    font-size: 1.25rem;
+    position: relative;
+
+    &:focus,
+    &:hover {
+      &::before {
+        background-color: $aqua;
+        border-radius: 50%;
+        content: '';
+        height: 0.5rem;
+        left: -0.75rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0.5rem;
+      }
+    }
+
+    &.active {
+      &::before {
+        background-color: $color-grey-1;
+        border-radius: 50%;
+        content: '';
+        height: 0.5rem;
+        left: -0.75rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0.5rem;
+      }
+    }
+  }
+}

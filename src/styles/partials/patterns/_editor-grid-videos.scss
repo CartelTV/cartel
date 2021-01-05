@@ -5,12 +5,24 @@
     padding-top: $space-300;
   }
 
+  &__list {
+    @include mq($M) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
   &__item {
     padding-bottom: $space-600;
     padding-top: $space-300;
 
     @include mq($M) {
-      padding-bottom: 0;
+      flex-basis: calc(50% - 1.5rem);
+
+      &:first-child {
+        flex-basis: 100%;
+      }
     }
 
     img {

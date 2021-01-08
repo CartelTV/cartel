@@ -1,0 +1,39 @@
+.lookout {
+  &__list {
+  }
+
+  &__item {
+    padding-bottom: $space-800;
+    padding-top: $space-800;
+
+    > .container {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    &-images {
+      position: relative;
+    }
+
+    &-primary-image {
+    }
+
+    &-secondary-image {
+      position: absolute;
+      width: 33.33333%;
+
+      &--right {
+        right: -$space-500;
+        top: -33.33333%;
+      }
+
+      &--bottom {
+        bottom: 0;
+      }
+
+      &--left {
+        left: 0;
+      }
+    }
+  }
+}

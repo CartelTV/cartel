@@ -79,27 +79,27 @@ export const Header = ({ siteTitle }) => {
             </Link>
           </li>
           <li className="nav__item">
-            <Link to="/" className="nav__link">
+            <Link to="/editors" className="nav__link">
               Editors
             </Link>
           </li>
           <li className="nav__item">
-            <Link to="/" className="nav__link">
+            <Link to="/contact" className="nav__link">
               Contact
             </Link>
           </li>
           <li className="nav__item">
-            <Link to="/" className="nav__link">
+            <Link to="/music-videos" className="nav__link">
               Music Videos
             </Link>
           </li>
           <li className="nav__item">
-            <Link to="/" className="nav__link">
+            <Link to="/the-lookout" className="nav__link">
               The Lookout
             </Link>
           </li>
           <li className="nav__item">
-            <Link to="/" className="nav__link">
+            <Link to="/about" className="nav__link">
               About
             </Link>
           </li>

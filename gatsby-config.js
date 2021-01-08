@@ -14,13 +14,15 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        google: {
-          families: ['Open Sans:400,700'],
+        custom: {
+          families: [
+            'DomaineDisp-Bold',
+            'DomaineDispSemibold',
+            'Interstate-Black',
+            'Interstate-Light',
+          ],
+          urls: ['/fonts/fonts.css'],
         },
-        // custom: {
-        //   families: ['CUSTOMFONT1, CUSTOMFONT2'],
-        //   urls: ['/fonts/fonts.css'],
-        // },
       },
     },
     {

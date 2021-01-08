@@ -18,7 +18,6 @@
   }
 
   &__heading {
-    color: $gold;
     margin-bottom: $space-700;
 
     @include mq($M) {
@@ -44,6 +43,12 @@
       flex-basis: 66.66666%;
       margin-left: 33.33333%;
       max-width: 30rem;
+    }
+  }
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: $space-600;
     }
   }
 }

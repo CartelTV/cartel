@@ -41,9 +41,21 @@ footer {
 }
 
 h1,
-.h1,
+h2 {
+  color: $gold;
+  letter-spacing: 1px;
+}
+
+h1,
+.h1 {
+  margin-bottom: $space-600;
+  letter-spacing: 1px;
+}
+
 h2,
 .h2 {
+  font-family: $font-serif-semi;
+  letter-spacing: 1px;
   margin-bottom: $space-300;
 }
 
@@ -51,6 +63,7 @@ h3,
 .h3,
 h4,
 .h4 {
+  font-family: $font-serif-semi;
   margin-bottom: 0.25rem;
 }
 
@@ -64,6 +77,10 @@ nav {
     justify-content: space-between;
     list-style: none;
   }
+}
+
+hr {
+  border-color: $gold;
 }
 
 .iframe-container {

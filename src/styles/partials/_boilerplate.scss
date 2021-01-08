@@ -52,6 +52,19 @@ html {
 }
 
 /*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  border: 0;
+  border-top: 2px solid $gold;
+  display: block;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+}
+
+/*
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:
  * https://github.com/h5bp/html5-boilerplate/issues/440

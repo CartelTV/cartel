@@ -52,12 +52,14 @@ const VideoDetailPage = () => (
 
     <article className="text-header">
       <div className="container">
-        <h2 className="text-header__heading h1">Our Team</h2>
+        <div className="text-header__heading-wrapper">
+          <h2 className="text-header__heading h1">Our Team</h2>
+        </div>
         <p className="text-header__copy">
           Cartel stands behind great creative and those who make it. With
           decades of international production experience, awards and accolades
           from all of the major shows, we know that the best work is made in a
-          collaborative environment with a dedication to craft.{' '}
+          collaborative environment with a dedication to craft.
         </p>
       </div>
     </article>

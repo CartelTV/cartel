@@ -49,10 +49,34 @@
       @include mq($XXL) {
         flex-basis: 33.33333%;
       }
+
+      a {
+        background-color: transparent;
+        outline: none;
+        padding: 0.3em 0;
+        transition: background-color 0.67s ease-out;
+
+        &:focus,
+        &:hover {
+          background-color: $aqua;
+          padding: 0.3em 0;
+        }
+      }
     }
 
     &-images {
       position: relative;
+
+      a {
+        display: block;
+        outline-color: $aqua;
+        transition: outline 0.33s ease-out;
+
+        &:focus,
+        &:hover {
+          outline: 27px solid $aqua;
+        }
+      }
 
       &:focus,
       &:hover {

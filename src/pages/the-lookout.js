@@ -20,14 +20,18 @@ const TheLookout = () => (
     <article className="lookout">
       <ul className="lookout__list">
         <li className="lookout__item">
-          <p className="lookout__item-name">Adam Robinson</p>
+          <p className="lookout__item-name">
+            <Link to="/lookout-detail">Adam Robinson</Link>
+          </p>
           <div className="lookout__item-images">
-            <Image
-              className="lookout__item-primary-image"
-              srcSmall="https://picsum.photos/id/1020/719/406"
-              alt="Adam Robinson video"
-              lazyLoad
-            />
+            <Link to="/lookout-detail">
+              <Image
+                className="lookout__item-primary-image"
+                srcSmall="https://picsum.photos/id/1020/719/406"
+                alt="Adam Robinson video"
+                lazyLoad
+              />
+            </Link>
 
             <Image
               className="lookout__item-secondary-image lookout__item-secondary-image--right"
@@ -52,14 +56,18 @@ const TheLookout = () => (
           </div>
         </li>
         <li className="lookout__item">
-          <p className="lookout__item-name">Adam Robinson</p>
+          <p className="lookout__item-name">
+            <Link to="/lookout-detail">Adam Robinson</Link>
+          </p>
           <div className="lookout__item-images">
-            <Image
-              className="lookout__item-primary-image"
-              srcSmall="https://picsum.photos/id/1020/719/406"
-              alt="Adam Robinson video"
-              lazyLoad
-            />
+            <Link to="/lookout-detail">
+              <Image
+                className="lookout__item-primary-image"
+                srcSmall="https://picsum.photos/id/1020/719/406"
+                alt="Adam Robinson video"
+                lazyLoad
+              />
+            </Link>
 
             <Image
               className="lookout__item-secondary-image lookout__item-secondary-image--right"
@@ -84,14 +92,18 @@ const TheLookout = () => (
           </div>
         </li>
         <li className="lookout__item">
-          <p className="lookout__item-name">Adam Robinson</p>
+          <p className="lookout__item-name">
+            <Link to="/lookout-detail">Adam Robinson</Link>
+          </p>
           <div className="lookout__item-images">
-            <Image
-              className="lookout__item-primary-image"
-              srcSmall="https://picsum.photos/id/1020/719/406"
-              alt="Adam Robinson video"
-              lazyLoad
-            />
+            <Link to="/lookout-detail">
+              <Image
+                className="lookout__item-primary-image"
+                srcSmall="https://picsum.photos/id/1020/719/406"
+                alt="Adam Robinson video"
+                lazyLoad
+              />
+            </Link>
 
             <Image
               className="lookout__item-secondary-image lookout__item-secondary-image--right"

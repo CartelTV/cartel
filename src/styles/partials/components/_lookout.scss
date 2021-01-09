@@ -53,6 +53,24 @@
 
     &-images {
       position: relative;
+
+      &:focus,
+      &:hover {
+        .lookout__item-secondary-image--right {
+          right: -$space-200;
+          top: -31%;
+        }
+
+        .lookout__item-secondary-image--bottom {
+          bottom: -33%;
+          right: 6%;
+        }
+
+        .lookout__item-secondary-image--left {
+          bottom: -11%;
+          left: -6%;
+        }
+      }
     }
 
     &-primary-image {
@@ -75,6 +93,7 @@
       &--right {
         right: -$space-500;
         top: -33.33333%;
+        transition: all 0.66s ease-out;
         width: 33.33333%;
 
         @include mq($M) {
@@ -85,12 +104,14 @@
       &--bottom {
         bottom: -35%;
         right: 5%;
+        transition: all 0.66s ease-out;
         width: 50%;
       }
 
       &--left {
         bottom: -15%;
         left: -7%;
+        transition: all 0.66s ease-out;
         width: 33.33333%;
       }
     }

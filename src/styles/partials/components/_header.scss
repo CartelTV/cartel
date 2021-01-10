@@ -3,16 +3,21 @@
 // ===========================================================================
 .header {
   align-items: center;
+  background-color: $beige;
   border: 1px solid $border-color;
   display: flex;
   justify-content: space-between;
   padding: $space-300;
   padding-left: $space-500;
-  position: relative;
+  position: fixed;
+  transition: transform 0.5s ease-out;
+  width: 100%;
+  z-index: 10;
 
   @include mq($M) {
     border-bottom: 1px solid $border-color;
     padding-left: $space-600;
+    position: relative;
   }
 
   @include mq($L) {
@@ -27,7 +32,7 @@
   }
 
   &.is-hidden {
-    transform: translateY(-99px);
+    transform: translateY(-50px);
 
     @include mq($M) {
       transform: translateY(0);

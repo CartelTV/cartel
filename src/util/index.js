@@ -19,7 +19,7 @@ export const handleNavVisibility = navEl => {
   }
 
   if (
-    currentScroll > 99 &&
+    currentScroll > 50 &&
     currentScroll > lastScroll &&
     !navEl.classList.contains('is-hidden')
   ) {

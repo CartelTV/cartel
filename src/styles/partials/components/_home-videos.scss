@@ -13,27 +13,27 @@
 
   &__heading-wrapper {
     align-self: flex-start;
-    margin-bottom: $space-700;
-    margin-top: $space-700;
+    padding-bottom: $space-700;
+    padding-top: $space-700;
     width: 100%;
 
     @include mq($M) {
       left: $space-600;
-      margin-bottom: 0;
-      margin-top: $space-750;
+      padding-bottom: 0;
+      padding-top: $space-750;
       position: sticky;
       top: 200px;
     }
 
     @include mq($L) {
       left: $space-700;
-      margin-top: $space-850;
+      padding-top: $space-850;
       top: 360px;
     }
 
     @include mq($XL) {
       left: $space-800;
-      margin-top: $space-800;
+      padding-top: $space-800;
       top: 317px;
     }
   }

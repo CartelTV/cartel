@@ -6,6 +6,14 @@ body {
   font-family: $font-sans-light;
 }
 
+main {
+  padding-top: 50px;
+
+  @include mq($M) {
+    padding-top: 0;
+  }
+}
+
 main,
 footer {
   p,

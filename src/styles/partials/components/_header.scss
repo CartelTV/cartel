@@ -39,18 +39,20 @@
   }
 
   &__logo {
+    height: 23px;
     max-width: 146px;
+    width: 146px;
 
     @include mq($M) {
+      height: 31px;
       max-width: 197px;
+      width: 197px;
     }
 
     @include mq($L) {
+      height: 71px;
       max-width: 375px;
-    }
-
-    @include mq($XL) {
-      max-width: 450px;
+      width: 453px;
     }
   }
 

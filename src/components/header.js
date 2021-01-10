@@ -5,7 +5,7 @@ import { useWindowWidth } from '@react-hook/window-size';
 
 import { debounce, handleNavVisibility } from '../util';
 
-import cartelTextLogo from '../images/cartel-text-logo.png';
+import cartelTextLogo from '../images/cartel-logo-text.svg';
 
 export const Header = ({ siteTitle }) => {
   const [menuIsExpanded, setMenuIsExpanded] = useState(false);

@@ -14,6 +14,7 @@ const TheLookout = () => (
     <Image
       srcSmall="https://picsum.photos/id/1011/719/384"
       srcMed="https://picsum.photos/id/1011/1199/640"
+      srcLarge="https://picsum.photos/id/1011/1920/1024"
       alt="The Lookout"
       lazyLoad
     />

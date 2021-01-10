@@ -5,7 +5,9 @@ import { Image } from './patterns/image';
 
 export const HomeVideos = ({ sectionHeading, videosList }) => (
   <article className="home-videos">
-    <h2 className="home-videos__heading">{sectionHeading}</h2>
+    <div className="home-videos__heading-wrapper">
+      <h2 className="home-videos__heading">{sectionHeading}</h2>
+    </div>
     <ul className="home-videos__list">
       {videosList.map(video => (
         <li className="home-videos__item">

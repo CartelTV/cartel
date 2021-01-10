@@ -12,7 +12,9 @@ const IndexPage = () => (
     <SEO title="Home" />
     <h1 className="visuallyhidden">Home</h1>
     <article className="home-videos">
-      <h2 className="home-videos__heading">Recent Work</h2>
+      <div className="home-videos__heading-wrapper">
+        <h2 className="home-videos__heading">Recent Work</h2>
+      </div>
       <ul className="home-videos__list">
         <li className="home-videos__item">
           <div className="home-videos__video-wrapper">
@@ -57,7 +59,9 @@ const IndexPage = () => (
     </article>
 
     <article className="home-videos">
-      <h2 className="home-videos__heading">Music Videos</h2>
+      <div className="home-videos__heading-wrapper">
+        <h2 className="home-videos__heading">Music Videos</h2>
+      </div>
       <ul className="home-videos__list">
         <li className="home-videos__item">
           <div className="home-videos__video-wrapper">

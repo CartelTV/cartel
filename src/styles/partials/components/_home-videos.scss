@@ -11,31 +11,36 @@
     padding-right: 0;
   }
 
-  &__heading {
+  &__heading-wrapper {
+    align-self: flex-start;
     margin-bottom: $space-700;
     margin-top: $space-700;
+    width: 100%;
 
     @include mq($M) {
       left: $space-600;
-      margin-top: 0;
-      position: absolute;
-      top: $space-750;
+      margin-bottom: 0;
+      margin-top: $space-750;
+      position: sticky;
+      top: 200px;
     }
 
     @include mq($L) {
       left: $space-700;
-      top: $space-850;
+      margin-top: $space-850;
+      top: 360px;
     }
 
     @include mq($XL) {
       left: $space-800;
-      top: $space-800;
+      margin-top: $space-800;
+      top: 317px;
     }
   }
 
   &__list {
     @include mq($M) {
-      max-width: 90%;
+      max-width: 80%;
     }
   }
 

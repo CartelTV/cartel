@@ -3,7 +3,12 @@ import { Link } from 'gatsby';
 
 import { Layout } from '../components/layout';
 import SEO from '../components/seo';
-import { EditorGridVideos } from '../components/patterns/editorGridVideos';
+import { LookoutGridVideos } from '../components/patterns/lookoutGridVideos';
+import { Image } from '../components/patterns/image';
+
+import bioCard692 from '../images/lookout-editor-bio-card-mobile.jpg';
+import bioCard1088 from '../images/lookout-editor-bio-card.jpg';
+import bioCard2176 from '../images/lookout-editor-bio-card@2x.jpg';
 
 const videosList = [
   {
@@ -55,7 +60,7 @@ const videosList = [
 
 const LookoutDetailPage = () => (
   <Layout>
-    <SEO title="Lookout Detail" />
+    <SEO title="Adam Robinson" />
     <article className="editor-detail__header editor-detail__header--lookout">
       <h2 className="editor-detail__name editor-detail__name--lookout">
         Adam Robinson
@@ -71,8 +76,7 @@ const LookoutDetailPage = () => (
         </li>
         <li className="editor-detail__item">
           <Link
-            className="editor-detail__link"
-            editor-detail__link--lookout
+            className="editor-detail__link editor-detail__link--lookout"
             to="/"
           >
             Comedy
@@ -80,8 +84,7 @@ const LookoutDetailPage = () => (
         </li>
         <li className="editor-detail__item">
           <Link
-            className="editor-detail__link"
-            editor-detail__link--lookout
+            className="editor-detail__link editor-detail__link--lookout"
             to="/"
           >
             Other
@@ -89,7 +92,18 @@ const LookoutDetailPage = () => (
         </li>
       </ul>
     </article>
-    <EditorGridVideos videosList={videosList} />
+    <LookoutGridVideos videosList={videosList} />
+
+    <article className="lookout__bio-card-wrapper">
+      <Image
+        className="lookout__bio-card"
+        srcSmall={bioCard692}
+        srcMed={bioCard1088}
+        srcLarge={bioCard2176}
+        alt="bio card for Adam Robinson"
+        lazyLoad
+      />
+    </article>
   </Layout>
 );
 

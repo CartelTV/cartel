@@ -1,0 +1,77 @@
+.lookout-grid-videos {
+  background-color: $white;
+  padding-bottom: $space-500;
+  padding-top: $space-500;
+
+  @include mq($XXL) {
+    padding-top: $space-700;
+  }
+
+  > .container {
+    padding: 0 $space-300;
+  }
+
+  &__list {
+    @include mq($M) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    margin-bottom: $space-700;
+
+    @include mq($M) {
+      &:nth-child(3n + 1) {
+        margin-left: auto;
+        margin-right: auto;
+        flex-basis: 80%;
+      }
+
+      &:nth-child(3n + 2),
+      &:nth-child(3n + 3) {
+        flex-basis: 45%;
+      }
+
+      &:nth-child(3n + 3) {
+        margin-top: $space-600;
+      }
+    }
+
+    @include mq($L) {
+      &:nth-child(3n + 2),
+      &:nth-child(3n + 3) {
+        flex-basis: 47.5%;
+      }
+    }
+
+    img {
+      filter: grayscale(1);
+      margin-bottom: $space-400;
+      transition: filter 0.2s ease-out;
+
+      @include mq($M) {
+        margin-bottom: $space-300;
+      }
+
+      &:focus,
+      &:hover {
+        filter: grayscale(0);
+      }
+    }
+  }
+
+  &__text {
+    @include mq($M) {
+      font-size: 0.6875rem;
+    }
+  }
+
+  &__title {
+    font-family: $font-serif-semi;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding-right: $space-200;
+  }
+}

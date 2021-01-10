@@ -21,6 +21,11 @@
       padding-left: $space-800;
       padding-top: $space-800;
     }
+
+    &--lookout {
+      background-color: $color-grey-2;
+      border-bottom: $space-500 solid $aqua;
+    }
   }
 
   &__name {
@@ -39,6 +44,11 @@
 
     @include mq($XXL) {
       padding-right: $space-900 * 2;
+    }
+
+    &--lookout {
+      font-family: $font-sans-black;
+      text-transform: uppercase;
     }
   }
 
@@ -65,7 +75,8 @@
     position: relative;
 
     &:focus,
-    &:hover {
+    &:hover,
+    .active {
       &::before {
         background-color: $aqua;
         border-radius: 50%;
@@ -73,23 +84,36 @@
         height: 0.5rem;
         left: -0.75rem;
         position: absolute;
-        top: 50%;
+        top: 45%;
         transform: translateY(-50%);
         width: 0.5rem;
       }
     }
 
-    &.active {
-      &::before {
-        background-color: $color-grey-1;
-        border-radius: 50%;
-        content: '';
-        height: 0.5rem;
-        left: -0.75rem;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 0.5rem;
+    &--lookout {
+      color: $white;
+
+      &:focus,
+      &:hover {
+        color: $white;
+
+        &::before {
+          background-color: $aqua;
+        }
+      }
+
+      &.active {
+        &::before {
+          background-color: $white;
+          border-radius: 50%;
+          content: '';
+          height: 0.5rem;
+          left: -0.75rem;
+          position: absolute;
+          top: 45%;
+          transform: translateY(-50%);
+          width: 0.5rem;
+        }
       }
     }
   }

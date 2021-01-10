@@ -140,4 +140,25 @@
       }
     }
   }
+
+  &__bio-card-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: $space-600 $space-300;
+
+    @include mq($M) {
+      padding: $space-700 $space-800;
+    }
+
+    @include mq($L) {
+      padding: $space-700 $space-900;
+    }
+  }
+
+  &__bio-card {
+    @include mq($L) {
+      max-width: 800px;
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { useWindowWidth } from '@react-hook/window-size';
@@ -9,11 +9,22 @@ import cartelTextLogo from '../images/cartel-logo-text.svg';
 
 export const Header = ({ siteTitle }) => {
   const [menuIsExpanded, setMenuIsExpanded] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef();
   const windowWidth = useWindowWidth();
 
   const toggleMenu = () => {
-    setMenuIsExpanded(!menuIsExpanded);
+    if (!menuIsExpanded) {
+      setMenuIsExpanded(true);
+      toggleIsOpen();
+    } else {
+      toggleIsOpen();
+      setTimeout(() => setMenuIsExpanded(false), 500);
+    }
+  };
+
+  const toggleIsOpen = () => {
+    setTimeout(() => setIsOpen(!isOpen), 100);
   };
 
   useEffect(() => {
@@ -55,19 +66,68 @@ export const Header = ({ siteTitle }) => {
   }, [menuIsExpanded]);
 
   return (
-    <header className="header" role="banner" ref={menuRef}>
-      <button
-        className="header__menu-button"
-        type="button"
-        aria-label="open site navigation"
-        aria-controls="nav-list"
-        aria-expanded={menuIsExpanded}
-        onClick={toggleMenu}
-      >
-        {menuIsExpanded ? 'Close' : 'Menu'}
-      </button>
+    <Fragment>
+      <header className="header" role="banner" ref={menuRef}>
+        <button
+          className="header__menu-button"
+          type="button"
+          aria-label="open site navigation"
+          aria-controls="nav-list"
+          aria-expanded={menuIsExpanded}
+          onClick={toggleMenu}
+        >
+          {menuIsExpanded ? 'Close' : 'Menu'}
+        </button>
+        <nav
+          className={`nav nav--large ${isOpen ? 'is-open' : ''}`}
+          role="navigation"
+          id="nav-list"
+          hidden={windowWidth > 767 ? false : !menuIsExpanded}
+        >
+          <ul className="nav__list">
+            <li className="nav__item">
+              <Link to="/work" className="nav__link">
+                Work
+              </Link>
+            </li>
+            <li className="nav__item">
+              <Link to="/editors" className="nav__link">
+                Editors
+              </Link>
+            </li>
+            <li className="nav__item">
+              <Link to="/contact" className="nav__link">
+                Contact
+              </Link>
+            </li>
+            <li className="nav__item">
+              <Link to="/music-videos" className="nav__link">
+                Music Videos
+              </Link>
+            </li>
+            <li className="nav__item">
+              <Link to="/the-lookout" className="nav__link">
+                The Lookout
+              </Link>
+            </li>
+            <li className="nav__item">
+              <Link to="/about" className="nav__link">
+                About
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <Link className="header__logo-link" to="/">
+          <h1 className="visuallyhidden">{siteTitle}</h1>
+          <img
+            className="header__logo"
+            src={cartelTextLogo}
+            alt="Cartel logo"
+          />
+        </Link>
+      </header>
       <nav
-        className="nav"
+        className={`nav nav--small ${isOpen ? 'is-open' : ''}`}
         role="navigation"
         id="nav-list"
         hidden={windowWidth > 767 ? false : !menuIsExpanded}
@@ -105,11 +165,7 @@ export const Header = ({ siteTitle }) => {
           </li>
         </ul>
       </nav>
-      <Link to="/">
-        <h1 className="visuallyhidden">{siteTitle}</h1>
-        <img className="header__logo" src={cartelTextLogo} alt="Cartel logo" />
-      </Link>
-    </header>
+    </Fragment>
   );
 };
 

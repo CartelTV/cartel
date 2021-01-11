@@ -65,6 +65,7 @@
     background-color: $white;
     margin-bottom: $space-400;
     padding: $space-300;
+    position: relative;
 
     @include mq($M) {
       flex-basis: 70%;
@@ -79,6 +80,16 @@
       &:hover {
         filter: grayscale(0);
       }
+    }
+
+    .iframe-container {
+      background-color: $black;
+      height: calc(100% - 1.5rem);
+      left: $space-300;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: calc(100% - 1.5rem);
     }
   }
 

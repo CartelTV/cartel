@@ -43,6 +43,16 @@
     transform: translateY(0);
   }
 
+  &__logo-link {
+    outline: none;
+    transform-origin: right;
+    transition: transform 0.2s ease-out;
+
+    &:focus {
+      transform: scaleX(1.1);
+    }
+  }
+
   &__logo {
     height: 23px;
     max-width: 146px;
@@ -62,107 +72,139 @@
   }
 
   &__menu-button {
+    align-items: center;
+    display: flex;
+    outline: none;
     text-transform: uppercase;
+
+    &:focus {
+      &::after {
+        content: '≡';
+        font-size: 1.25rem;
+        margin-left: $space-200;
+        position: relative;
+        top: -1px;
+      }
+    }
 
     @include mq($M) {
       display: none;
     }
   }
+}
 
-  .nav {
-    background-color: $beige;
-    border: 1px solid $border-color;
-    left: 0;
-    padding-bottom: $space-500;
-    padding-left: $space-500;
-    padding-top: $space-500;
-    position: absolute;
-    transform: translateY(62%);
-    width: 100%;
-    z-index: 1;
+.nav {
+  background-color: $beige;
+  border: 1px solid $border-color;
+  left: 0;
+  overflow: hidden;
+  padding-bottom: $space-500;
+  padding-left: $space-500;
+  padding-top: $space-500;
+  position: absolute;
+  transform: translateY(-154px);
+  transition: transform 0.33s ease-out;
+  width: 100%;
+  z-index: 9;
+
+  &--small {
+    @include mq($M) {
+      display: none;
+    }
+  }
+
+  &--large {
+    display: none;
 
     @include mq($M) {
-      border: 0;
-      max-width: 350px;
-      padding: 0;
-      position: relative;
-      transform: none;
+      display: block;
+    }
+  }
+
+  &.is-open {
+    transform: translateY(50px);
+    transition: transform 0.33s ease-out;
+  }
+
+  @include mq($M) {
+    border: 0;
+    max-width: 350px;
+    padding: 0;
+    position: relative;
+    transform: none;
+  }
+
+  @include mq($L) {
+    max-width: 460px;
+  }
+
+  @include mq($XL) {
+    max-width: 550px;
+  }
+
+  &__list {
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex-basis: 50%;
+    margin-bottom: $space-500;
+
+    @include mq($M) {
+      flex-basis: calc(40% - 2.25rem);
+      margin-bottom: 0;
+      margin-right: $space-400;
+
+      // first three items
+      &:nth-child(-n + 3) {
+        margin-bottom: $space-200;
+      }
+
+      // 3rd and 6th items
+      &:nth-child(3n) {
+        flex-basis: 20%;
+        margin-right: 0;
+        text-align: right;
+      }
     }
 
     @include mq($L) {
-      max-width: 460px;
-    }
+      margin-right: $space-600;
 
-    @include mq($XL) {
-      max-width: 550px;
-    }
-
-    &__list {
-      flex-wrap: wrap;
-    }
-
-    &__item {
-      flex-basis: 50%;
-      margin-bottom: $space-500;
-
-      @include mq($M) {
-        flex-basis: calc(40% - 2.25rem);
-        margin-bottom: 0;
-        margin-right: $space-400;
-
-        // first three items
-        &:nth-child(-n + 3) {
-          margin-bottom: $space-200;
-        }
-
-        // 3rd and 6th items
-        &:nth-child(3n) {
-          flex-basis: 20%;
-          margin-right: 0;
-          text-align: right;
-        }
-      }
-
-      @include mq($L) {
-        margin-right: $space-600;
-
-        &:nth-child(-n + 3) {
-          margin-bottom: $space-300;
-        }
+      &:nth-child(-n + 3) {
+        margin-bottom: $space-300;
       }
     }
+  }
 
-    &__link {
-      color: $text-clr;
+  &__link {
+    color: $text-clr;
+    font-size: 0.875rem;
+    outline: none;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include mq($M) {
+      font-size: 0.75rem;
+    }
+
+    @include mq($L) {
       font-size: 1.25rem;
-      font-size: 1rem; // remove when Interstate font is added
-      position: relative;
-      text-decoration: none;
-      text-transform: uppercase;
+    }
 
-      @include mq($M) {
-        font-size: 1rem;
-        font-size: 0.75rem; // remove when Interstate font is added
-      }
-
-      @include mq($L) {
-        font-size: 1.25rem;
-        font-size: 1rem; // remove when Interstate font is added
-      }
-
-      &:focus,
-      &:hover {
-        &::before {
-          background-color: $aqua;
-          border-radius: 50%;
-          content: '';
-          height: 0.5rem;
-          left: -0.75rem;
-          position: absolute;
-          top: 45%;
-          transform: translateY(-50%);
-          width: 0.5rem;
-        }
+    &:focus,
+    &:hover {
+      &::before {
+        background-color: $aqua;
+        border-radius: 50%;
+        content: '';
+        height: 0.5rem;
+        left: -0.75rem;
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+        width: 0.5rem;
       }
     }
   }

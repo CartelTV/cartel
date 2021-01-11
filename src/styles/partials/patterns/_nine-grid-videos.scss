@@ -34,8 +34,13 @@
       }
 
       @include mq($L) {
-        flex-basis: calc(66.66666% - 0.5rem);
-        max-width: calc(66.66666% - 0.5rem);
+        flex-basis: calc(68.75% - 1rem);
+        max-width: calc(68.75% - 1rem);
+      }
+
+      @include mq($XXL) {
+        flex-basis: calc(68% - 1.5rem);
+        max-width: calc(68% - 1.5rem);
       }
     }
 
@@ -48,8 +53,13 @@
       }
 
       @include mq($L) {
-        flex-basis: calc(33.33333% - 1.5rem);
-        max-width: calc(33.33333% - 1.5rem);
+        flex-basis: calc(31.25% - 1rem);
+        max-width: calc(31.25% - 1rem);
+      }
+
+      @include mq($XXL) {
+        flex-basis: calc(32% - 1.5rem);
+        max-width: calc(32% - 1.5rem);
       }
 
       div:first-child {

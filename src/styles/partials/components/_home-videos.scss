@@ -72,14 +72,8 @@
       margin-bottom: 0;
     }
 
-    img {
-      filter: grayscale(1);
-      transition: filter 0.2s ease-out;
-
-      &:focus,
-      &:hover {
-        filter: grayscale(0);
-      }
+    @include mq($XXL) {
+      flex-basis: 90%;
     }
 
     .iframe-container {
@@ -91,6 +85,43 @@
       transform: translateY(-50%);
       width: calc(100% - 1.5rem);
     }
+  }
+
+  &__button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    &:focus,
+    &:hover {
+      .home-videos__thumbnail-icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__thumbnail {
+    filter: grayscale(1);
+    transition: filter 0.2s ease-out, opacity 2s ease-out;
+
+    &:focus,
+    &:hover {
+      filter: grayscale(0);
+    }
+
+    &.play-video {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &__thumbnail-icon {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity 1s ease-out;
+    width: 10%;
   }
 
   &__text-wrapper {

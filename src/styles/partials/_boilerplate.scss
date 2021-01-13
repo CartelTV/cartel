@@ -313,7 +313,7 @@ label[for] {
 
 [hidden],
 .hidden {
-  display: none !important; // sass-lint:disable-line no-important
+  display: none; // sass-lint:disable-line no-important
 }
 
 /*

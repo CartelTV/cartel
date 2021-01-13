@@ -12,9 +12,9 @@ const TheLookout = () => (
   <Layout>
     <SEO title="The Lookout" />
     <Image
-      srcSmall="https://picsum.photos/id/1011/719/384"
-      srcMed="https://picsum.photos/id/1011/1199/640"
-      srcLarge="https://picsum.photos/id/1011/1920/1024"
+      srcSmall="https://picsum.photos/750/400"
+      srcMed="https://picsum.photos/1199/640"
+      srcLarge="https://picsum.photos/1920/688"
       alt="The Lookout"
       lazyLoad
     />

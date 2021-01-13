@@ -23,18 +23,23 @@
       padding-top: $space-750;
       position: sticky;
       top: 200px;
+      width: 50%;
     }
 
     @include mq($L) {
       left: $space-700;
       padding-top: $space-850;
-      top: 360px;
     }
 
     @include mq($XL) {
       left: $space-800;
       padding-top: $space-800;
       top: 317px;
+      width: 60%;
+    }
+
+    @include mq($XXL) {
+      width: 33.33333%;
     }
   }
 
@@ -72,8 +77,8 @@
       margin-bottom: 0;
     }
 
-    @include mq($XXL) {
-      flex-basis: 90%;
+    @media (min-width: 1560px) {
+      flex-basis: 80%;
     }
 
     .iframe-container {
@@ -96,6 +101,11 @@
     &:hover {
       .home-videos__thumbnail-icon {
         opacity: 1;
+
+        &.play-video {
+          opacity: 0;
+          pointer-events: none;
+        }
       }
     }
   }

@@ -16,6 +16,7 @@ const ContactPage = () => (
           srcMed="https://picsum.photos/id/1041/1199"
           srcLarge="https://picsum.photos/id/1042/1920"
           alt="map showing location Cartel's office"
+          aspectRatio="800:800"
           lazyLoad
         />
       </div>

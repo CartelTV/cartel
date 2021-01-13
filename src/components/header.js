@@ -86,32 +86,48 @@ export const Header = ({ siteTitle }) => {
         >
           <ul className="nav__list">
             <li className="nav__item">
-              <Link to="/work" className="nav__link">
+              <Link to="/work" className="nav__link" activeClassName="active">
                 Work
               </Link>
             </li>
             <li className="nav__item">
-              <Link to="/editors" className="nav__link">
+              <Link
+                to="/editors"
+                className="nav__link"
+                activeClassName="active"
+              >
                 Editors
               </Link>
             </li>
             <li className="nav__item">
-              <Link to="/contact" className="nav__link">
+              <Link
+                to="/contact"
+                className="nav__link"
+                activeClassName="active"
+              >
                 Contact
               </Link>
             </li>
             <li className="nav__item">
-              <Link to="/music-videos" className="nav__link">
+              <Link
+                to="/music-videos"
+                className="nav__link"
+                activeClassName="active"
+              >
                 Music Videos
               </Link>
             </li>
             <li className="nav__item">
-              <Link to="/the-lookout" className="nav__link">
+              <Link
+                to="/the-lookout"
+                className="nav__link"
+                activeClassName="active"
+              >
                 The Lookout
               </Link>
             </li>
             <li className="nav__item">
-              <Link to="/about" className="nav__link">
+              <Link to="/about" className="nav__link" activeClassName="active">
                 About
               </Link>
             </li>

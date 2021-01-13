@@ -27,7 +27,7 @@ export const NineGridVideos = ({ videosList }) => {
           return (
             <div className="nine-grid-videos__row">
               <div className="nine-grid-videos__item">
-                <Link to="/">
+                <Link to="/video-detail">
                   <Image
                     srcSmall={video[0].url}
                     alt={video[0].title}
@@ -39,7 +39,7 @@ export const NineGridVideos = ({ videosList }) => {
                 </p>
               </div>
               <div className="nine-grid-videos__item">
-                <Link to="/">
+                <Link to="/video-detail">
                   <Image
                     srcSmall={video[1].url}
                     alt={video[1].title}
@@ -51,7 +51,7 @@ export const NineGridVideos = ({ videosList }) => {
                 </p>
               </div>
               <div className="nine-grid-videos__item">
-                <Link to="/">
+                <Link to="/video-detail">
                   <Image
                     srcSmall={video[2].url}
                     alt={video[2].title}
@@ -70,10 +70,11 @@ export const NineGridVideos = ({ videosList }) => {
           return (
             <div className="nine-grid-videos__row">
               <div className="nine-grid-videos__item nine-grid-videos__item--large">
-                <Link to="/">
+                <Link to="/video-detail">
                   <Image
                     srcSmall={video[0].url}
                     alt={video[0].title}
+                    aspectRatio="2400:1350"
                     lazyLoad
                   />
                 </Link>
@@ -83,10 +84,11 @@ export const NineGridVideos = ({ videosList }) => {
               </div>
               <div className="nine-grid-videos__item nine-grid-videos__item--stacked">
                 <div>
-                  <Link to="/">
+                  <Link to="/video-detail">
                     <Image
                       srcSmall={video[1].url}
                       alt={video[1].title}
+                      aspectRatio="2400:1350"
                       lazyLoad
                     />
                   </Link>
@@ -95,10 +97,11 @@ export const NineGridVideos = ({ videosList }) => {
                   </p>
                 </div>{' '}
                 <div>
-                  <Link to="/">
+                  <Link to="/video-detail">
                     <Image
                       srcSmall={video[2].url}
                       alt={video[2].title}
+                      aspectRatio="2400:1350"
                       lazyLoad
                     />
                   </Link>
@@ -115,10 +118,11 @@ export const NineGridVideos = ({ videosList }) => {
           <div className="nine-grid-videos__row">
             <div className="nine-grid-videos__item nine-grid-videos__item--stacked">
               <div>
-                <Link to="/">
+                <Link to="/video-detail">
                   <Image
                     srcSmall={video[0].url}
                     alt={video[0].title}
+                    aspectRatio="2400:1350"
                     lazyLoad
                   />
                 </Link>
@@ -127,10 +131,11 @@ export const NineGridVideos = ({ videosList }) => {
                 </p>
               </div>
               <div>
-                <Link to="/">
+                <Link to="/video-detail">
                   <Image
                     srcSmall={video[1].url}
                     alt={video[1].title}
+                    aspectRatio="2400:1350"
                     lazyLoad
                   />
                 </Link>
@@ -140,8 +145,13 @@ export const NineGridVideos = ({ videosList }) => {
               </div>
             </div>
             <div className="nine-grid-videos__item nine-grid-videos__item--large">
-              <Link to="/">
-                <Image srcSmall={video[2].url} alt={video[2].title} lazyLoad />
+              <Link to="/video-detail">
+                <Image
+                  srcSmall={video[2].url}
+                  alt={video[2].title}
+                  aspectRatio="2400:1350"
+                  lazyLoad
+                />
               </Link>
               <p className="nine-grid-videos__text">
                 {video[2].client} : {video[2].title}

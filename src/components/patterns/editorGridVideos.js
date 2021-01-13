@@ -9,8 +9,8 @@ export const EditorGridVideos = ({ videosList }) => (
     <div className="container">
       <ul className="editor-grid-videos__list">
         {videosList.map(video => (
-          <li className="editor-grid-videos__item">
-            <Link to="/">
+          <li className="editor-grid-videos__item" key={video.url}>
+            <Link to="/video-detail">
               <Image srcSmall={video.url} alt={video.title} lazyLoad />
             </Link>
             <p className="editor-grid-videos__text">

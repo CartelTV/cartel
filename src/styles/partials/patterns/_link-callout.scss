@@ -19,6 +19,7 @@
     display: flex;
     font-size: 1.25rem;
     justify-content: space-between;
+    outline: none;
 
     @include mq($S) {
       max-width: 240px;
@@ -26,6 +27,10 @@
 
     &:focus,
     &:hover {
+      span {
+        border-bottom: 1px solid $aqua;
+      }
+
       svg {
         transform: translateX($space-500);
       }

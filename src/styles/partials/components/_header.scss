@@ -16,19 +16,19 @@
 
   @include mq($M) {
     border-bottom: 1px solid $border-color;
-    padding-left: $space-600;
+    padding-left: calc(2.25rem - 30px);
     position: relative;
   }
 
   @include mq($L) {
     padding-bottom: $space-700;
-    padding-left: $space-700;
+    padding-left: calc(3rem - 45px);
     padding-right: $space-500;
     padding-top: $space-700;
   }
 
   @include mq($XL) {
-    padding-left: $space-800;
+    padding-left: calc(6rem - 15px);
   }
 
   &.is-hidden {
@@ -49,7 +49,7 @@
     transition: transform 0.2s ease-out;
 
     &:focus {
-      transform: scaleX(1.1);
+      border-bottom: 1px solid $aqua;
     }
   }
 
@@ -128,14 +128,15 @@
 
   @include mq($M) {
     border: 0;
-    max-width: 350px;
+    max-width: 420px;
     padding: 0;
+    padding-left: 15px;
     position: relative;
     transform: none;
   }
 
   @include mq($L) {
-    max-width: 460px;
+    max-width: 550px;
   }
 
   @include mq($XL) {
@@ -151,7 +152,7 @@
     margin-bottom: $space-500;
 
     @include mq($M) {
-      flex-basis: calc(40% - 2.25rem);
+      flex-basis: calc(33.33333% - 2.25rem);
       margin-bottom: 0;
       margin-right: $space-400;
 
@@ -162,9 +163,7 @@
 
       // 3rd and 6th items
       &:nth-child(3n) {
-        flex-basis: 20%;
         margin-right: 0;
-        text-align: right;
       }
     }
 
@@ -194,7 +193,8 @@
     }
 
     &:focus,
-    &:hover {
+    &:hover,
+    &.active {
       &::before {
         background-color: $aqua;
         border-radius: 50%;

@@ -7,21 +7,29 @@ export const Image = ({
   srcMed,
   srcLarge,
   alt,
+  aspectRatio,
   lazyLoad,
-}) => (
-  <picture>
-    <source srcSet={srcLarge} media="(min-width: 1200px)" />
-    <source srcSet={srcMed} media="(min-width: 720px)" />
-    <img
-      className={className}
-      src={srcSmall}
-      alt={alt}
-      loading={`${lazyLoad ? 'lazy' : 'eager'}`}
-    />
-  </picture>
-);
+}) => {
+  const height = aspectRatio.split(':')[1];
+  const width = aspectRatio.split(':')[0];
+  return (
+    <picture>
+      <source srcSet={srcLarge} media="(min-width: 1200px)" />
+      <source srcSet={srcMed} media="(min-width: 720px)" />
+      <img
+        className={className}
+        src={srcSmall}
+        alt={alt}
+        height={height}
+        width={width}
+        loading={`${lazyLoad ? 'lazy' : 'eager'}`}
+      />
+    </picture>
+  );
+};
 
 Image.propTypes = {
+  aspectRatio: PropTypes.string,
   className: PropTypes.string,
   srcSmall: PropTypes.string.isRequired,
   srcMed: PropTypes.string,
@@ -31,6 +39,7 @@ Image.propTypes = {
 };
 
 Image.defaultProps = {
+  aspectRatio: '',
   className: '',
   lazyLoad: false,
   srcMed: '',

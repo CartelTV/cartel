@@ -12,52 +12,52 @@ const VideoDetailPage = () => (
       <h2 className="editors__heading">Editors</h2>
       <ul className="editors__list">
         <li className="editors__item">
-          <Link className="editors__link" to="/">
+          <Link className="editors__link" to="/editor-detail">
             Adam Robinson
           </Link>
         </li>
         <li className="editors__item">
-          <Link className="editors__link" to="/">
+          <Link className="editors__link" to="/editor-detail">
             Andy McGraw
           </Link>
         </li>
         <li className="editors__item">
-          <Link className="editors__link" to="/">
+          <Link className="editors__link" to="/editor-detail">
             Chris Catanach
           </Link>
         </li>
         <li className="editors__item">
-          <Link className="editors__link" to="/">
+          <Link className="editors__link" to="/editor-detail">
             Ellie Johnson
           </Link>
         </li>
         <li className="editors__item">
-          <Link className="editors__link" to="/">
+          <Link className="editors__link" to="/editor-detail">
             Ernie Gilbert
           </Link>
         </li>
         <li className="editors__item">
-          <Link className="editors__link" to="/">
+          <Link className="editors__link" to="/editor-detail">
             Kevin Zimmerman
           </Link>
         </li>
         <li className="editors__item">
-          <Link className="editors__link" to="/">
+          <Link className="editors__link" to="/editor-detail">
             Kyle Valenta
           </Link>
         </li>
         <li className="editors__item">
-          <Link className="editors__link" to="/">
+          <Link className="editors__link" to="/editor-detail">
             Leo Scott
           </Link>
         </li>
         <li className="editors__item">
-          <Link className="editors__link" to="/">
-            Paul O'Reilly
+          <Link className="editors__link" to="/editor-detail">
+            Paul O&apos;Reilly
           </Link>
         </li>
         <li className="editors__item">
-          <Link className="editors__link" to="/">
+          <Link className="editors__link" to="/editor-detail">
             Ting Poo
           </Link>
         </li>

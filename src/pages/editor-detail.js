@@ -60,17 +60,17 @@ const EditorDetailPage = () => (
       <h2 className="editor-detail__name">Adam Robinson</h2>
       <ul className="editor-detail__list">
         <li className="editor-detail__item">
-          <Link className="editor-detail__link active" to="/">
+          <Link className="editor-detail__link active" to="/editor-detail">
             Main
           </Link>
         </li>
         <li className="editor-detail__item">
-          <Link className="editor-detail__link" to="/">
+          <Link className="editor-detail__link" to="/editor-detail">
             Comedy
           </Link>
         </li>
         <li className="editor-detail__item">
-          <Link className="editor-detail__link" to="/">
+          <Link className="editor-detail__link" to="/editor-detail">
             Other
           </Link>
         </li>

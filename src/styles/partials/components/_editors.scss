@@ -72,9 +72,10 @@
       &:hover {
         &::after {
           background-color: $white;
-          content: url('https://picsum.photos/id/1018/300/169');
+          content: url('https://picsum.photos/300/179');
           margin-left: $space-600;
           padding: $space-300;
+          padding-bottom: $space-200;
           position: absolute;
           width: calc(300px + 1.5rem);
           z-index: 1;

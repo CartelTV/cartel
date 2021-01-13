@@ -10,7 +10,7 @@ export const LookoutGridVideos = ({ videosList }) => (
       <ul className="lookout-grid-videos__list">
         {videosList.map(video => (
           <li className="lookout-grid-videos__item">
-            <Link to="/">
+            <Link to="/video-detail">
               <Image srcSmall={video.url} alt={video.title} lazyLoad />
             </Link>
             <p className="lookout-grid-videos__text">

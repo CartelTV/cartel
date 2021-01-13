@@ -155,7 +155,7 @@
     }
 
     &-copy {
-      margin-left: $space-800;
+      // margin-left: $space-800;
 
       @include mq($M) {
         margin-left: $space-850;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { Image } from './patterns/image';
@@ -8,8 +8,11 @@ import cartelMarkLogo from '../images/cartel-logo.png';
 export const HomeVideos = ({ sectionHeading, videosList }) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
+  const iframeRef = useRef(null);
+
   const thumbnailClick = index => {
     setActiveIndex(index);
+    iframeRef.current.focus();
   };
 
   return (
@@ -27,8 +30,9 @@ export const HomeVideos = ({ sectionHeading, videosList }) => {
                     activeIndex === index ? '&autoplay=1' : ''
                   }`}
                   title={video.title}
+                  tabIndex={activeIndex === index ? 0 : -1}
+                  ref={iframeRef}
                   frameBorder="0"
-                  allow="autoplay; fullscreen"
                   allowFullScreen
                 />
               </div>
@@ -43,10 +47,13 @@ export const HomeVideos = ({ sectionHeading, videosList }) => {
                   }`}
                   srcSmall={video.imageSrc}
                   alt="Race Day is Still Sacred"
+                  aspectRatio="2400:1350"
                   lazyLoad
                 />
                 <img
-                  className="home-videos__thumbnail-icon"
+                  className={`home-videos__thumbnail-icon ${
+                    activeIndex === index ? 'play-video' : ''
+                  }`}
                   src={cartelMarkLogo}
                   alt=""
                 />

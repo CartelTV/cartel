@@ -8,11 +8,14 @@ export const VideoDetail = () => (
   <article className="video-detail">
     <div className="container">
       <div className="video-detail__video">
-        <Image
-          srcSmall="https://picsum.photos/id/1011/5472/3648"
-          alt="Race Day is Still Sacred"
-          lazyLoad
-        />
+        <div className="iframe-container iframe-container-16x9">
+          <iframe
+            src="https://cartel.wiredrive.com/?routekey=iframe-embed&token=300e1776e61b6928228e78cd005577ac&loop=0&controls=1&color=4EB7D4&autoplay=0"
+            title="video title"
+            frameBorder="0"
+            allowFullScreen
+          />
+        </div>
       </div>
       <div className="video-detail__text">
         <div className="video-detail__meta">
@@ -41,7 +44,7 @@ export const VideoDetail = () => (
             </dd>
           </dl>
         </div>
-        <Link className="video-detail__more-link" to="/">
+        <Link className="video-detail__more-link" to="/editor-detail">
           <LinkCalloutArrow className="flip" /> <span>View more by Kyle</span>
         </Link>
       </div>

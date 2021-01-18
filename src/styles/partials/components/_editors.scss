@@ -70,17 +70,31 @@
 
       &:focus,
       &:hover {
-        &::after {
-          background-color: $white;
-          content: url('https://picsum.photos/300/179');
-          margin-left: $space-600;
-          padding: $space-300;
-          padding-bottom: $space-200;
-          position: absolute;
-          width: calc(300px + 1.5rem);
-          z-index: 1;
+        .editors__image {
+          opacity: 1;
         }
       }
+    }
+  }
+
+  &__image {
+    background-color: $white;
+    opacity: 0;
+    padding: $space-300;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity 0.33s ease-out;
+    max-width: 600px;
+    width: 62.5%;
+    z-index: 1;
+
+    @media (min-width: 1380px) {
+      right: $space-300;
+    }
+
+    @include mq($XXL) {
+      right: $space-500;
     }
   }
 

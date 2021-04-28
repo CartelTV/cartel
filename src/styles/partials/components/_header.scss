@@ -1,184 +1,67 @@
 // ===========================================================================
 // ==== HEADER
 // ===========================================================================
-.header {
-  align-items: center;
-  background-color: $beige;
-  border: 1px solid $border-color;
-  display: flex;
-  justify-content: space-between;
-  padding: $space-300;
-  padding-left: $space-500;
-  position: fixed;
-  transition: transform 0.5s ease-out;
-  width: 100%;
-  z-index: 10;
-
-  @include mq($M) {
-    border-bottom: 1px solid $border-color;
-    padding-left: calc(2.25rem - 30px);
-    position: relative;
-  }
-
-  @include mq($L) {
-    padding-bottom: $space-700;
-    padding-left: calc(3rem - 45px);
-    padding-right: $space-500;
-    padding-top: $space-700;
-  }
-
-  @include mq($XL) {
-    padding-left: calc(6rem - 15px);
-  }
-
-  &.is-hidden {
-    transform: translateY(-50px);
-
-    @include mq($M) {
-      transform: translateY(0);
-    }
-  }
-
-  &.is-visible {
-    transform: translateY(0);
-  }
-
-  &__logo-link {
-    outline: none;
-    transform-origin: right;
-    transition: transform 0.2s ease-out;
-
-    &:focus {
-      border-bottom: 1px solid $aqua;
-    }
-  }
-
-  &__logo {
-    height: 23px;
-    max-width: 146px;
-    width: 146px;
-
-    @include mq($M) {
-      height: 31px;
-      max-width: 197px;
-      width: 197px;
-    }
-
-    @include mq($L) {
-      height: 71px;
-      max-width: 375px;
-      width: 453px;
-    }
-  }
-
-  &__menu-button {
-    align-items: center;
-    display: flex;
-    outline: none;
-    text-transform: uppercase;
-
-    &:focus {
-      &::after {
-        content: '≡';
-        font-size: 1.25rem;
-        margin-left: $space-200;
-        position: relative;
-        top: -1px;
-      }
-    }
-
-    @include mq($M) {
-      display: none;
-    }
-  }
-}
-
 .nav {
-  background-color: $beige;
-  border: 1px solid $border-color;
-  left: 0;
-  overflow: hidden;
-  padding-bottom: $space-500;
-  padding-left: $space-500;
-  padding-top: $space-500;
-  position: absolute;
-  transform: translateY(-154px);
-  transition: transform 0.33s ease-out;
+  padding-top: $space-400;
   width: 100%;
-  z-index: 9;
 
   &--small {
-    @include mq($M) {
+    max-height: 0;
+    position: absolute;
+    top: 0;
+    transition: max-height 0.33s ease-out;
+    width: calc(100% - 2.25rem);
+    z-index: -1;
+
+    @media (min-width: 820px) {
       display: none;
+    }
+
+    &.is-open {
+      border-bottom: 3px solid $gold;
+      max-height: 275px;
     }
   }
 
   &--large {
     display: none;
 
-    @include mq($M) {
+    @media (min-width: 820px) {
       display: block;
+      width: auto;
     }
   }
 
-  &.is-open {
-    transform: translateY(50px);
-    transition: transform 0.33s ease-out;
-  }
-
-  @include mq($M) {
-    border: 0;
-    max-width: 420px;
-    padding: 0;
-    padding-left: 15px;
-    position: relative;
-    transform: none;
-  }
-
-  @include mq($L) {
-    max-width: 550px;
-  }
-
-  @include mq($XL) {
-    max-width: 550px;
+  @media (min-width: 820px) {
+    padding-top: 0;
   }
 
   &__list {
-    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+
+    @media (min-width: 820px) {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
   }
 
   &__item {
-    flex-basis: 50%;
-    margin-bottom: $space-500;
+    margin-bottom: $space-400;
 
-    @include mq($M) {
-      flex-basis: calc(33.33333% - 2.25rem);
+    @media (min-width: 820px) {
       margin-bottom: 0;
-      margin-right: $space-400;
 
-      // first three items
-      &:nth-child(-n + 3) {
-        margin-bottom: $space-200;
-      }
-
-      // 3rd and 6th items
-      &:nth-child(3n) {
-        margin-right: 0;
-      }
-    }
-
-    @include mq($L) {
-      margin-right: $space-600;
-
-      &:nth-child(-n + 3) {
-        margin-bottom: $space-300;
+      &:not(:last-child) {
+        margin-right: $space-500;
       }
     }
   }
 
   &__link {
-    color: $text-clr;
-    font-size: 0.875rem;
+    color: $gold;
+    font-weight: 600;
+    letter-spacing: 1px;
     outline: none;
     position: relative;
     text-decoration: none;
@@ -189,7 +72,7 @@
     }
 
     @include mq($L) {
-      font-size: 1rem;
+      font-size: 0.875rem;
     }
 
     &:focus,
@@ -207,5 +90,81 @@
         width: 0.5rem;
       }
     }
+  }
+}
+
+.header {
+  align-items: center;
+  background-color: $bg-clr;
+  border-bottom: 3px solid $gold;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: margin-top 0.33s ease-out;
+  width: 100%;
+
+  @media (min-width: 820px) {
+    flex-direction: row;
+    padding-bottom: $space-500;
+    padding-top: $space-500;
+  }
+
+  &.is-open {
+    margin-top: 275px;
+  }
+
+  &__menu-button {
+    align-items: center;
+    color: $gold;
+    display: flex;
+    font-weight: 600;
+    letter-spacing: 1px;
+    outline: none;
+    padding-bottom: $space-500;
+    padding-top: $space-500;
+    text-transform: uppercase;
+    transition: color 0.2s ease-out;
+
+    &:focus {
+      color: $text-clr;
+      text-decoration: underline;
+    }
+
+    @media (min-width: 820px) {
+      display: none;
+    }
+  }
+
+  &__logo-wrapper {
+    border-top: 3px solid $gold;
+    display: flex;
+    justify-content: center;
+    padding-bottom: $space-500;
+    padding-top: $space-500;
+    width: 100%;
+
+    @media (min-width: 820px) {
+      border-top: 0;
+      justify-content: flex-start;
+      padding-bottom: 0;
+      padding-right: $space-300;
+      padding-top: 0;
+      width: auto;
+    }
+  }
+
+  &__logo-link {
+    outline: none;
+    transform-origin: right;
+    transition: transform 0.2s ease-out;
+
+    &:focus {
+      border-bottom: 1px solid $aqua;
+    }
+  }
+
+  &__logo {
+    height: 25px;
+    width: 160px;
   }
 }

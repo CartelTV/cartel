@@ -4,9 +4,12 @@
 body {
   background: $bg-clr;
   font-family: $font-sans-light;
+  padding-left: $space-400;
+  padding-right: $space-400;
 }
 
 main {
+  background-color: $bg-clr;
   padding-top: 50px;
 
   @include mq($M) {
@@ -82,7 +85,6 @@ h1 {
 nav {
   ul {
     display: flex;
-    justify-content: space-between;
     list-style: none;
   }
 }

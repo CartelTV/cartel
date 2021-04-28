@@ -36,7 +36,7 @@ $color-grey-5: rgb(112, 112, 112);
 // $color-grey-6: rgb(159, 159, 159);
 // $color-grey-7: rgb(187, 187, 187);
 $color-grey-8: rgb(222, 222, 222);
-// $color-grey-9: rgb(238, 238, 238);
+$color-grey-9: rgb(252, 252, 252);
 
 $white: rgb(255, 255, 255);
 $black: rgb(0, 0, 0);
@@ -50,7 +50,7 @@ $aqua: #a5daca;
 
 // COLOR CONFIGS
 // ------------------------------------------------------------------------------
-$bg-clr: $beige;
+$bg-clr: $color-grey-9;
 $text-clr: $color-grey-2;
 $link-clr: $color-grey-1;
 $link-hover-clr: darken($link-clr, 20%);

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
 import { Image } from './image';
+import GridImage from './gridImage';
 
 export const NineGridVideos = ({ videosList }) => {
   const chunk = 3;
@@ -30,46 +31,28 @@ export const NineGridVideos = ({ videosList }) => {
               key={video[0].imageSrc}
             >
               <div className="nine-grid-videos__item">
-                <Link to="/video-detail" className="nine-grid-videos__link">
-                  <Image
-                    srcSmall={video[0].imageSrc}
-                    alt={video[0].title}
-                    lazyLoad
-                  />
-                  <div className="nine-grid-videos__item-overlay">
-                    <p className="nine-grid-videos__text">
-                      {video[0].client} - {video[0].title}
-                    </p>
-                  </div>
-                </Link>
+                <GridImage
+                  altText={video[0].title}
+                  copy={`${video[0].client} - ${video[0].title}`}
+                  imgSrc={video[0].imageSrc}
+                  linkUrl="/video-detail"
+                />
               </div>
               <div className="nine-grid-videos__item">
-                <Link to="/video-detail" className="nine-grid-videos__link">
-                  <Image
-                    srcSmall={video[1].imageSrc}
-                    alt={video[1].title}
-                    lazyLoad
-                  />
-                  <div className="nine-grid-videos__item-overlay">
-                    <p className="nine-grid-videos__text">
-                      {video[1].client} - {video[1].title}
-                    </p>
-                  </div>
-                </Link>
+                <GridImage
+                  altText={video[1].title}
+                  copy={`${video[1].client} - ${video[1].title}`}
+                  imgSrc={video[1].imageSrc}
+                  linkUrl="/video-detail"
+                />
               </div>
               <div className="nine-grid-videos__item">
-                <Link to="/video-detail" className="nine-grid-videos__link">
-                  <Image
-                    srcSmall={video[2].imageSrc}
-                    alt={video[2].title}
-                    lazyLoad
-                  />
-                  <div className="nine-grid-videos__item-overlay">
-                    <p className="nine-grid-videos__text">
-                      {video[2].client} - {video[2].title}
-                    </p>
-                  </div>
-                </Link>
+                <GridImage
+                  altText={video[2].title}
+                  copy={`${video[2].client} - ${video[2].title}`}
+                  imgSrc={video[2].imageSrc}
+                  linkUrl="/video-detail"
+                />
               </div>
             </div>
           );
@@ -102,34 +85,20 @@ export const NineGridVideos = ({ videosList }) => {
               </div>
               <div className="nine-grid-videos__item nine-grid-videos__item--stacked">
                 <div>
-                  <Link to="/video-detail" className="nine-grid-videos__link">
-                    <Image
-                      srcSmall={video[1].imageSrc}
-                      alt={video[1].title}
-                      aspectRatio="2400:1350"
-                      lazyLoad
-                    />
-                    <div className="nine-grid-videos__item-overlay">
-                      <p className="nine-grid-videos__text">
-                        {video[1].client} - {video[1].title}
-                      </p>
-                    </div>
-                  </Link>
-                </div>{' '}
+                  <GridImage
+                    altText={video[1].title}
+                    copy={`${video[1].client} - ${video[1].title}`}
+                    imgSrc={video[1].imageSrc}
+                    linkUrl="/video-detail"
+                  />
+                </div>
                 <div>
-                  <Link to="/video-detail" className="nine-grid-videos__link">
-                    <Image
-                      srcSmall={video[2].imageSrc}
-                      alt={video[2].title}
-                      aspectRatio="2400:1350"
-                      lazyLoad
-                    />
-                    <div className="nine-grid-videos__item-overlay">
-                      <p className="nine-grid-videos__text">
-                        {video[2].client} - {video[2].title}
-                      </p>
-                    </div>
-                  </Link>
+                  <GridImage
+                    altText={video[2].title}
+                    copy={`${video[2].client} - ${video[2].title}`}
+                    imgSrc={video[2].imageSrc}
+                    linkUrl="/video-detail"
+                  />
                 </div>
               </div>
             </div>
@@ -143,34 +112,20 @@ export const NineGridVideos = ({ videosList }) => {
           >
             <div className="nine-grid-videos__item nine-grid-videos__item--stacked">
               <div>
-                <Link to="/video-detail" className="nine-grid-videos__link">
-                  <Image
-                    srcSmall={video[0].imageSrc}
-                    alt={video[0].title}
-                    aspectRatio="2400:1350"
-                    lazyLoad
-                  />
-                  <div className="nine-grid-videos__item-overlay">
-                    <p className="nine-grid-videos__text">
-                      {video[0].client} - {video[0].title}
-                    </p>
-                  </div>
-                </Link>
+                <GridImage
+                  altText={video[0].title}
+                  copy={`${video[0].client} - ${video[0].title}`}
+                  imgSrc={video[0].imageSrc}
+                  linkUrl="/video-detail"
+                />
               </div>
               <div>
-                <Link to="/video-detail" className="nine-grid-videos__link">
-                  <Image
-                    srcSmall={video[1].imageSrc}
-                    alt={video[1].title}
-                    aspectRatio="2400:1350"
-                    lazyLoad
-                  />
-                  <div className="nine-grid-videos__item-overlay">
-                    <p className="nine-grid-videos__text">
-                      {video[1].client} - {video[1].title}
-                    </p>
-                  </div>
-                </Link>
+                <GridImage
+                  altText={video[1].title}
+                  copy={`${video[1].client} - ${video[1].title}`}
+                  imgSrc={video[1].imageSrc}
+                  linkUrl="/video-detail"
+                />
               </div>
             </div>
             <div className="nine-grid-videos__item nine-grid-videos__item--large">

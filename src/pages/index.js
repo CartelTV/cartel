@@ -1,9 +1,7 @@
-import React, { useRef } from 'react';
-import { Link } from 'gatsby';
+import React from 'react';
 
 import { Layout } from '../components/layout';
 import SEO from '../components/seo';
-import { Image } from '../components/patterns/image';
 
 import { NineGridVideos } from '../components/patterns/nineGridVideos';
 
@@ -74,13 +72,6 @@ const recentWorkVideos = [
 ];
 
 const IndexPage = () => {
-  const thumbnailRef = useRef(null);
-
-  const thumbnailClick = () => {
-    console.log('thumbnailRef.current', thumbnailRef.current);
-    // thumbnailRef.current.classList.add('video-play');
-  };
-
   return (
     <Layout>
       <SEO title="Work" />

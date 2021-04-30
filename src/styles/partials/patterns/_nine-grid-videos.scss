@@ -1,7 +1,4 @@
 .nine-grid-videos {
-  @include mq($M) {
-    padding-top: $space-300;
-  }
   &__row {
     display: flex;
     flex-direction: column;
@@ -180,7 +177,7 @@
 
     img {
       filter: grayscale(1);
-      transition: filter 0.2s ease-out;
+      transition: filter 0.33s ease-out;
 
       @include mq($M) {
         margin-bottom: $space-300;

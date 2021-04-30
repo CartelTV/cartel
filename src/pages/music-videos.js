@@ -2,67 +2,83 @@ import React from 'react';
 
 import { Layout } from '../components/layout';
 import SEO from '../components/seo';
-import { LinkCallout } from '../components/patterns/linkCallout';
+
 import { NineGridVideos } from '../components/patterns/nineGridVideos';
 
-const videosList = [
+const recentWorkVideos = [
   {
-    client: 'Uber Eats',
-    title: 'Stand Off',
-    url: 'https://picsum.photos/id/1016/1200/675',
-  },
-  {
-    client: 'WeTransfer',
-    title: 'Doubt, Create, Repeat',
-    url: 'https://picsum.photos/id/1018/1200/675',
-  },
-  {
-    client: 'Track Smith',
+    videoSrc:
+      'https://cartel.wiredrive.com/?routekey=iframe-embed&token=300e1776e61b6928228e78cd005577ac&loop=0&controls=1&color=4EB7D4',
     title: 'Race Day is Still Sacred',
-    url: 'https://picsum.photos/id/1020/1200/675',
-  },
-  {
-    client: 'Uber Eats',
-    title: 'Stand Off',
-    url: 'https://picsum.photos/id/1022/1200/675',
-  },
-  {
-    client: 'WeTransfer',
-    title: 'Doubt, Create, Repeat',
-    url: 'https://picsum.photos/id/1024/1200/675',
-  },
-  {
     client: 'Track Smith',
+    imageSrc: 'https://picsum.photos/1030/596',
+  },
+  {
+    videoSrc:
+      'https://cartel.wiredrive.com/?routekey=iframe-embed&token=234f2dda2110b43e094f19fcde9ad4b0&loop=0&controls=1&color=4EB7D4',
     title: 'Race Day is Still Sacred',
-    url: 'https://picsum.photos/id/1026/1200/675',
-  },
-  {
-    client: 'Uber Eats',
-    title: 'Stand Off',
-    url: 'https://picsum.photos/id/1028/1200/675',
-  },
-  {
-    client: 'WeTransfer',
-    title: 'Doubt, Create, Repeat',
-    url: 'https://picsum.photos/id/7/1200/675',
-  },
-  {
     client: 'Track Smith',
+    imageSrc: 'https://picsum.photos/1030/596',
+  },
+  {
+    videoSrc:
+      'https://cartel.wiredrive.com/?routekey=iframe-embed&token=3e2f6c9d1ebdf0816c75a7a52c5fda1c&loop=0&controls=1&color=4EB7D4',
     title: 'Race Day is Still Sacred',
-    url: 'https://picsum.photos/id/9/1200/675',
+    client: 'Track Smith',
+    imageSrc: 'https://picsum.photos/1030/596',
+  },
+  {
+    videoSrc:
+      'https://cartel.wiredrive.com/?routekey=iframe-embed&token=300e1776e61b6928228e78cd005577ac&loop=0&controls=1&color=4EB7D4',
+    title: 'Race Day is Still Sacred',
+    client: 'Track Smith',
+    imageSrc: 'https://picsum.photos/1030/596',
+  },
+  {
+    videoSrc:
+      'https://cartel.wiredrive.com/?routekey=iframe-embed&token=234f2dda2110b43e094f19fcde9ad4b0&loop=0&controls=1&color=4EB7D4',
+    title: 'Race Day is Still Sacred',
+    client: 'Track Smith',
+    imageSrc: 'https://picsum.photos/1030/596',
+  },
+  {
+    videoSrc:
+      'https://cartel.wiredrive.com/?routekey=iframe-embed&token=3e2f6c9d1ebdf0816c75a7a52c5fda1c&loop=0&controls=1&color=4EB7D4',
+    title: 'Race Day is Still Sacred',
+    client: 'Track Smith',
+    imageSrc: 'https://picsum.photos/1030/596',
+  },
+  {
+    videoSrc:
+      'https://cartel.wiredrive.com/?routekey=iframe-embed&token=300e1776e61b6928228e78cd005577ac&loop=0&controls=1&color=4EB7D4',
+    title: 'Race Day is Still Sacred',
+    client: 'Track Smith',
+    imageSrc: 'https://picsum.photos/1030/596',
+  },
+  {
+    videoSrc:
+      'https://cartel.wiredrive.com/?routekey=iframe-embed&token=234f2dda2110b43e094f19fcde9ad4b0&loop=0&controls=1&color=4EB7D4',
+    title: 'Race Day is Still Sacred',
+    client: 'Track Smith',
+    imageSrc: 'https://picsum.photos/1030/596',
+  },
+  {
+    videoSrc:
+      'https://cartel.wiredrive.com/?routekey=iframe-embed&token=3e2f6c9d1ebdf0816c75a7a52c5fda1c&loop=0&controls=1&color=4EB7D4',
+    title: 'Race Day is Still Sacred',
+    client: 'Track Smith',
+    imageSrc: 'https://picsum.photos/1030/596',
   },
 ];
 
-const MusicVideos = () => (
-  <Layout>
-    <SEO title="Work" />
-    <article className="container container--white">
-      <h1 className="h2 page-heading">Work</h1>
-      <NineGridVideos videosList={videosList} />
-    </article>
+const IndexPage = () => {
+  return (
+    <Layout>
+      <SEO title="Music Videos" />
+      <h1 className="visuallyhidden">Music Videos</h1>
+      <NineGridVideos videosList={recentWorkVideos} />
+    </Layout>
+  );
+};
 
-    <LinkCallout linkPath="/work" linkText="Music Videos" />
-  </Layout>
-);
-
-export default MusicVideos;
+export default IndexPage;

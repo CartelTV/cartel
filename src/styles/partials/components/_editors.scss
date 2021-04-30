@@ -1,119 +1,22 @@
 .editors {
-  border-bottom: 1px solid $border-color;
-  padding-bottom: $space-300;
-  padding-left: $space-400;
-  padding-right: $space-400;
-  padding-top: $space-700;
-  position: relative;
-
-  @include mq($M) {
-    display: flex;
-    padding-bottom: $space-400;
-    padding-right: 0;
-    padding-top: $space-700;
-  }
-
-  @include mq($XL) {
-    padding-bottom: $space-750;
-    padding-left: $space-800;
-    padding-top: $space-800;
-  }
-
-  &__heading {
-    margin-bottom: $space-700;
-
-    @include mq($M) {
-      border: 0;
-      clip: rect(0 0 0 0);
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      padding: 0;
-      position: absolute;
-      width: 1px;
-    }
-
-    @include mq($L) {
-      left: $space-700;
-    }
-
-    @include mq($XL) {
-      left: $space-800;
-    }
-  }
-
-  &__list {
-    margin-left: $space-400;
-
-    @media (min-width: 600px) {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    @include mq($XL) {
-      margin-left: 0;
-      max-width: 1440px;
-      width: 90%;
-    }
-  }
-
-  &__item {
-    margin-bottom: $space-600;
-    position: relative;
-
-    @media (min-width: 600px) {
-      flex-basis: 50%;
-    }
-
-    @include mq($XL) {
-      position: relative;
-
-      &:focus,
-      &:hover {
-        .editors__image {
-          opacity: 1;
-        }
+  &-grid {
+    &__list {
+      @include mq($M) {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
       }
     }
-  }
 
-  &__image {
-    background-color: $white;
-    opacity: 0;
-    padding: $space-300;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: opacity 0.33s ease-out;
-    max-width: 600px;
-    width: 62.5%;
-    z-index: 1;
+    &__item {
+      margin-bottom: $space-700;
 
-    @media (min-width: 1380px) {
-      right: $space-300;
-    }
+      @include mq($M) {
+        flex-basis: calc(33.33333% - 0.75rem);
+      }
 
-    @include mq($XXL) {
-      right: $space-500;
-    }
-  }
-
-  &__link {
-    border: 0;
-    font-size: 1.25rem;
-
-    &:focus,
-    &:hover {
-      &::before {
-        background-color: $aqua;
-        border-radius: 50%;
-        content: '';
-        height: 0.5rem;
-        left: -0.75rem;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 0.5rem;
+      @include mq($L) {
+        flex-basis: calc(33.33333% - 1.5rem);
       }
     }
   }

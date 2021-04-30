@@ -11,10 +11,6 @@ body {
 main {
   background-color: $bg-clr;
   padding-top: $space-500;
-
-  @include mq($M) {
-    padding-top: 0;
-  }
 }
 
 main,

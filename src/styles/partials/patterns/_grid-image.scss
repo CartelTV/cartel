@@ -1,0 +1,46 @@
+.grid-image {
+  &__link {
+    display: block;
+    position: relative;
+    width: 100%;
+
+    &:focus,
+    &:hover {
+      img {
+        filter: grayscale(0);
+      }
+    }
+  }
+
+  &__item-overlay {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.33);
+    bottom: 0;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    margin: auto;
+    padding: $space-300;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__text {
+    font-size: 1rem;
+    text-align: center;
+
+    @include mq($S) {
+      font-size: 1.25rem;
+    }
+
+    @include mq($M) {
+      font-size: 1rem;
+    }
+
+    @include mq($L) {
+      font-size: 1.125rem;
+    }
+  }
+}

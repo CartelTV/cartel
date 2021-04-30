@@ -25,7 +25,10 @@ export const NineGridVideos = ({ videosList }) => {
       {chunks.map((video, index) => {
         if (index % 2) {
           return (
-            <div className="nine-grid-videos__row" key={video[0].imageSrc}>
+            <div
+              className="nine-grid-videos__row nine-grid-videos__row--two"
+              key={video[0].imageSrc}
+            >
               <div className="nine-grid-videos__item">
                 <Link to="/video-detail" className="nine-grid-videos__link">
                   <Image
@@ -74,7 +77,10 @@ export const NineGridVideos = ({ videosList }) => {
 
         if (index % 4 === 0) {
           return (
-            <div className="nine-grid-videos__row" key={video[1].imageSrc}>
+            <div
+              className="nine-grid-videos__row nine-grid-videos__row--one"
+              key={video[1].imageSrc}
+            >
               <div className="nine-grid-videos__item nine-grid-videos__item--large">
                 <Link to="/video-detail" className="nine-grid-videos__link">
                   <Image
@@ -131,7 +137,10 @@ export const NineGridVideos = ({ videosList }) => {
         }
 
         return (
-          <div className="nine-grid-videos__row" key={video[2].imageSrc}>
+          <div
+            className="nine-grid-videos__row nine-grid-videos__row--three"
+            key={video[2].imageSrc}
+          >
             <div className="nine-grid-videos__item nine-grid-videos__item--stacked">
               <div>
                 <Link to="/video-detail" className="nine-grid-videos__link">

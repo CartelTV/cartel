@@ -8,6 +8,10 @@
   &__col {
     @include mq($M) {
       flex-basis: 50%;
+
+      &:first-child {
+        margin-right: $space-500;
+      }
     }
   }
 
@@ -19,4 +23,54 @@
       margin-bottom: $space-300;
     }
   }
+
+  &__social {
+    &-list {
+      display: flex;
+      margin-bottom: $space-300;
+    }
+
+    &-item {
+      &:not(:last-child) {
+        margin-right: $space-500;
+      }
+    }
+
+    &-link {
+      outline: none;
+      &:focus,
+      &:hover {
+        .contact__social-icon {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    &-icon {
+      height: 1.25rem;
+      transition: transform 0.2s ease-out;
+    }
+  }
+
+  &__address {
+    font-size: 0.75rem;
+  }
+
+  &__representation-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: $space-300;
+
+    > .contact__block {
+      flex-basis: 50%;
+    }
+  }
+}
+
+#map {
+  background-color: $color-grey-8;
+  height: 0;
+  margin-bottom: $space-300;
+  padding-bottom: 56.25%;
+  width: 100%;
 }

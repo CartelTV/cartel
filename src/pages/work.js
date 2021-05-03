@@ -76,7 +76,9 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Work" />
       <h1 className="visuallyhidden">Work</h1>
-      <NineGridVideos videosList={recentWorkVideos} />
+      <div className="container">
+        <NineGridVideos videosList={recentWorkVideos} />
+      </div>
     </Layout>
   );
 };

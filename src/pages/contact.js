@@ -2,135 +2,101 @@ import React from 'react';
 
 import { Layout } from '../components/layout';
 import SEO from '../components/seo';
-import { Image } from '../components/patterns/image';
-import { LinkCallout } from '../components/patterns/linkCallout';
 
 const ContactPage = () => (
   <Layout>
-    <SEO title="Video Detail" />
-    <h1 className="visuallyhidden">Contact</h1>
-    <article className="contact-header">
-      <div className="contact-header__image-wrapper">
-        <Image
-          srcSmall="https://picsum.photos/id/1040/719"
-          srcMed="https://picsum.photos/id/1041/1199"
-          srcLarge="https://picsum.photos/id/1042/1920"
-          alt="map showing location Cartel's office"
-          aspectRatio="800:800"
-          lazyLoad
-        />
-      </div>
-      <div className="contact-header__copy-wrapper">
-        <div className="container">
-          <div className="contact-header__contact-block-wrapper">
-            <h2 className="contact-header__heading h1">Enquiries</h2>
-            <p className="contact-header__contact-block">
-              <a
-                className="contact-header__contact-number"
-                href="tel:3108285555"
-              >
-                310 828 5555
-              </a>
+    <SEO title="Contact" />
+    <article className="contact">
+      <div className="container">
+        <div className="contact__col">
+          <p>MAP GOES HERE</p>
+        </div>
+        <div className="contact__col">
+          <h1>Contact</h1>
+          <div className="contact__block">
+            <h2>Enquiries</h2>
+            <a href="tel:13108285555">310-828-5555</a>
+          </div>
+
+          <div className="contact__block">
+            <p>
+              <strong>Lauren Bleiweiss</strong>
+              <br />
+              Executive Producer / Managing Director
+              <br />
+              <a href="mailto:lauren@cartel.tv">lauren@cartel.tv</a>
+              <br />
+              <a href="tel:19173748436">917-374-8436</a> (Mobile)
+            </p>
+          </div>
+          <div className="contact__block">
+            <p>
+              <strong>Alaina Zanotti</strong>
+              <br />
+              Executive Producer / Head of Sales
+              <br />
+              <a href="mailto:alaina@cartel.tv">alaina@cartel.tv</a>
+              <br />
+              <a href="tel:13105700918">310-570-0918</a> (Mobile)
             </p>
           </div>
 
-          <hr />
+          <h2>Representation</h2>
+          <h3>East Coast Sales</h3>
+          <div className="contact__block">
+            <p>
+              Tara Averill
+              <br />
+              <a href="mailto:tara@representationco.com">
+                tara@representationco.com
+              </a>
+              <br />
+              <a href="tel:12123438085">212-343-8085</a>
+            </p>
 
-          <ul>
-            <li className="contact-header__contact-block">
-              <h3 className="h2">Lauren Bleiweiss</h3>
-              <p>
-                Executive Producer
-                <br />
-                + Managing Director
-                <br />
-                <a href="mailto:lauren@cartel.tv">Lauren@Cartel.Tv</a>
-                <br />
-                <a href="tel:9173748436">917 374 8436</a>
-              </p>
-            </li>
-            <li className="contact-header__contact-block">
-              <h3 className="h2">Alaina Zanotti</h3>
-              <p>
-                Executive Producer
-                <br />
-                + Head of Sales
-                <br />
-                <a href="mailto:lauren@cartel.tv">Alaina@Cartel.Tv</a>
-                <br />
-                <a href="tel:3105700918">310 570 0918</a>
-              </p>
-            </li>
-          </ul>
+            <p>
+              John Robertson
+              <br />
+              <a href="mailto:john@representationco.com">
+                john@representationco.com
+              </a>
+              <br />
+              <a href="tel:12123438085">212-343-8085</a>
+            </p>
+          </div>
+
+          <h3>West Coast Sales</h3>
+          <div className="contact__block">
+            <p>
+              Millie Munro
+              <br />
+              <a href="mailto:bueno@wearebueno.com">bueno@wearebueno.com </a>
+              <br />
+              <a href="tel:13107955035">310-795-5035</a>
+            </p>
+
+            <p>
+              Bryan Shrednick
+              <br />
+              <a href="mailto:bueno@wearebueno.com">bueno@wearebueno.com </a>
+              <br />
+              <a href="tel:13109804900">310-980-4900</a>
+            </p>
+          </div>
+
+          <h3>Midwest Sales</h3>
+          <div className="contact__block">
+            <p>
+              Jimmy Waldron
+              <br />
+              <a href="mailto:jimmy@themreps.com">jimmy@themreps.com </a>
+              <br />
+              <a href="tel:18477275154">847-727-5154</a> (Mobile)
+            </p>
+          </div>
         </div>
       </div>
     </article>
-
-    <article className="contact__office-block">
-      <div className="container">
-        <h2 className="h1">Office</h2>
-        <div className="contact__office-block-copy">
-          <address>
-            <h3 className="h2">Headquarters</h3>
-            <p>
-              1708 Berkeley Street
-              <br />
-              Santa Monica, CA 90404
-            </p>
-          </address>
-
-          <address>
-            <h3 className="h2">The Cottage</h3>
-            <p>
-              By appointment only.
-              <br />
-              Please call to schedule.
-            </p>
-          </address>
-        </div>
-      </div>
-    </article>
-
-    <article className="contact__representation-block">
-      <div className="container">
-        <h2 className="contact__representation-block-heading h1">
-          Representation
-        </h2>
-        <ul className="contact__representation-block-copy">
-          <li>
-            <h3 className="h2">West Coast Sales</h3>
-            <p className="contact-header__contact-block">
-              Millie Munro
-              <br />
-              <a href="mailto:lauren@cartel.tv">millie@Cartel.Tv</a>
-              <br />
-              <a href="tel:3105700918">310 570 0918</a>
-            </p>
-          </li>
-          <li>
-            <h3 className="h2">East Coast Sales</h3>
-            <p className="contact-header__contact-block">
-              Millie Munro
-              <br />
-              <a href="mailto:lauren@cartel.tv">millie@Cartel.Tv</a>
-              <br />
-              <a href="tel:3105700918">310 570 0918</a>
-            </p>
-          </li>
-          <li>
-            <h3 className="h2">Midwest Sales</h3>
-            <p className="contact-header__contact-block">
-              Millie Munro
-              <br />
-              <a href="mailto:lauren@cartel.tv">millie@Cartel.Tv</a>
-              <br />
-              <a href="tel:3105700918">310 570 0918</a>
-            </p>
-          </li>
-        </ul>
-      </div>
-    </article>
-    <LinkCallout linkPath="/work" linkText="Work" />
   </Layout>
 );
 

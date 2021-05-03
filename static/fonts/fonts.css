@@ -33,12 +33,12 @@
 }
 
 @font-face {
-  font-family: 'Interstate-Black';
+  font-family: 'Interstate-Bold';
   font-style: normal;
   font-weight: 900;
-  src: url('Interstate-Black.woff2') format('woff2'),
-    url('Interstate-Black.woff') format('woff'),
-    url('Interstate-Black.ttf') format('truetype');
+  src: url('Interstate-Bold.woff2') format('woff2'),
+    url('Interstate-Bold.woff') format('woff'),
+    url('Interstate-Bold.ttf') format('truetype');
 }
 
 @font-face {

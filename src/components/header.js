@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { useWindowWidth } from '@react-hook/window-size';
@@ -45,7 +45,8 @@ export const Header = ({ siteTitle }) => {
   }, [menuIsExpanded, windowWidth]);
 
   return (
-    <Fragment>
+    <div className="container">
+      {' '}
       <nav
         className={`nav nav--small ${isOpen ? 'is-open' : ''}`}
         role="navigation"
@@ -64,8 +65,8 @@ export const Header = ({ siteTitle }) => {
             </Link>
           </li>
           <li className="nav__item">
-            <Link to="/contact" className="nav__link">
-              Contact
+            <Link to="/the-lookout" className="nav__link">
+              The Lookout
             </Link>
           </li>
           <li className="nav__item">
@@ -74,13 +75,8 @@ export const Header = ({ siteTitle }) => {
             </Link>
           </li>
           <li className="nav__item">
-            <Link to="/the-lookout" className="nav__link">
-              The Lookout
-            </Link>
-          </li>
-          <li className="nav__item">
-            <Link to="/about" className="nav__link">
-              About
+            <Link to="/contact" className="nav__link">
+              Contact
             </Link>
           </li>
         </ul>
@@ -131,11 +127,11 @@ export const Header = ({ siteTitle }) => {
             </li>
             <li className="nav__item">
               <Link
-                to="/contact"
+                to="/the-lookout"
                 className="nav__link"
                 activeClassName="active"
               >
-                Contact
+                The Lookout
               </Link>
             </li>
             <li className="nav__item">
@@ -149,22 +145,17 @@ export const Header = ({ siteTitle }) => {
             </li>
             <li className="nav__item">
               <Link
-                to="/the-lookout"
+                to="/contact"
                 className="nav__link"
                 activeClassName="active"
               >
-                The Lookout
-              </Link>
-            </li>
-            <li className="nav__item">
-              <Link to="/about" className="nav__link" activeClassName="active">
-                About
+                Contact
               </Link>
             </li>
           </ul>
         </nav>
       </header>
-    </Fragment>
+    </div>
   );
 };
 

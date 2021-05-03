@@ -60,18 +60,21 @@ h1,
 }
 
 h2,
-.h2 {
-  font-family: $font-serif-semi;
+.h2,
+h3,
+.h3 {
+  color: $black;
+  font-family: $font-sans-bold;
+  font-size: 0.75rem;
   letter-spacing: 1px;
-  margin-bottom: $space-300;
+  margin-bottom: $space-200;
+  text-transform: uppercase;
 }
 
 h3,
-.h3,
-h4,
-.h4 {
-  font-family: $font-serif-semi;
-  margin-bottom: 0.25rem;
+.h3 {
+  font-size: 0.6875rem;
+  text-transform: none;
 }
 
 h1 {
@@ -116,11 +119,8 @@ hr {
   padding: 0 $space-500;
   margin-left: auto;
   margin-right: auto;
+  max-width: 1200px;
   width: 100%;
-
-  @include mq($XL) {
-    padding: 0 $space-800;
-  }
 
   &--white {
     background-color: $white;

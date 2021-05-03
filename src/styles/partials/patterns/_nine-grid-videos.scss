@@ -32,13 +32,6 @@
     display: block;
     position: relative;
     width: 100%;
-
-    &:focus,
-    &:hover {
-      img {
-        filter: grayscale(0);
-      }
-    }
   }
 
   &__item-overlay {
@@ -176,9 +169,6 @@
     }
 
     img {
-      filter: grayscale(1);
-      transition: filter 0.33s ease-out;
-
       @include mq($M) {
         margin-bottom: $space-300;
 

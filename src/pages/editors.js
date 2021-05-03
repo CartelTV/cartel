@@ -52,14 +52,16 @@ const editorsList = [
   },
 ];
 
-const VideoDetailPage = () => (
+const EditorsPage = () => (
   <Layout>
     <SEO title="Editors" />
     <article className="editors">
       <h2 className="visuallyhidden">Editors</h2>
-      <EditorsGrid editorsList={editorsList} />
+      <div className="container">
+        <EditorsGrid editorsList={editorsList} />
+      </div>
     </article>
   </Layout>
 );
 
-export default VideoDetailPage;
+export default EditorsPage;

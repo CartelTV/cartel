@@ -4,9 +4,9 @@ import { Link } from 'gatsby';
 
 import { Image } from './image';
 
-const GridImage = ({ altText, copy, imgSrc, linkUrl }) => (
+const GridImage = ({ altText, aspectRatio, copy, imgSrc, linkUrl }) => (
   <Link to={linkUrl} className="grid-image__link">
-    <Image srcSmall={imgSrc} alt={altText} lazyLoad />
+    <Image srcSmall={imgSrc} alt={altText} aspectRatio={aspectRatio} lazyLoad />
     <div className="grid-image__item-overlay">
       <p className="grid-image__text">{copy}</p>
     </div>
@@ -15,6 +15,7 @@ const GridImage = ({ altText, copy, imgSrc, linkUrl }) => (
 
 GridImage.propTypes = {
   altText: PropTypes.string.isRequired,
+  aspectRatio: PropTypes.string.isRequired,
   copy: PropTypes.string.isRequired,
   imgSrc: PropTypes.string.isRequired,
   linkUrl: PropTypes.string.isRequired,

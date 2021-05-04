@@ -32,6 +32,13 @@
     display: block;
     position: relative;
     width: 100%;
+
+    &:focus,
+    &:hover {
+      img {
+        filter: grayscale(0);
+      }
+    }
   }
 
   &__item-overlay {
@@ -159,16 +166,13 @@
             margin-bottom: $space-300;
           }
         }
-
-        @include mq($XL) {
-          @supports (display: grid) {
-            margin-bottom: 1rem;
-          }
-        }
       }
     }
 
     img {
+      filter: grayscale(1);
+      transition: filter 0.33s ease-out;
+
       @include mq($M) {
         margin-bottom: $space-300;
 

@@ -36,6 +36,7 @@ export const NineGridVideos = ({ videosList }) => {
                   copy={`${video[0].client} - ${video[0].title}`}
                   imgSrc={video[0].imageSrc}
                   linkUrl="/video-detail"
+                  aspectRatio="1600:900"
                 />
               </div>
               <div className="nine-grid-videos__item">
@@ -44,6 +45,7 @@ export const NineGridVideos = ({ videosList }) => {
                   copy={`${video[1].client} - ${video[1].title}`}
                   imgSrc={video[1].imageSrc}
                   linkUrl="/video-detail"
+                  aspectRatio="1600:900"
                 />
               </div>
               <div className="nine-grid-videos__item">
@@ -52,6 +54,7 @@ export const NineGridVideos = ({ videosList }) => {
                   copy={`${video[2].client} - ${video[2].title}`}
                   imgSrc={video[2].imageSrc}
                   linkUrl="/video-detail"
+                  aspectRatio="1600:900"
                 />
               </div>
             </div>
@@ -69,7 +72,7 @@ export const NineGridVideos = ({ videosList }) => {
                   <Image
                     srcSmall={video[0].imageSrc}
                     alt={video[0].title}
-                    aspectRatio="2400:1350"
+                    aspectRatio="1600:900"
                     lazyLoad
                   />
                   <div className="nine-grid-videos__item-overlay">
@@ -90,6 +93,7 @@ export const NineGridVideos = ({ videosList }) => {
                     copy={`${video[1].client} - ${video[1].title}`}
                     imgSrc={video[1].imageSrc}
                     linkUrl="/video-detail"
+                    aspectRatio="1600:900"
                   />
                 </div>
                 <div>
@@ -98,6 +102,7 @@ export const NineGridVideos = ({ videosList }) => {
                     copy={`${video[2].client} - ${video[2].title}`}
                     imgSrc={video[2].imageSrc}
                     linkUrl="/video-detail"
+                    aspectRatio="1600:900"
                   />
                 </div>
               </div>
@@ -117,6 +122,7 @@ export const NineGridVideos = ({ videosList }) => {
                   copy={`${video[0].client} - ${video[0].title}`}
                   imgSrc={video[0].imageSrc}
                   linkUrl="/video-detail"
+                  aspectRatio="1600:900"
                 />
               </div>
               <div>
@@ -125,6 +131,7 @@ export const NineGridVideos = ({ videosList }) => {
                   copy={`${video[1].client} - ${video[1].title}`}
                   imgSrc={video[1].imageSrc}
                   linkUrl="/video-detail"
+                  aspectRatio="1600:900"
                 />
               </div>
             </div>
@@ -133,7 +140,7 @@ export const NineGridVideos = ({ videosList }) => {
                 <Image
                   srcSmall={video[2].imageSrc}
                   alt={video[2].title}
-                  aspectRatio="2400:1350"
+                  aspectRatio="1600:900"
                   lazyLoad
                 />
                 <div className="nine-grid-videos__item-overlay">

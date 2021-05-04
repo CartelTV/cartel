@@ -13,6 +13,7 @@ const EditorsGrid = ({ editorsList }) => (
             copy={editor.name}
             imgSrc={editor.imageSrc}
             linkUrl={editor.url}
+            aspectRatio="3500:1460"
           />
         </li>
       ))}

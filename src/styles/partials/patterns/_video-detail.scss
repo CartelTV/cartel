@@ -1,25 +1,21 @@
 .video-detail {
   background-color: $white;
-  border-bottom: 1px solid $border-color;
-  padding-bottom: $space-400;
-  padding-top: $space-400;
+  padding-bottom: $space-500;
 
   > .container {
-    @include mq($XL) {
+    @include mq($M) {
       display: flex;
-      flex-direction: row-reverse;
+      flex-direction: row;
     }
   }
 
   &__video {
+    background-color: $black;
     margin-bottom: $space-400;
+    position: relative;
 
     @include mq($M) {
-      margin-bottom: $space-750;
-    }
-
-    @include mq($XL) {
-      flex-basis: 75%;
+      flex-basis: 66.66666%;
       margin-bottom: 0;
     }
 
@@ -30,73 +26,79 @@
     }
   }
 
-  &__text {
-    @include mq($M) {
-      align-items: center;
-      display: flex;
-      justify-content: space-between;
-      padding-left: $space-750;
+  &__thumbnail-button {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    transition: opacity 1s ease-out;
+
+    &::after {
+      content: url('/icon-play.svg');
+      position: absolute;
+      width: 24px;
     }
 
-    @include mq($XL) {
+    &.is-playing {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &__video-wrapper {
+    animation: fadeIn 2s ease-out;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &__text {
+    @include mq($M) {
       align-items: flex-start;
-      flex-basis: 25%;
+      flex-basis: 33.33333%;
       flex-direction: column;
       justify-content: center;
-      padding-left: 0;
-      padding-right: $space-400;
+      padding-left: $space-500;
+      padding-right: 0;
       position: relative;
     }
   }
 
-  &__meta-group {
-    margin-bottom: $space-400;
+  &__client {
+    font-size: 1.75rem;
+    margin-bottom: 0;
 
-    @include mq($M) {
-      margin-bottom: $space-600;
+    &::after {
+      border: 0;
     }
   }
 
-  &__meta-heading {
+  &__project {
     font-size: 0.75rem;
-    font-weight: 300;
-    margin-bottom: $space-200;
-  }
-
-  &__meta-content {
-    font-size: 0.875rem;
-    font-weight: 300;
-    line-height: 1.5;
-
-    &.video-detail__meta-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-    }
-  }
-
-  &__more-link {
-    align-items: center;
-    display: flex;
-    font-size: 0.875rem;
-    font-weight: 300;
-    line-height: 1;
-    margin-top: $space-700;
+    letter-spacing: 1px;
+    position: relative;
     text-transform: uppercase;
 
-    @include mq($M) {
-      margin-top: 0;
-    }
-
-    @include mq($XL) {
+    &::after {
+      border-top: 3px solid $text-clr;
+      bottom: -14px;
+      content: '';
+      display: block;
+      height: 0;
       position: absolute;
-      bottom: 0;
-      right: $space-400;
-      justify-content: space-between;
-      width: calc(100% - 1.125rem);
+      left: 0;
+      width: 30px;
     }
+  }
 
-    span {
-      padding-left: $space-700;
+  &__meta {
+    font-size: 0.6875rem;
+
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: $space-100;
+      }
     }
   }
 }

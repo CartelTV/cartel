@@ -1,11 +1,7 @@
-import React from 'react';
+/**
+ * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/ssr-apis/
+ */
 
-export const onRenderBody = ({ setHeadComponents }) => {
-  setHeadComponents([
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSQ-2TUSm0yqVfuotzZB44vTTHDQkeUNA&callback=initMap"
-    />,
-  ]);
-};
+// You can delete this file if you're not using it

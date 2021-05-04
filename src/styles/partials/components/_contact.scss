@@ -70,7 +70,11 @@
     margin-top: $space-300;
 
     > .contact__block {
-      flex-basis: 50%;
+      flex-basis: 100%;
+
+      @include mq($M) {
+        flex-basis: 50%;
+      }
     }
   }
 }

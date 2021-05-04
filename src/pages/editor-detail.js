@@ -56,26 +56,23 @@ const videosList = [
 const EditorDetailPage = () => (
   <Layout>
     <SEO title="Editor Detail" />
-    <article className="editor-detail__header">
-      <h2 className="editor-detail__name">Adam Robinson</h2>
-      <ul className="editor-detail__list">
-        <li className="editor-detail__item">
-          <Link className="editor-detail__link active" to="/editor-detail">
-            Main
-          </Link>
-        </li>
-        <li className="editor-detail__item">
-          <Link className="editor-detail__link" to="/editor-detail">
-            Comedy
-          </Link>
-        </li>
-        <li className="editor-detail__item">
-          <Link className="editor-detail__link" to="/editor-detail">
-            Other
-          </Link>
-        </li>
-      </ul>
-    </article>
+    <div className="container">
+      <article className="editor-detail__header">
+        <h1 className="editor-detail__name">Adam Robinson</h1>
+        <ul className="editor-detail__list">
+          <li className="editor-detail__item">
+            <Link className="editor-detail__link active" to="/editor-detail">
+              Main
+            </Link>
+          </li>
+          <li className="editor-detail__item">
+            <Link className="editor-detail__link" to="/editor-detail">
+              Other Work
+            </Link>
+          </li>
+        </ul>
+      </article>
+    </div>
     <EditorGridVideos videosList={videosList} />
   </Layout>
 );

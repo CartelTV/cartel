@@ -1,26 +1,7 @@
 .editor-detail {
   &__header {
-    background-color: $beige;
-    border-bottom: 1px solid $border-color;
     padding-bottom: $space-300;
-    padding-left: $space-400;
-    padding-right: $space-400;
-    padding-top: $space-700;
-    position: relative;
-
-    @include mq($M) {
-      background-color: $white;
-      display: flex;
-      padding-bottom: $space-700;
-      padding-right: 0;
-      padding-top: $space-700;
-    }
-
-    @include mq($XL) {
-      padding-bottom: $space-800;
-      padding-left: $space-800;
-      padding-top: $space-800;
-    }
+    padding-top: $space-300;
 
     &--lookout {
       background-color: $color-grey-2;
@@ -53,11 +34,8 @@
   }
 
   &__list {
-    margin-left: $space-400;
-
-    @include mq($M) {
-      display: flex;
-    }
+    display: flex;
+    margin-top: $space-400;
   }
 
   &__item {
@@ -65,14 +43,25 @@
 
     @include mq($M) {
       margin-bottom: 0;
-      margin-right: $space-700;
+      margin-right: $space-300;
+    }
+
+    &:not(:last-child) {
+      &::after {
+        border-right: 2px solid $black;
+        content: '';
+        margin-left: $space-300;
+      }
     }
   }
 
   &__link {
     border: 0;
-    font-size: 1.25rem;
+    font-family: $font-sans-bold;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
     position: relative;
+    text-transform: uppercase;
 
     &:focus,
     &:hover,
@@ -81,12 +70,12 @@
         background-color: $aqua;
         border-radius: 50%;
         content: '';
-        height: 0.5rem;
-        left: -0.75rem;
+        height: 0.375rem;
+        left: -0.5rem;
         position: absolute;
         top: 45%;
         transform: translateY(-50%);
-        width: 0.5rem;
+        width: 0.375rem;
       }
     }
 

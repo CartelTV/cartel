@@ -6,6 +6,10 @@
   }
 
   &__col {
+    &:first-child {
+      margin-bottom: $space-500;
+    }
+
     @include mq($M) {
       flex-basis: 50%;
 
@@ -13,6 +17,10 @@
         margin-right: $space-500;
       }
     }
+  }
+
+  &__group {
+    margin-bottom: $space-700;
   }
 
   &__block {

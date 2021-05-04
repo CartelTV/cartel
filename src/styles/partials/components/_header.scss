@@ -10,7 +10,7 @@
     position: absolute;
     top: 0;
     transition: max-height 0.33s ease-out;
-    width: calc(100% - 2.25rem);
+    width: calc(100% - 3rem);
     z-index: -1;
 
     @media (min-width: 820px) {
@@ -19,7 +19,7 @@
 
     &.is-open {
       border-bottom: 3px solid $gold;
-      max-height: 275px;
+      max-height: 235px;
     }
   }
 
@@ -106,7 +106,7 @@
   }
 
   &.is-open {
-    margin-top: 275px;
+    margin-top: 235px;
   }
 
   &__menu-button {

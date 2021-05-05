@@ -1,23 +1,5 @@
 .editors {
-  &-grid {
-    &__list {
-      @include mq($M) {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-      }
-    }
-
-    &__item {
-      margin-bottom: $space-700;
-
-      @include mq($M) {
-        flex-basis: calc(33.33333% - 0.75rem);
-      }
-
-      @include mq($L) {
-        flex-basis: calc(33.33333% - 1.5rem);
-      }
-    }
+  .three-col-grid__item {
+    margin-bottom: $space-700;
   }
 }

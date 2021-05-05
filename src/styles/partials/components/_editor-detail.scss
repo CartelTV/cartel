@@ -2,35 +2,10 @@
   &__header {
     padding-bottom: $space-300;
     padding-top: $space-300;
-
-    &--lookout {
-      background-color: $color-grey-2;
-      border-bottom: $space-500 solid $aqua;
-    }
   }
 
   &__name {
-    margin-bottom: $space-700;
-
-    @include mq($M) {
-      margin-bottom: 0;
-      padding-left: $space-500;
-      padding-right: $space-800;
-    }
-
-    @include mq($XL) {
-      padding-left: 0;
-      padding-right: $space-900;
-    }
-
-    @include mq($XXL) {
-      padding-right: $space-900 * 2;
-    }
-
-    &--lookout {
-      font-family: $font-sans-bold;
-      text-transform: uppercase;
-    }
+    margin-bottom: 0;
   }
 
   &__list {
@@ -39,12 +14,7 @@
   }
 
   &__item {
-    margin-bottom: $space-600;
-
-    @include mq($M) {
-      margin-bottom: 0;
-      margin-right: $space-300;
-    }
+    margin-right: $space-300;
 
     &:not(:last-child) {
       &::after {
@@ -76,33 +46,6 @@
         top: 45%;
         transform: translateY(-50%);
         width: 0.375rem;
-      }
-    }
-
-    &--lookout {
-      color: $white;
-
-      &:focus,
-      &:hover {
-        color: $white;
-
-        &::before {
-          background-color: $aqua;
-        }
-      }
-
-      &.active {
-        &::before {
-          background-color: $white;
-          border-radius: 50%;
-          content: '';
-          height: 0.5rem;
-          left: -0.75rem;
-          position: absolute;
-          top: 45%;
-          transform: translateY(-50%);
-          width: 0.5rem;
-        }
       }
     }
   }

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Layout } from '../components/layout';
 import SEO from '../components/seo';
-import EditorsGrid from '../components/patterns/editorsGrid';
+import ThreeColGrid from '../components/patterns/threeColGrid';
 
 const editorsList = [
   {
@@ -54,11 +54,11 @@ const editorsList = [
 
 const TheLookoutPage = () => (
   <Layout>
-    <SEO title="Editors" />
+    <SEO title="The Lookout" />
     <article className="editors">
-      <h2 className="visuallyhidden">Editors</h2>
+      <h1 className="visuallyhidden">Editors</h1>
       <div className="container">
-        <EditorsGrid editorsList={editorsList} />
+        <ThreeColGrid list={editorsList} aspectRatio="3500:1460" />
       </div>
     </article>
   </Layout>

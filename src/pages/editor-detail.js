@@ -3,53 +3,80 @@ import { Link } from 'gatsby';
 
 import { Layout } from '../components/layout';
 import SEO from '../components/seo';
-import { EditorGridVideos } from '../components/patterns/editorGridVideos';
+import ThreeColGrid from '../components/patterns/threeColGrid';
 
 const videosList = [
   {
-    client: 'Uber Eats',
-    title: 'Stand Off',
-    url: 'https://picsum.photos/id/1016/1920/1080',
-  },
-  {
-    client: 'WeTransfer',
-    title: 'Doubt, Create, Repeat',
-    url: 'https://picsum.photos/id/1018/1920/1080',
-  },
-  {
-    client: 'Track Smith',
+    videoSrc:
+      'https://cartel.wiredrive.com/?routekey=iframe-embed&token=300e1776e61b6928228e78cd005577ac&loop=0&controls=1&color=4EB7D4',
     title: 'Race Day is Still Sacred',
-    url: 'https://picsum.photos/id/1020/1920/1080',
-  },
-  {
-    client: 'Uber Eats',
-    title: 'Stand Off',
-    url: 'https://picsum.photos/id/1022/1920/1080',
-  },
-  {
-    client: 'WeTransfer',
-    title: 'Doubt, Create, Repeat',
-    url: 'https://picsum.photos/id/1024/1920/1080',
-  },
-  {
     client: 'Track Smith',
+    imageSrc: 'https://picsum.photos/1030/596',
+    url: '/video-detail',
+  },
+  {
+    videoSrc:
+      'https://cartel.wiredrive.com/?routekey=iframe-embed&token=234f2dda2110b43e094f19fcde9ad4b0&loop=0&controls=1&color=4EB7D4',
     title: 'Race Day is Still Sacred',
-    url: 'https://picsum.photos/id/1026/1920/1080',
-  },
-  {
-    client: 'Uber Eats',
-    title: 'Stand Off',
-    url: 'https://picsum.photos/id/1028/1920/1080',
-  },
-  {
-    client: 'WeTransfer',
-    title: 'Doubt, Create, Repeat',
-    url: 'https://picsum.photos/id/7/1920/1080',
-  },
-  {
     client: 'Track Smith',
+    imageSrc: 'https://picsum.photos/1030/596',
+    url: '/video-detail',
+  },
+  {
+    videoSrc:
+      'https://cartel.wiredrive.com/?routekey=iframe-embed&token=3e2f6c9d1ebdf0816c75a7a52c5fda1c&loop=0&controls=1&color=4EB7D4',
     title: 'Race Day is Still Sacred',
-    url: 'https://picsum.photos/id/9/1920/1080',
+    client: 'Track Smith',
+    imageSrc: 'https://picsum.photos/1030/596',
+    url: '/video-detail',
+  },
+  {
+    videoSrc:
+      'https://cartel.wiredrive.com/?routekey=iframe-embed&token=300e1776e61b6928228e78cd005577ac&loop=0&controls=1&color=4EB7D4',
+    title: 'Race Day is Still Sacred',
+    client: 'Track Smith',
+    imageSrc: 'https://picsum.photos/1030/596',
+    url: '/video-detail',
+  },
+  {
+    videoSrc:
+      'https://cartel.wiredrive.com/?routekey=iframe-embed&token=234f2dda2110b43e094f19fcde9ad4b0&loop=0&controls=1&color=4EB7D4',
+    title: 'Race Day is Still Sacred',
+    client: 'Track Smith',
+    imageSrc: 'https://picsum.photos/1030/596',
+    url: '/video-detail',
+  },
+  {
+    videoSrc:
+      'https://cartel.wiredrive.com/?routekey=iframe-embed&token=3e2f6c9d1ebdf0816c75a7a52c5fda1c&loop=0&controls=1&color=4EB7D4',
+    title: 'Race Day is Still Sacred',
+    client: 'Track Smith',
+    imageSrc: 'https://picsum.photos/1030/596',
+    url: '/video-detail',
+  },
+  {
+    videoSrc:
+      'https://cartel.wiredrive.com/?routekey=iframe-embed&token=300e1776e61b6928228e78cd005577ac&loop=0&controls=1&color=4EB7D4',
+    title: 'Race Day is Still Sacred',
+    client: 'Track Smith',
+    imageSrc: 'https://picsum.photos/1030/596',
+    url: '/video-detail',
+  },
+  {
+    videoSrc:
+      'https://cartel.wiredrive.com/?routekey=iframe-embed&token=234f2dda2110b43e094f19fcde9ad4b0&loop=0&controls=1&color=4EB7D4',
+    title: 'Race Day is Still Sacred',
+    client: 'Track Smith',
+    imageSrc: 'https://picsum.photos/1030/596',
+    url: '/video-detail',
+  },
+  {
+    videoSrc:
+      'https://cartel.wiredrive.com/?routekey=iframe-embed&token=3e2f6c9d1ebdf0816c75a7a52c5fda1c&loop=0&controls=1&color=4EB7D4',
+    title: 'Race Day is Still Sacred',
+    client: 'Track Smith',
+    imageSrc: 'https://picsum.photos/1030/596',
+    url: '/video-detail',
   },
 ];
 
@@ -72,8 +99,8 @@ const EditorDetailPage = () => (
           </li>
         </ul>
       </article>
+      <ThreeColGrid videosList={videosList} />
     </div>
-    <EditorGridVideos videosList={videosList} />
   </Layout>
 );
 

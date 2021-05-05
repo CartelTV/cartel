@@ -23,8 +23,13 @@ export const VideoDetail = () => {
               <iframe
                 src="https://cartel.wiredrive.com/?routekey=iframe-embed&token=2df4f688bf833feddcd1e0f1e4cbe539&autoplay=1&loop=0&controls=1&color=4EB7D4"
                 title="video title"
+                width="1920"
+                height="1080"
                 frameBorder="0"
+                webkitAllowFullScreen
+                mozallowfullscreen
                 allowFullScreen
+                allowtransparency
               />
             </div>
           )}

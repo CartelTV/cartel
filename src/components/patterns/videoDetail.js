@@ -16,7 +16,12 @@ export const VideoDetail = () => {
             type="button"
             onClick={() => setVideoIsPlaying(true)}
           >
-            <img src={thumbnailImg} alt="Apple - Test the Limits" />
+            <img
+              src={thumbnailImg}
+              alt="Apple - Test the Limits"
+              height="563"
+              width="1000"
+            />
           </button>
           {videoIsPlaying && (
             <div className="video-detail__video-wrapper iframe-container iframe-container-16x9">

@@ -1,6 +1,6 @@
 .video-detail {
   background-color: $white;
-  padding-bottom: $space-500;
+  padding-bottom: $space-700;
 
   > .container {
     @include mq($M) {
@@ -15,7 +15,7 @@
     position: relative;
 
     @include mq($M) {
-      flex-basis: 66.66666%;
+      flex-basis: 65.55%;
       margin-bottom: 0;
     }
 
@@ -56,10 +56,10 @@
   &__text {
     @include mq($M) {
       align-items: flex-start;
-      flex-basis: 33.33333%;
+      flex-basis: 34.45%;
       flex-direction: column;
       justify-content: center;
-      padding-left: $space-500;
+      padding-left: 1.9rem;
       padding-right: 0;
       position: relative;
     }

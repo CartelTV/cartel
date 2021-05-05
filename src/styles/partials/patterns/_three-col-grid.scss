@@ -15,7 +15,7 @@
     }
 
     @include mq($L) {
-      flex-basis: calc(33.33333% - 1.5rem);
+      flex-basis: calc(33.33333% - 1.25rem);
     }
   }
 }

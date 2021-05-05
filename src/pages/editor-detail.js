@@ -99,7 +99,7 @@ const EditorDetailPage = () => (
           </li>
         </ul>
       </article>
-      <ThreeColGrid videosList={videosList} />
+      <ThreeColGrid list={videosList} />
     </div>
   </Layout>
 );

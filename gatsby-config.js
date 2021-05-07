@@ -12,6 +12,15 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
     {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        typeName: 'Cartel',
+        fieldName: 'cartel',
+        url: 'http://13.59.83.89/graphql',
+        refetchInterval: 30,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         custom: {
@@ -53,15 +62,5 @@ module.exports = {
         errorClassName: false,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-google-tagmanager`,
-    //   options: {
-    //     id: 'GTM-ID-STRING',
-    //     includeInDevelopment: true
-    //   }
-    // }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
   ],
 };

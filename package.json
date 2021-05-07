@@ -19,6 +19,7 @@
     "gatsby-plugin-sitemap": "^2.4.11",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.3.24",
+    "gatsby-source-graphql": "^3.4.0",
     "gatsby-transformer-sharp": "^2.5.12",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",

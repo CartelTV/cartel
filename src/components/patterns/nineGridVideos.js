@@ -34,7 +34,7 @@ export const NineGridVideos = ({ videosList }) => {
                 <GridImage
                   altText={video[0].image.altText}
                   copy={`${video[0].client} - ${video[0].title}`}
-                  imgSrc={video[0].image.sourceUrl.split(':')[1]}
+                  imgSrc={video[0].image.sourceUrl}
                   linkUrl="/video-detail"
                   aspectRatio="1600:900"
                 />
@@ -43,7 +43,7 @@ export const NineGridVideos = ({ videosList }) => {
                 <GridImage
                   altText={video[1].image.altText}
                   copy={`${video[1].client} - ${video[1].title}`}
-                  imgSrc={video[1].image.sourceUrl.split(':')[1]}
+                  imgSrc={video[1].image.sourceUrl}
                   linkUrl="/video-detail"
                   aspectRatio="1600:900"
                 />
@@ -52,7 +52,7 @@ export const NineGridVideos = ({ videosList }) => {
                 <GridImage
                   altText={video[2].image.altText}
                   copy={`${video[2].client} - ${video[2].title}`}
-                  imgSrc={video[2].image.sourceUrl.split(':')[1]}
+                  imgSrc={video[2].image.sourceUrl}
                   linkUrl="/video-detail"
                   aspectRatio="1600:900"
                 />
@@ -70,7 +70,7 @@ export const NineGridVideos = ({ videosList }) => {
               <div className="nine-grid-videos__item nine-grid-videos__item--large">
                 <Link to="/video-detail" className="nine-grid-videos__link">
                   <Image
-                    srcSmall={video[0].image.sourceUrl.split(':')[1]}
+                    srcSmall={video[0].image.sourceUrl}
                     alt={video[0].image.altText}
                     aspectRatio="1600:900"
                     lazyLoad
@@ -91,7 +91,7 @@ export const NineGridVideos = ({ videosList }) => {
                   <GridImage
                     altText={video[1].image.altText}
                     copy={`${video[1].client} - ${video[1].title}`}
-                    imgSrc={video[1].image.sourceUrl.split(':')[1]}
+                    imgSrc={video[1].image.sourceUrl}
                     linkUrl="/video-detail"
                     aspectRatio="1600:900"
                   />
@@ -100,7 +100,7 @@ export const NineGridVideos = ({ videosList }) => {
                   <GridImage
                     altText={video[2].image.altText}
                     copy={`${video[2].client} - ${video[2].title}`}
-                    imgSrc={video[2].image.sourceUrl.split(':')[1]}
+                    imgSrc={video[2].image.sourceUrl}
                     linkUrl="/video-detail"
                     aspectRatio="1600:900"
                   />
@@ -120,7 +120,7 @@ export const NineGridVideos = ({ videosList }) => {
                 <GridImage
                   altText={video[0].image.altText}
                   copy={`${video[0].client} - ${video[0].title}`}
-                  imgSrc={video[0].image.sourceUrl.split(':')[1]}
+                  imgSrc={video[0].image.sourceUrl}
                   linkUrl="/video-detail"
                   aspectRatio="1600:900"
                 />
@@ -129,7 +129,7 @@ export const NineGridVideos = ({ videosList }) => {
                 <GridImage
                   altText={video[1].image.altText}
                   copy={`${video[1].client} - ${video[1].title}`}
-                  imgSrc={video[1].image.sourceUrl.split(':')[1]}
+                  imgSrc={video[1].image.sourceUrl}
                   linkUrl="/video-detail"
                   aspectRatio="1600:900"
                 />
@@ -138,7 +138,7 @@ export const NineGridVideos = ({ videosList }) => {
             <div className="nine-grid-videos__item nine-grid-videos__item--large">
               <Link to="/video-detail" className="nine-grid-videos__link">
                 <Image
-                  srcSmall={video[2].image.sourceUrl.split(':')[1]}
+                  srcSmall={video[2].image.sourceUrl}
                   alt={video[2].image.altText}
                   aspectRatio="1600:900"
                   lazyLoad

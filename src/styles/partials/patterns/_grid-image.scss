@@ -33,8 +33,9 @@
   }
 
   &__text {
-    font-family: $font-sans-bold;
-    font-size: 0.875rem;
+    font-family: $font-sans-light;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
     text-align: center;
     text-transform: uppercase;
   }

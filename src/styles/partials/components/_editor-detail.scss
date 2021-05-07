@@ -30,12 +30,19 @@
     font-family: $font-sans-bold;
     font-size: 0.75rem;
     letter-spacing: 1px;
+    outline: none;
     position: relative;
     text-transform: uppercase;
+    transition: color 0.2s ease-out;
+
+    &:focus,
+    &:hover {
+      color: $text-clr;
+    }
 
     &:focus,
     &:hover,
-    .active {
+    &.active {
       &::before {
         background-color: $aqua;
         border-radius: 50%;

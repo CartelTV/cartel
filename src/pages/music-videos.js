@@ -8,6 +8,7 @@ import SEO from '../components/seo';
 import { NineGridVideos } from '../components/patterns/nineGridVideos';
 
 const MusicVideosPage = ({ data }) => {
+  // TODO: replace with Music Videos page data
   const workVideos = data.cartel.page.work.videos;
 
   return (
@@ -21,6 +22,7 @@ const MusicVideosPage = ({ data }) => {
   );
 };
 
+// TODO: replace with Music Videos page data
 export const query = graphql`
   query {
     cartel {

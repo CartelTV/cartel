@@ -1,67 +1,65 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
 import { Layout } from '../components/layout';
 import SEO from '../components/seo';
 import ThreeColGrid from '../components/patterns/threeColGrid';
 
-const editorsList = [
-  {
-    imageSrc: 'https://picsum.photos/1060/442',
-    name: 'Andy McGraw',
-    url: '/editor-detail',
-  },
-  {
-    imageSrc: 'https://picsum.photos/1060/442',
-    name: 'Andy McGraw',
-    url: '/editor-detail',
-  },
-  {
-    imageSrc: 'https://picsum.photos/1060/442',
-    name: 'Andy McGraw',
-    url: '/editor-detail',
-  },
-  {
-    imageSrc: 'https://picsum.photos/1060/442',
-    name: 'Andy McGraw',
-    url: '/editor-detail',
-  },
-  {
-    imageSrc: 'https://picsum.photos/1060/442',
-    name: 'Andy McGraw',
-    url: '/editor-detail',
-  },
-  {
-    imageSrc: 'https://picsum.photos/1060/442',
-    name: 'Andy McGraw',
-    url: '/editor-detail',
-  },
-  {
-    imageSrc: 'https://picsum.photos/1060/442',
-    name: 'Andy McGraw',
-    url: '/editor-detail',
-  },
-  {
-    imageSrc: 'https://picsum.photos/1060/442',
-    name: 'Andy McGraw',
-    url: '/editor-detail',
-  },
-  {
-    imageSrc: 'https://picsum.photos/1060/442',
-    name: 'Andy McGraw',
-    url: '/editor-detail',
-  },
-];
+const EditorsPage = ({ data }) => {
+  const { editors } = data.cartel.page.editors;
 
-const EditorsPage = () => (
-  <Layout>
-    <SEO title="Editors" />
-    <article className="editors">
-      <h1 className="visuallyhidden">Editors</h1>
-      <div className="container">
-        <ThreeColGrid list={editorsList} aspectRatio="3500:1460" />
-      </div>
-    </article>
-  </Layout>
-);
+  return (
+    <Layout>
+      <SEO title="Editors" />
+      <article className="editors">
+        <h1 className="visuallyhidden">Editors</h1>
+        <div className="container">
+          <ThreeColGrid list={editors} aspectRatio="3500:1460" />
+        </div>
+      </article>
+    </Layout>
+  );
+};
+
+export const query = graphql`
+  query {
+    cartel {
+      page(id: "64", idType: DATABASE_ID) {
+        editors {
+          editors {
+            image {
+              altText
+              sourceUrl
+            }
+            name
+            pagePath
+          }
+        }
+      }
+    }
+  }
+`;
+
+EditorsPage.propTypes = {
+  data: PropTypes.shape({
+    cartel: PropTypes.shape({
+      page: PropTypes.shape({
+        editors: PropTypes.shape({
+          editors: PropTypes.arrayOf(
+            PropTypes.shape({
+              image: PropTypes.shape({
+                altText: PropTypes.string,
+                sourceUrl: PropTypes.string,
+              }),
+              name: PropTypes.string,
+              pagePath: PropTypes.string,
+            })
+          ),
+        }),
+      }),
+    }),
+  }).isRequired,
+};
 
 export default EditorsPage;

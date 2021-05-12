@@ -8,14 +8,14 @@ import SEO from '../components/seo';
 import { NineGridVideos } from '../components/patterns/nineGridVideos';
 
 const MusicVideosPage = ({ data }) => {
-  const workVideos = data.cartel.page.work.videos;
+  const musicVideos = data.cartel.page.musicVideos.videos;
 
   return (
     <Layout>
       <SEO title="Work" />
       <h1 className="visuallyhidden">Work</h1>
       <div className="container">
-        <NineGridVideos videosList={workVideos} />
+        <NineGridVideos videosList={musicVideos} />
       </div>
     </Layout>
   );
@@ -24,12 +24,12 @@ const MusicVideosPage = ({ data }) => {
 export const query = graphql`
   query {
     cartel {
-      page(id: "40", idType: DATABASE_ID) {
-        work {
+      page(id: "52", idType: DATABASE_ID) {
+        musicVideos {
           videos {
-            client
-            title
+            artist
             pagePath
+            title
             image {
               altText
               sourceUrl
@@ -45,10 +45,10 @@ MusicVideosPage.propTypes = {
   data: PropTypes.shape({
     cartel: PropTypes.shape({
       page: PropTypes.shape({
-        work: PropTypes.shape({
+        musicVideos: PropTypes.shape({
           videos: PropTypes.arrayOf(
             PropTypes.shape({
-              client: PropTypes.string,
+              artist: PropTypes.string,
               image: PropTypes.shape({
                 altText: PropTypes.string,
                 sourceUrl: PropTypes.string,

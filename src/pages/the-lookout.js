@@ -6,49 +6,76 @@ import ThreeColGrid from '../components/patterns/threeColGrid';
 
 const editorsList = [
   {
-    imageSrc: 'https://picsum.photos/1060/442',
+    image: {
+      altText: 'Andy McGraw',
+      sourceUrl: 'https://picsum.photos/1060/442',
+    },
     name: 'Andy McGraw',
-    url: '/editor-detail',
+    pathPath: '/editor-detail',
   },
   {
-    imageSrc: 'https://picsum.photos/1060/442',
+    image: {
+      altText: 'Andy McGraw',
+      sourceUrl: 'https://picsum.photos/1060/442',
+    },
     name: 'Andy McGraw',
-    url: '/editor-detail',
+    pathPath: '/editor-detail',
   },
   {
-    imageSrc: 'https://picsum.photos/1060/442',
+    image: {
+      altText: 'Andy McGraw',
+      sourceUrl: 'https://picsum.photos/1060/442',
+    },
     name: 'Andy McGraw',
-    url: '/editor-detail',
+    pathPath: '/editor-detail',
   },
   {
-    imageSrc: 'https://picsum.photos/1060/442',
+    image: {
+      altText: 'Andy McGraw',
+      sourceUrl: 'https://picsum.photos/1060/442',
+    },
     name: 'Andy McGraw',
-    url: '/editor-detail',
+    pathPath: '/editor-detail',
   },
   {
-    imageSrc: 'https://picsum.photos/1060/442',
+    image: {
+      altText: 'Andy McGraw',
+      sourceUrl: 'https://picsum.photos/1060/442',
+    },
     name: 'Andy McGraw',
-    url: '/editor-detail',
+    pathPath: '/editor-detail',
   },
   {
-    imageSrc: 'https://picsum.photos/1060/442',
+    image: {
+      altText: 'Andy McGraw',
+      sourceUrl: 'https://picsum.photos/1060/442',
+    },
     name: 'Andy McGraw',
-    url: '/editor-detail',
+    pathPath: '/editor-detail',
   },
   {
-    imageSrc: 'https://picsum.photos/1060/442',
+    image: {
+      altText: 'Andy McGraw',
+      sourceUrl: 'https://picsum.photos/1060/442',
+    },
     name: 'Andy McGraw',
-    url: '/editor-detail',
+    pathPath: '/editor-detail',
   },
   {
-    imageSrc: 'https://picsum.photos/1060/442',
+    image: {
+      altText: 'Andy McGraw',
+      sourceUrl: 'https://picsum.photos/1060/442',
+    },
     name: 'Andy McGraw',
-    url: '/editor-detail',
+    pathPath: '/editor-detail',
   },
   {
-    imageSrc: 'https://picsum.photos/1060/442',
+    image: {
+      altText: 'Andy McGraw',
+      sourceUrl: 'https://picsum.photos/1060/442',
+    },
     name: 'Andy McGraw',
-    url: '/editor-detail',
+    pathPath: '/editor-detail',
   },
 ];
 

@@ -16,7 +16,7 @@ module.exports = {
       options: {
         typeName: 'Cartel',
         fieldName: 'cartel',
-        url: 'http://13.59.83.89/graphql',
+        url: 'https://carteldev.pyrographicdesign.com/graphql',
         refetchInterval: 30,
       },
     },

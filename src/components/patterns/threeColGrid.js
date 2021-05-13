@@ -10,7 +10,11 @@ const ThreeColGrid = ({ aspectRatio, list }) => (
         <li className="three-col-grid__item" key={item.title || item.name}>
           <GridImage
             altText={item.image.altText}
-            copy={item.title || item.name}
+            copy={
+              item.title ||
+              item.name ||
+              `${item.client || item.artist} - ${item.title}`
+            }
             imgSrc={item.image.sourceUrl}
             linkUrl={item.pagePath}
             aspectRatio={aspectRatio}
@@ -25,6 +29,7 @@ ThreeColGrid.propTypes = {
   aspectRatio: PropTypes.string,
   list: PropTypes.arrayOf(
     PropTypes.shape({
+      client: PropTypes.string,
       image: PropTypes.shape({
         altText: PropTypes.string,
         sourceUrl: PropTypes.string,

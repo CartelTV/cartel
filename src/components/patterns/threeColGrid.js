@@ -11,9 +11,10 @@ const ThreeColGrid = ({ aspectRatio, list }) => (
           <GridImage
             altText={item.image.altText}
             copy={
+              ((item.client || item.artist) &&
+                `${item.client || item.artist} - ${item.title}`) ||
               item.title ||
-              item.name ||
-              `${item.client || item.artist} - ${item.title}`
+              item.name
             }
             imgSrc={item.image.sourceUrl}
             linkUrl={item.pagePath}

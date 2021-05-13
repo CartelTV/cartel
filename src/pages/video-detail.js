@@ -11,7 +11,7 @@ const videosList = [
     client: 'Track Smith',
     image: {
       altText: 'Race Day is Still Sacred',
-      sourceUrl: 'https://picsum.photos/1060/442',
+      sourceUrl: 'https://picsum.photos/1600/900',
     },
     pagePath: '/video-detail',
   },
@@ -20,7 +20,7 @@ const videosList = [
     client: 'Track Smith',
     image: {
       altText: 'Race Day is Still Sacred',
-      sourceUrl: 'https://picsum.photos/1060/442',
+      sourceUrl: 'https://picsum.photos/1600/900',
     },
     pagePath: '/video-detail',
   },
@@ -29,7 +29,7 @@ const videosList = [
     client: 'Track Smith',
     image: {
       altText: 'Race Day is Still Sacred',
-      sourceUrl: 'https://picsum.photos/1060/442',
+      sourceUrl: 'https://picsum.photos/1600/900',
     },
     pagePath: '/video-detail',
   },
@@ -38,7 +38,7 @@ const videosList = [
     client: 'Track Smith',
     image: {
       altText: 'Race Day is Still Sacred',
-      sourceUrl: 'https://picsum.photos/1060/442',
+      sourceUrl: 'https://picsum.photos/1600/900',
     },
     pagePath: '/video-detail',
   },
@@ -47,7 +47,7 @@ const videosList = [
     client: 'Track Smith',
     image: {
       altText: 'Race Day is Still Sacred',
-      sourceUrl: 'https://picsum.photos/1060/442',
+      sourceUrl: 'https://picsum.photos/1600/900',
     },
     pagePath: '/video-detail',
   },
@@ -56,7 +56,7 @@ const videosList = [
     client: 'Track Smith',
     image: {
       altText: 'Race Day is Still Sacred',
-      sourceUrl: 'https://picsum.photos/1060/442',
+      sourceUrl: 'https://picsum.photos/1600/900',
     },
     pagePath: '/video-detail',
   },
@@ -65,7 +65,7 @@ const videosList = [
     client: 'Track Smith',
     image: {
       altText: 'Race Day is Still Sacred',
-      sourceUrl: 'https://picsum.photos/1060/442',
+      sourceUrl: 'https://picsum.photos/1600/900',
     },
     pagePath: '/video-detail',
   },
@@ -74,7 +74,7 @@ const videosList = [
     client: 'Track Smith',
     image: {
       altText: 'Race Day is Still Sacred',
-      sourceUrl: 'https://picsum.photos/1060/442',
+      sourceUrl: 'https://picsum.photos/1600/900',
     },
     pagePath: '/video-detail',
   },
@@ -83,7 +83,7 @@ const videosList = [
     client: 'Track Smith',
     image: {
       altText: 'Race Day is Still Sacred',
-      sourceUrl: 'https://picsum.photos/1060/442',
+      sourceUrl: 'https://picsum.photos/1600/900',
     },
     pagePath: '/video-detail',
   },

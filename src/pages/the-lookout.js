@@ -11,7 +11,7 @@ const editorsList = [
       sourceUrl: 'https://picsum.photos/1060/442',
     },
     name: 'Andy McGraw',
-    pathPath: '/editor-detail',
+    pagePath: '/editor-detail',
   },
   {
     image: {
@@ -19,7 +19,7 @@ const editorsList = [
       sourceUrl: 'https://picsum.photos/1060/442',
     },
     name: 'Andy McGraw',
-    pathPath: '/editor-detail',
+    pagePath: '/editor-detail',
   },
   {
     image: {
@@ -27,7 +27,7 @@ const editorsList = [
       sourceUrl: 'https://picsum.photos/1060/442',
     },
     name: 'Andy McGraw',
-    pathPath: '/editor-detail',
+    pagePath: '/editor-detail',
   },
   {
     image: {
@@ -35,7 +35,7 @@ const editorsList = [
       sourceUrl: 'https://picsum.photos/1060/442',
     },
     name: 'Andy McGraw',
-    pathPath: '/editor-detail',
+    pagePath: '/editor-detail',
   },
   {
     image: {
@@ -43,7 +43,7 @@ const editorsList = [
       sourceUrl: 'https://picsum.photos/1060/442',
     },
     name: 'Andy McGraw',
-    pathPath: '/editor-detail',
+    pagePath: '/editor-detail',
   },
   {
     image: {
@@ -51,7 +51,7 @@ const editorsList = [
       sourceUrl: 'https://picsum.photos/1060/442',
     },
     name: 'Andy McGraw',
-    pathPath: '/editor-detail',
+    pagePath: '/editor-detail',
   },
   {
     image: {
@@ -59,7 +59,7 @@ const editorsList = [
       sourceUrl: 'https://picsum.photos/1060/442',
     },
     name: 'Andy McGraw',
-    pathPath: '/editor-detail',
+    pagePath: '/editor-detail',
   },
   {
     image: {
@@ -67,7 +67,7 @@ const editorsList = [
       sourceUrl: 'https://picsum.photos/1060/442',
     },
     name: 'Andy McGraw',
-    pathPath: '/editor-detail',
+    pagePath: '/editor-detail',
   },
   {
     image: {
@@ -75,7 +75,7 @@ const editorsList = [
       sourceUrl: 'https://picsum.photos/1060/442',
     },
     name: 'Andy McGraw',
-    pathPath: '/editor-detail',
+    pagePath: '/editor-detail',
   },
 ];
 

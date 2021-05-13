@@ -11,7 +11,7 @@ const videosList = [
     client: 'Track Smith',
     image: {
       altText: 'Andy McGraw',
-      sourceUrl: 'https://picsum.photos/1060/442',
+      sourceUrl: 'https://picsum.photos/1600/900',
     },
     url: '/video-detail',
   },
@@ -20,7 +20,7 @@ const videosList = [
     client: 'Track Smith',
     image: {
       altText: 'Andy McGraw',
-      sourceUrl: 'https://picsum.photos/1060/442',
+      sourceUrl: 'https://picsum.photos/1600/900',
     },
     url: '/video-detail',
   },
@@ -29,7 +29,7 @@ const videosList = [
     client: 'Track Smith',
     image: {
       altText: 'Andy McGraw',
-      sourceUrl: 'https://picsum.photos/1060/442',
+      sourceUrl: 'https://picsum.photos/1600/900',
     },
     url: '/video-detail',
   },
@@ -38,7 +38,7 @@ const videosList = [
     client: 'Track Smith',
     image: {
       altText: 'Andy McGraw',
-      sourceUrl: 'https://picsum.photos/1060/442',
+      sourceUrl: 'https://picsum.photos/1600/900',
     },
     url: '/video-detail',
   },
@@ -47,7 +47,7 @@ const videosList = [
     client: 'Track Smith',
     image: {
       altText: 'Andy McGraw',
-      sourceUrl: 'https://picsum.photos/1060/442',
+      sourceUrl: 'https://picsum.photos/1600/900',
     },
     url: '/video-detail',
   },
@@ -56,7 +56,7 @@ const videosList = [
     client: 'Track Smith',
     image: {
       altText: 'Andy McGraw',
-      sourceUrl: 'https://picsum.photos/1060/442',
+      sourceUrl: 'https://picsum.photos/1600/900',
     },
     url: '/video-detail',
   },
@@ -65,7 +65,7 @@ const videosList = [
     client: 'Track Smith',
     image: {
       altText: 'Andy McGraw',
-      sourceUrl: 'https://picsum.photos/1060/442',
+      sourceUrl: 'https://picsum.photos/1600/900',
     },
     url: '/video-detail',
   },
@@ -74,7 +74,7 @@ const videosList = [
     client: 'Track Smith',
     image: {
       altText: 'Andy McGraw',
-      sourceUrl: 'https://picsum.photos/1060/442',
+      sourceUrl: 'https://picsum.photos/1600/900',
     },
     url: '/video-detail',
   },
@@ -83,7 +83,7 @@ const videosList = [
     client: 'Track Smith',
     image: {
       altText: 'Andy McGraw',
-      sourceUrl: 'https://picsum.photos/1060/442',
+      sourceUrl: 'https://picsum.photos/1600/900',
     },
     url: '/video-detail',
   },

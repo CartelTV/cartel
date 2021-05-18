@@ -13,7 +13,7 @@ const videosList = [
       altText: 'Andy McGraw',
       sourceUrl: 'https://picsum.photos/1600/900',
     },
-    url: '/video-detail',
+    pagePath: '/video-detail',
   },
   {
     title: 'Race Day is Still Sacred',
@@ -22,7 +22,7 @@ const videosList = [
       altText: 'Andy McGraw',
       sourceUrl: 'https://picsum.photos/1600/900',
     },
-    url: '/video-detail',
+    pagePath: '/video-detail',
   },
   {
     title: 'Race Day is Still Sacred',
@@ -31,7 +31,7 @@ const videosList = [
       altText: 'Andy McGraw',
       sourceUrl: 'https://picsum.photos/1600/900',
     },
-    url: '/video-detail',
+    pagePath: '/video-detail',
   },
   {
     title: 'Race Day is Still Sacred',
@@ -40,7 +40,7 @@ const videosList = [
       altText: 'Andy McGraw',
       sourceUrl: 'https://picsum.photos/1600/900',
     },
-    url: '/video-detail',
+    pagePath: '/video-detail',
   },
   {
     title: 'Race Day is Still Sacred',
@@ -49,7 +49,7 @@ const videosList = [
       altText: 'Andy McGraw',
       sourceUrl: 'https://picsum.photos/1600/900',
     },
-    url: '/video-detail',
+    pagePath: '/video-detail',
   },
   {
     title: 'Race Day is Still Sacred',
@@ -58,7 +58,7 @@ const videosList = [
       altText: 'Andy McGraw',
       sourceUrl: 'https://picsum.photos/1600/900',
     },
-    url: '/video-detail',
+    pagePath: '/video-detail',
   },
   {
     title: 'Race Day is Still Sacred',
@@ -67,7 +67,7 @@ const videosList = [
       altText: 'Andy McGraw',
       sourceUrl: 'https://picsum.photos/1600/900',
     },
-    url: '/video-detail',
+    pagePath: '/video-detail',
   },
   {
     title: 'Race Day is Still Sacred',
@@ -76,7 +76,7 @@ const videosList = [
       altText: 'Andy McGraw',
       sourceUrl: 'https://picsum.photos/1600/900',
     },
-    url: '/video-detail',
+    pagePath: '/video-detail',
   },
   {
     title: 'Race Day is Still Sacred',
@@ -85,7 +85,7 @@ const videosList = [
       altText: 'Andy McGraw',
       sourceUrl: 'https://picsum.photos/1600/900',
     },
-    url: '/video-detail',
+    pagePath: '/video-detail',
   },
 ];
 

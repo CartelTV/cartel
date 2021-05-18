@@ -5,6 +5,20 @@
       justify-content: space-between;
       flex-wrap: wrap;
     }
+
+    &--align-right {
+      justify-content: flex-start;
+
+      .three-col-grid__item:not(:last-child) {
+        @include mq($M) {
+          margin-right: 1.5rem;
+        }
+
+        @include mq($L) {
+          margin-right: 1.875rem;
+        }
+      }
+    }
   }
 
   &__item {

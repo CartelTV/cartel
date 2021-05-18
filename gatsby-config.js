@@ -16,7 +16,7 @@ module.exports = {
       options: {
         typeName: 'Cartel',
         fieldName: 'cartel',
-        url: 'https://carteldev.pyrographicdesign.com/graphql',
+        url: 'https://pnm.059.myftpupload.com/graphql',
         refetchInterval: 30,
       },
     },

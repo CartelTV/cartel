@@ -20,7 +20,7 @@ const TheLookoutPage = ({ data }) => {
       <article className="editors">
         <h1 className="visuallyhidden">Editors</h1>
         <div className="container">
-          <video muted autoPlay loop height="540" width="1070">
+          <video muted autoPlay loop height="585" width="1140">
             <source
               src={lookoutHeroHeaderVideo.mediaItemUrl}
               type="video/webm"

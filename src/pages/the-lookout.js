@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/media-has-caption */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
@@ -7,13 +9,27 @@ import SEO from '../components/seo';
 import ThreeColGrid from '../components/patterns/threeColGrid';
 
 const TheLookoutPage = ({ data }) => {
-  const { lookoutEditors } = data.cartel.page.lookoutPage;
+  const {
+    lookoutHeroHeaderVideo,
+    lookoutHeroHeaderVideoFallback,
+    lookoutEditors,
+  } = data.cartel.page.lookoutPage;
   return (
     <Layout>
       <SEO title="The Lookout" />
       <article className="editors">
         <h1 className="visuallyhidden">Editors</h1>
         <div className="container">
+          <video muted autoPlay loop>
+            <source
+              src={lookoutHeroHeaderVideo.mediaItemUrl}
+              type="video/webm"
+            />
+            <source
+              src={lookoutHeroHeaderVideoFallback.mediaItemUrl}
+              type="video/mp4"
+            />
+          </video>
           <ThreeColGrid list={lookoutEditors} aspectRatio="3500:1460" />
         </div>
       </article>
@@ -26,6 +42,12 @@ export const query = graphql`
     cartel {
       page(id: "114", idType: DATABASE_ID) {
         lookoutPage {
+          lookoutHeroHeaderVideo {
+            mediaItemUrl
+          }
+          lookoutHeroHeaderVideoFallback {
+            mediaItemUrl
+          }
           lookoutEditors {
             name
             pagePath
@@ -45,6 +67,8 @@ TheLookoutPage.propTypes = {
     cartel: PropTypes.shape({
       page: PropTypes.shape({
         lookoutPage: PropTypes.shape({
+          lookoutHeroHeaderVideo: PropTypes.string,
+          lookoutHeroHeaderVideoFallback: PropTypes.string,
           lookoutEditors: PropTypes.arrayOf(
             PropTypes.shape({
               image: PropTypes.shape({

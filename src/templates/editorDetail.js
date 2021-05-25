@@ -7,7 +7,8 @@ import SEO from '../components/seo';
 import ThreeColGrid from '../components/patterns/threeColGrid';
 
 const EditorDetailPage = ({ data }) => {
-  const { slug, title } = data.cartel.editorDetailPage;
+  const { title } = data.cartel.editorDetailPage;
+  const links = data.cartel.editorDetailPage.editorDetail.editorLinks;
   const videos = data.cartel.editorDetailPage.editorDetail.editorVideos;
 
   return (
@@ -15,30 +16,21 @@ const EditorDetailPage = ({ data }) => {
       <SEO title="Editor Detail" />
       <div className="container">
         <article className="editor-detail__header">
-          <h1 className="editor-detail__name">{title.replace('Other', '')}</h1>
+          <h1 className="editor-detail__name">
+            {title.replace(/Main|Other|Comedy/, '')}
+          </h1>
           <ul className="editor-detail__list">
-            <li className="editor-detail__item">
-              <Link
-                className="editor-detail__link"
-                activeClassName="active"
-                to={
-                  !slug.includes('other')
-                    ? `/${slug}`
-                    : `/${slug.replace('-other', '')}`
-                }
-              >
-                Main
-              </Link>
-            </li>
-            <li className="editor-detail__item">
-              <Link
-                className="editor-detail__link"
-                activeClassName={slug.includes('other') ? 'active' : null}
-                to={slug.includes('other') ? `/${slug}` : `/${slug}-other`}
-              >
-                Other Work
-              </Link>
-            </li>
+            {links.map(link => (
+              <li className="editor-detail__item" key={link.linkTitle}>
+                <Link
+                  className="editor-detail__link"
+                  activeClassName="active"
+                  to={link.linkPath}
+                >
+                  {link.linkTitle}
+                </Link>
+              </li>
+            ))}
           </ul>
         </article>
         <ThreeColGrid list={videos} />
@@ -51,16 +43,18 @@ export const query = graphql`
   query($id: ID!) {
     cartel {
       editorDetailPage(id: $id) {
-        slug
         title
         editorDetail {
+          editorLinks {
+            linkTitle
+            linkPath
+          }
           editorVideos {
             pagePath
-            client
-            title
             image {
               altText
               sourceUrl
+              title
             }
           }
         }
@@ -76,6 +70,12 @@ EditorDetailPage.propTypes = {
         slug: PropTypes.string,
         title: PropTypes.string,
         editorDetail: PropTypes.shape({
+          editorLinks: PropTypes.arrayOf(
+            PropTypes.shape({
+              linkPath: PropTypes.string,
+              linkTitle: PropTypes.string,
+            })
+          ),
           editorVideos: PropTypes.arrayOf(
             PropTypes.shape({
               videoThumbnail: PropTypes.shape({

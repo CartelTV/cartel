@@ -1,3 +1,5 @@
+// TODO: This page can get deleted when all data is entered.
+
 import React from 'react';
 import { Link } from 'gatsby';
 

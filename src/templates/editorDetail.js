@@ -17,7 +17,7 @@ const EditorDetailPage = ({ data }) => {
       <div className="container">
         <article className="editor-detail__header">
           <h1 className="editor-detail__name">
-            {title.replace(/Main|Other|Comedy/, '')}
+            {title.replace(/Main|Other|Comedy|Music|VR/, '')}
           </h1>
           <ul className="editor-detail__list">
             {links.map(link => (

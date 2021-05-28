@@ -11,7 +11,7 @@ exports.createPages = async ({ graphql, actions }) => {
   } = await graphql(`
     query {
       cartel {
-        editorDetailPages {
+        editorDetailPages(first: 50) {
           nodes {
             id
             slug

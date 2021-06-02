@@ -2,21 +2,11 @@
   &__list {
     @include mq($M) {
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
-    }
+      gap: 1.5rem;
 
-    &--align-right {
-      justify-content: flex-start;
-
-      .three-col-grid__item:not(:last-child) {
-        @include mq($M) {
-          margin-right: 1.5rem;
-        }
-
-        @include mq($L) {
-          margin-right: 1.875rem;
-        }
+      @include mq($L) {
+        gap: 1.875rem;
       }
     }
   }
@@ -26,6 +16,7 @@
 
     @include mq($M) {
       flex-basis: calc(50% - 0.75rem);
+      margin-bottom: 0;
     }
 
     @include mq($L) {

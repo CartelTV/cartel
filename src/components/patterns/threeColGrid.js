@@ -3,31 +3,23 @@ import PropTypes from 'prop-types';
 
 import GridImage from './gridImage';
 
-const ThreeColGrid = ({ aspectRatio, list }) => {
-  const listLength = list.length;
-
-  return (
-    <section className="three-col-grid">
-      <ul
-        className={`three-col-grid__list ${
-          listLength < 3 ? 'three-col-grid__list--align-right' : ''
-        }`}
-      >
-        {list.map(item => (
-          <li className="three-col-grid__item" key={item.image.sourceUrl}>
-            <GridImage
-              altText={item.image.altText}
-              copy={item.image.title || item.title || item.name}
-              imgSrc={item.image.sourceUrl}
-              linkUrl={item.pagePath}
-              aspectRatio={aspectRatio}
-            />
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
-};
+const ThreeColGrid = ({ aspectRatio, list }) => (
+  <section className="three-col-grid">
+    <ul className="three-col-grid__list">
+      {list.map(item => (
+        <li className="three-col-grid__item" key={item.image.sourceUrl}>
+          <GridImage
+            altText={item.image.altText}
+            copy={item.image.title || item.title || item.name}
+            imgSrc={item.image.sourceUrl}
+            linkUrl={item.pagePath}
+            aspectRatio={aspectRatio}
+          />
+        </li>
+      ))}
+    </ul>
+  </section>
+);
 
 ThreeColGrid.propTypes = {
   aspectRatio: PropTypes.string,

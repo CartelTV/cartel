@@ -1,13 +1,16 @@
 .three-col-grid {
   &__list {
+    margin-bottom: $space-500 !important;
+
     @include mq($M) {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
+      gap: $space-500;
+    }
 
-      @include mq($L) {
-        gap: 1.875rem;
-      }
+    @include mq($L) {
+      gap: 1.875rem;
+      margin-bottom: 1.875rem !important;
     }
   }
 

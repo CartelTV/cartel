@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-import thumbnailImg from '../../images/thumb-apple-test-the-limits.png';
-
-export const VideoDetail = () => {
+export const VideoDetail = ({ data }) => {
   const [videoIsPlaying, setVideoIsPlaying] = useState(false);
 
   return (
@@ -17,16 +16,16 @@ export const VideoDetail = () => {
             onClick={() => setVideoIsPlaying(true)}
           >
             <img
-              src={thumbnailImg}
-              alt="Apple - Test the Limits"
-              height="563"
-              width="1000"
+              src={data.videoStill.sourceUrl}
+              alt={data.videoStill.altText}
+              height="422"
+              width="750"
             />
           </button>
           {videoIsPlaying && (
             <div className="video-detail__video-wrapper iframe-container iframe-container-16x9">
               <iframe
-                src="https://cartel.wiredrive.com/?routekey=iframe-embed&token=2df4f688bf833feddcd1e0f1e4cbe539&autoplay=1&loop=0&controls=1&color=4EB7D4"
+                src={data.videoUrl}
                 title="video title"
                 width="1920"
                 height="1080"
@@ -41,33 +40,56 @@ export const VideoDetail = () => {
         </div>
 
         <div className="video-detail__text">
-          <h1 className="video-detail__client">Apple</h1>
+          <h1 className="video-detail__client">{data.client}</h1>
           <p className="video-detail__project">
-            <strong>Test the Limits</strong>
+            <strong>{data.title}</strong>
           </p>
           <ul className="video-detail__meta">
-            <li className="video-detail__meta-item">
-              <strong>Director:</strong> Vania and Muggia
-            </li>
+            {data.director && (
+              <li className="video-detail__meta-item">
+                <strong>Director:</strong> {data.director}
+              </li>
+            )}
 
             <li className="video-detail__meta-item">
-              <strong>Editor:</strong> Leo Scott
+              <strong>Editor:</strong> {data.editor}
             </li>
 
-            <li className="video-detail__meta-item">
-              <strong>Agency:</strong> Apple
-            </li>
+            {data.agency && (
+              <li className="video-detail__meta-item">
+                <strong>Agency:</strong> {data.agency}
+              </li>
+            )}
+
+            {data.productionCompany && (
+              <li className="video-detail__meta-item">
+                <strong>Production Company:</strong> {data.productionCompany}
+              </li>
+            )}
 
             <li className="video-detail__meta-item">
-              <strong>Production Company:</strong> Iconoclast
-            </li>
-
-            <li className="video-detail__meta-item">
-              <strong>Duration:</strong> 01:24
+              <strong>Duration:</strong> {data.duration}
             </li>
           </ul>
         </div>
       </div>
     </article>
   );
+};
+
+VideoDetail.propTypes = {
+  data: PropTypes.shape({
+    agency: PropTypes.string,
+    client: PropTypes.string,
+    director: PropTypes.string,
+    duration: PropTypes.string,
+    editor: PropTypes.string,
+    productionCompany: PropTypes.string,
+    title: PropTypes.string,
+    videoStill: PropTypes.shape({
+      altText: PropTypes.string,
+      sourceUrl: PropTypes.string,
+    }),
+    videoUrl: PropTypes.string,
+  }).isRequired,
 };

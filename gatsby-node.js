@@ -52,6 +52,7 @@ exports.createPages = async ({ graphql, actions }) => {
             slug
             videoDetail {
               editor
+              editorId
             }
           }
         }
@@ -63,6 +64,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   videoDetailPages.nodes.forEach(page => {
     const editorSlug = page.videoDetail.editor.replace(' ', '-').toLowerCase();
+    const { editorId } = page.videoDetail;
 
     createPage({
       // will be the url for the page
@@ -73,6 +75,7 @@ exports.createPages = async ({ graphql, actions }) => {
       // as a GraphQL variable to query for this page's data.
       context: {
         id: page.id,
+        editorId: parseInt(editorId, 10),
       },
     });
   });

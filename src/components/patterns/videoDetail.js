@@ -31,9 +31,9 @@ export const VideoDetail = ({ data }) => {
                 height="1080"
                 frameBorder="0"
                 webkitAllowFullScreen
-                mozallowfullscreen
+                mozAllowFullScreen
                 allowFullScreen
-                allowtransparency
+                allowTransparency
               />
             </div>
           )}

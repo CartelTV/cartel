@@ -7,92 +7,10 @@ import SEO from '../components/seo';
 import { VideoDetail } from '../components/patterns/videoDetail';
 import ThreeColGrid from '../components/patterns/threeColGrid';
 
-const videosList = [
-  {
-    title: 'Race Day is Still Sacred',
-    client: 'Track Smith',
-    image: {
-      altText: 'Race Day is Still Sacred',
-      sourceUrl: 'https://picsum.photos/1600/900',
-    },
-    pagePath: '/video-detail',
-  },
-  {
-    title: 'Race Day is Still Sacred',
-    client: 'Track Smith',
-    image: {
-      altText: 'Race Day is Still Sacred',
-      sourceUrl: 'https://picsum.photos/1600/900',
-    },
-    pagePath: '/video-detail',
-  },
-  {
-    title: 'Race Day is Still Sacred',
-    client: 'Track Smith',
-    image: {
-      altText: 'Race Day is Still Sacred',
-      sourceUrl: 'https://picsum.photos/1600/900',
-    },
-    pagePath: '/video-detail',
-  },
-  {
-    title: 'Race Day is Still Sacred',
-    client: 'Track Smith',
-    image: {
-      altText: 'Race Day is Still Sacred',
-      sourceUrl: 'https://picsum.photos/1600/900',
-    },
-    pagePath: '/video-detail',
-  },
-  {
-    title: 'Race Day is Still Sacred',
-    client: 'Track Smith',
-    image: {
-      altText: 'Race Day is Still Sacred',
-      sourceUrl: 'https://picsum.photos/1600/900',
-    },
-    pagePath: '/video-detail',
-  },
-  {
-    title: 'Race Day is Still Sacred',
-    client: 'Track Smith',
-    image: {
-      altText: 'Race Day is Still Sacred',
-      sourceUrl: 'https://picsum.photos/1600/900',
-    },
-    pagePath: '/video-detail',
-  },
-  {
-    title: 'Race Day is Still Sacred',
-    client: 'Track Smith',
-    image: {
-      altText: 'Race Day is Still Sacred',
-      sourceUrl: 'https://picsum.photos/1600/900',
-    },
-    pagePath: '/video-detail',
-  },
-  {
-    title: 'Race Day is Still Sacred',
-    client: 'Track Smith',
-    image: {
-      altText: 'Race Day is Still Sacred',
-      sourceUrl: 'https://picsum.photos/1600/900',
-    },
-    pagePath: '/video-detail',
-  },
-  {
-    title: 'Race Day is Still Sacred',
-    client: 'Track Smith',
-    image: {
-      altText: 'Race Day is Still Sacred',
-      sourceUrl: 'https://picsum.photos/1600/900',
-    },
-    pagePath: '/video-detail',
-  },
-];
-
 const VideoDetailPage = ({ data }) => {
   const videoDetails = data.cartel.videoDetailPage.videoDetail;
+  const videosList =
+    data.cartel.editorDetailPages.nodes[0].editorDetail.editorVideos;
 
   return (
     <Layout>
@@ -106,7 +24,7 @@ const VideoDetailPage = ({ data }) => {
 };
 
 export const query = graphql`
-  query($id: ID!) {
+  query($id: ID!, $editorId: Int!) {
     cartel {
       videoDetailPage(id: $id) {
         videoDetail {
@@ -124,6 +42,22 @@ export const query = graphql`
         }
       }
     }
+    cartel {
+      editorDetailPages(where: { id: $editorId }) {
+        nodes {
+          editorDetail {
+            editorVideos {
+              pagePath
+              image {
+                altText
+                sourceUrl
+                title
+              }
+            }
+          }
+        }
+      }
+    }
   }
 `;
 
@@ -137,6 +71,7 @@ VideoDetailPage.propTypes = {
           director: PropTypes.string,
           duration: PropTypes.string,
           editor: PropTypes.string,
+          editorId: PropTypes.string,
           productionCompany: PropTypes.string,
           title: PropTypes.string,
           videoStill: PropTypes.shape({
@@ -145,6 +80,15 @@ VideoDetailPage.propTypes = {
           }),
           videoUrl: PropTypes.string,
         }),
+      }),
+      editorDetailPages: PropTypes.shape({
+        nodes: PropTypes.arrayOf(
+          PropTypes.shape({
+            editorDetail: PropTypes.shape({
+              editorVideos: PropTypes.arrayOf(PropTypes.shape({})),
+            }),
+          })
+        ),
       }),
     }),
   }).isRequired,

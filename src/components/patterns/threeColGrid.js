@@ -3,26 +3,37 @@ import PropTypes from 'prop-types';
 
 import GridImage from './gridImage';
 
-const ThreeColGrid = ({ aspectRatio, list }) => (
+const ThreeColGrid = ({ aspectRatio, editorSlug, list }) => (
   <section className="three-col-grid">
     <ul className="three-col-grid__list">
-      {list.map(item => (
-        <li className="three-col-grid__item" key={item.image.sourceUrl}>
-          <GridImage
-            altText={item.image.altText}
-            copy={item.image.title || item.title || item.name}
-            imgSrc={item.image.sourceUrl}
-            linkUrl={item.pagePath}
-            aspectRatio={aspectRatio}
-          />
-        </li>
-      ))}
+      {list.map(item => {
+        const linkUrl = editorSlug
+          ? `/${editorSlug}/${item.image.title
+              .replaceAll(' – ', '-')
+              .replaceAll('’', '')
+              .replaceAll(' ', '-')
+              .toLowerCase()}`
+          : item.pagePath;
+
+        return (
+          <li className="three-col-grid__item" key={item.image.sourceUrl}>
+            <GridImage
+              altText={item.image.altText}
+              copy={item.image.title || item.title || item.name}
+              imgSrc={item.image.sourceUrl}
+              linkUrl={linkUrl}
+              aspectRatio={aspectRatio}
+            />
+          </li>
+        );
+      })}
     </ul>
   </section>
 );
 
 ThreeColGrid.propTypes = {
   aspectRatio: PropTypes.string,
+  editorSlug: PropTypes.string,
   list: PropTypes.arrayOf(
     PropTypes.shape({
       image: PropTypes.shape({
@@ -37,6 +48,7 @@ ThreeColGrid.propTypes = {
 
 ThreeColGrid.defaultProps = {
   aspectRatio: '1600:900',
+  editorSlug: '',
 };
 
 export default ThreeColGrid;

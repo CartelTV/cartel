@@ -14,6 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
       cartel {
         editorDetailPages(first: 50) {
           nodes {
+            databaseId
             id
             slug
           }
@@ -63,8 +64,12 @@ exports.createPages = async ({ graphql, actions }) => {
   const videoDetailTemplate = path.resolve(`./src/templates/videoDetail.js`);
 
   videoDetailPages.nodes.forEach(page => {
-    const editorSlug = page.videoDetail.editor.replace(' ', '-').toLowerCase();
     const { editorId } = page.videoDetail;
+
+    const editorObj = editorDetailPages.nodes.find(
+      editor => editor.databaseId.toString() === editorId
+    );
+    const editorSlug = editorObj.slug;
 
     createPage({
       // will be the url for the page

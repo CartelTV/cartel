@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
 export const VideoDetail = ({ data }) => {
-  console.log('data:', data);
   const [videoIsPlaying, setVideoIsPlaying] = useState(false);
-  const editorLink = data.editor.replace(' ', '-').toLowerCase();
+  const editorLink = `/${data.editor.replace(' ', '-').toLowerCase()}`;
 
   return (
     <article className="video-detail">
@@ -33,10 +32,7 @@ export const VideoDetail = ({ data }) => {
                 width="1920"
                 height="1080"
                 frameBorder="0"
-                webkitAllowFullScreen
-                mozAllowFullScreen
                 allowFullScreen
-                allowTransparency
               />
             </div>
           )}

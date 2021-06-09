@@ -10,6 +10,10 @@ const EditorDetailPage = ({ data }) => {
   const { title } = data.cartel.editorDetailPage;
   const links = data.cartel.editorDetailPage.editorDetail.editorLinks;
   const videos = data.cartel.editorDetailPage.editorDetail.editorVideos;
+  const editorSlug = title
+    .replace(/ Main/, '')
+    .replaceAll(' ', '-')
+    .toLowerCase();
 
   return (
     <Layout>
@@ -33,7 +37,7 @@ const EditorDetailPage = ({ data }) => {
             ))}
           </ul>
         </article>
-        <ThreeColGrid list={videos} />
+        <ThreeColGrid list={videos} editorSlug={editorSlug} />
       </div>
     </Layout>
   );
@@ -50,7 +54,6 @@ export const query = graphql`
             linkPath
           }
           editorVideos {
-            pagePath
             image {
               altText
               sourceUrl

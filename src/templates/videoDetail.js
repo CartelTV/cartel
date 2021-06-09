@@ -11,13 +11,14 @@ const VideoDetailPage = ({ data }) => {
   const videoDetails = data.cartel.videoDetailPage.videoDetail;
   const videosList =
     data.cartel.editorDetailPages.nodes[0].editorDetail.editorVideos;
+  const editorSlug = data.cartel.editorDetailPages.nodes[0].slug;
 
   return (
     <Layout>
       <SEO title="Video Detail" />
       <VideoDetail data={videoDetails} />
       <div className="container">
-        <ThreeColGrid list={videosList} />
+        <ThreeColGrid list={videosList} editorSlug={editorSlug} />
       </div>
     </Layout>
   );
@@ -28,6 +29,7 @@ export const query = graphql`
     cartel {
       videoDetailPage(id: $id) {
         videoDetail {
+          agency
           client
           director
           duration
@@ -45,9 +47,9 @@ export const query = graphql`
     cartel {
       editorDetailPages(where: { id: $editorId }) {
         nodes {
+          slug
           editorDetail {
             editorVideos {
-              pagePath
               image {
                 altText
                 sourceUrl
@@ -87,6 +89,7 @@ VideoDetailPage.propTypes = {
             editorDetail: PropTypes.shape({
               editorVideos: PropTypes.arrayOf(PropTypes.shape({})),
             }),
+            slug: PropTypes.string,
           })
         ),
       }),

@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 
 export const VideoDetail = ({ data }) => {
+  console.log('data:', data);
   const [videoIsPlaying, setVideoIsPlaying] = useState(false);
+  const editorLink = data.editor.replace(' ', '-').toLowerCase();
 
   return (
     <article className="video-detail">
@@ -52,7 +55,10 @@ export const VideoDetail = ({ data }) => {
             )}
 
             <li className="video-detail__meta-item">
-              <strong>Editor:</strong> {data.editor}
+              <strong>Editor:</strong>{' '}
+              <Link to={editorLink} className="video-detail__editor-link">
+                {data.editor}
+              </Link>
             </li>
 
             {data.agency && (

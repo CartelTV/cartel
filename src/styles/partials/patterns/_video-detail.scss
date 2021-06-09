@@ -101,4 +101,14 @@
       }
     }
   }
+
+  &__editor-link {
+    border: 0;
+    color: inherit;
+
+    &:focus,
+    &:hover {
+      border-bottom: 1px dotted;
+    }
+  }
 }

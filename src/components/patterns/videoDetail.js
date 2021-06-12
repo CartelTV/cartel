@@ -40,9 +40,11 @@ export const VideoDetail = ({ data }) => {
 
         <div className="video-detail__text">
           <h1 className="video-detail__client">{data.client}</h1>
-          <p className="video-detail__project">
-            <strong>{data.title}</strong>
-          </p>
+          {data.title && (
+            <p className="video-detail__project">
+              <strong>{data.title}</strong>
+            </p>
+          )}
           <ul className="video-detail__meta">
             {data.director && (
               <li className="video-detail__meta-item">

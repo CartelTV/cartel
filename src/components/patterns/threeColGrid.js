@@ -10,6 +10,7 @@ const ThreeColGrid = ({ aspectRatio, editorSlug, list }) => (
         const linkUrl = editorSlug
           ? `/${editorSlug}/${item.image.title
               .replaceAll(' – ', '-')
+              .replaceAll('/', '-')
               .replaceAll('.', '-')
               .replaceAll('’', '')
               .replaceAll(' ', '-')

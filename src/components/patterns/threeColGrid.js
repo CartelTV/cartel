@@ -11,9 +11,10 @@ const ThreeColGrid = ({ aspectRatio, editorSlug, list }) => (
           ? `/${editorSlug}/${item.image.title
               .replaceAll(' – ', '-')
               .replaceAll('/', '-')
-              .replaceAll('.', '-')
+              .replaceAll('.', '')
               .replaceAll('’', '')
               .replaceAll(' ', '-')
+              .replaceAll('ø', 'o')
               .toLowerCase()}`
           : item.pagePath;
 

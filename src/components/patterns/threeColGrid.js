@@ -9,12 +9,12 @@ const ThreeColGrid = ({ aspectRatio, editorSlug, list }) => (
       {list.map(item => {
         const linkUrl = editorSlug
           ? `/${editorSlug}/${item.image.title
-              .replaceAll(' – ', '-')
-              .replaceAll('/', '-')
-              .replaceAll('.', '')
-              .replaceAll('’', '')
-              .replaceAll(' ', '-')
-              .replaceAll('ø', 'o')
+              .replace(/ – /g, '-')
+              .replace(/\//g, '-')
+              .replace(/./g, '')
+              .replace(/’/g, '')
+              .replace(/\s+/g, '-')
+              .replace(/ø/g, 'o')
               .toLowerCase()}`
           : item.pagePath;
 

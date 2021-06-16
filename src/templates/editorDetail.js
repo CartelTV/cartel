@@ -12,7 +12,7 @@ const EditorDetailPage = ({ data }) => {
   const videos = data.cartel.editorDetailPage.editorDetail.editorVideos;
   const editorSlug = title
     .replace(/ Main/, '')
-    .replaceAll(' ', '-')
+    .replace(/\s+/g, '-')
     .toLowerCase();
 
   return (

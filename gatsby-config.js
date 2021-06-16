@@ -16,7 +16,7 @@ module.exports = {
       options: {
         typeName: 'Cartel',
         fieldName: 'cartel',
-        url: 'https://pnm.059.myftpupload.com/graphql',
+        url: 'http://pom.aru.mybluehost.me/graphql',
         refetchInterval: 30,
       },
     },

@@ -13,6 +13,8 @@ const ThreeColGrid = ({ aspectRatio, editorSlug, list }) => (
               .replace(/\//g, '-')
               .replace(/\./g, ' ')
               .replace(/’/g, '')
+              .replace(/:/g, '')
+              .replace(/&/g, '')
               .replace(/\s+/g, '-')
               .replace(/ø/g, 'o')
               .toLowerCase()}`

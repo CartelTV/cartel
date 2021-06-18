@@ -17,7 +17,7 @@ const EditorDetailPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Editor Detail" />
+      <SEO title={title.replace(/Main|Other|Comedy|Music|VR/, '')} />
       <div className="container">
         <article className="editor-detail__header">
           <h1 className="editor-detail__name">

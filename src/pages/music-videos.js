@@ -12,7 +12,7 @@ const MusicVideosPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Work" />
+      <SEO title="Music Videos" />
       <h1 className="visuallyhidden">Work</h1>
       <div className="container">
         <NineGridVideos videosList={musicVideos} />

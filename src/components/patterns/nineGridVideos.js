@@ -6,7 +6,6 @@ import { Image } from './image';
 import GridImage from './gridImage';
 
 export const NineGridVideos = ({ videosList }) => {
-  console.log('videosList:', videosList);
   const chunk = 3;
   const videos = videosList;
   const chunks = videos.reduce((resultArray, item, index) => {

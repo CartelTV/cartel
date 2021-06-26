@@ -4,6 +4,10 @@
     position: relative;
     width: 100%;
 
+    &:focus {
+      outline: 3px solid $gold;
+    }
+
     &:focus,
     &:hover {
       img {

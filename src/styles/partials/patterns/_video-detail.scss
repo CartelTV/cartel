@@ -34,6 +34,10 @@
     position: relative;
     transition: opacity 1s ease-out;
 
+    &:focus {
+      outline: 5px solid $gold;
+    }
+
     &::after {
       content: url('/icon-play.svg');
       position: absolute;
@@ -65,20 +69,9 @@
     }
   }
 
-  &__client {
-    font-size: 1.75rem;
-    margin-bottom: 0;
-
-    &::after {
-      border: 0;
-    }
-  }
-
   &__project {
-    font-size: 0.75rem;
-    letter-spacing: 1px;
+    margin-bottom: $space-500;
     position: relative;
-    text-transform: uppercase;
 
     &::after {
       border-top: 3px solid $text-clr;
@@ -90,6 +83,21 @@
       left: 0;
       width: 30px;
     }
+  }
+
+  &__client {
+    font-size: 1.75rem;
+    margin-bottom: 0;
+
+    &::after {
+      border: 0;
+    }
+  }
+
+  &__title {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 
   &__meta {

@@ -4,7 +4,10 @@ import { Link } from 'gatsby';
 
 export const VideoDetail = ({ data }) => {
   const [videoIsPlaying, setVideoIsPlaying] = useState(false);
-  const editorLink = `/${data.editor.replace(' ', '-').toLowerCase()}`;
+  const editorLink = `/${data.editor
+    .replace(' ', '-')
+    .replace(/'/g, '')
+    .toLowerCase()}`;
 
   return (
     <article className="video-detail">

@@ -12,11 +12,19 @@ const ThreeColGrid = ({ aspectRatio, editorSlug, list }) => (
               .replace(/ – /g, '-')
               .replace(/\//g, '-')
               .replace(/\./g, ' ')
+              .replace(/\u2026/g, '')
               .replace(/’/g, '')
               .replace(/:/g, '')
+              .replace(/•/g, '-')
+              .replace(/\|/g, '')
               .replace(/&/g, '')
+              .replace(/\(/g, '')
+              .replace(/\)/g, '')
               .replace(/\s+/g, '-')
               .replace(/ø/g, 'o')
+              .replace(/\$/g, 's')
+              .replace(/é/g, 'e')
+              .replace(/ŏ/g, 'o')
               .toLowerCase()}`
           : item.pagePath;
 

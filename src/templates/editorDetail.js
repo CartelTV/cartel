@@ -13,6 +13,7 @@ const EditorDetailPage = ({ data }) => {
   const editorSlug = title
     .replace(/ Main/, '')
     .replace(/\s+/g, '-')
+    .replace(/’/g, '')
     .toLowerCase();
 
   return (

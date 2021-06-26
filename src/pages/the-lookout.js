@@ -14,6 +14,7 @@ const TheLookoutPage = ({ data }) => {
     lookoutHeroHeaderVideoFallback,
     lookoutEditors,
   } = data.cartel.page.lookoutPage;
+
   return (
     <Layout>
       <SEO title="The Lookout" />
@@ -67,7 +68,9 @@ TheLookoutPage.propTypes = {
     cartel: PropTypes.shape({
       page: PropTypes.shape({
         lookoutPage: PropTypes.shape({
-          lookoutHeroHeaderVideo: PropTypes.string,
+          lookoutHeroHeaderVideo: PropTypes.shape({
+            mediaItemUrl: PropTypes.string,
+          }),
           lookoutHeroHeaderVideoFallback: PropTypes.string,
           lookoutEditors: PropTypes.arrayOf(
             PropTypes.shape({

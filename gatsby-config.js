@@ -16,7 +16,7 @@ module.exports = {
       options: {
         typeName: 'Cartel',
         fieldName: 'cartel',
-        url: 'http://pom.aru.mybluehost.me/graphql',
+        url: 'https://admin.cartel.tv/graphql/',
         refetchInterval: 30,
       },
     },

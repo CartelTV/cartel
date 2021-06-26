@@ -50,7 +50,7 @@ export const Header = ({ siteTitle }) => {
       <nav
         className={`nav nav--small ${isOpen ? 'is-open' : ''}`}
         role="navigation"
-        id="nav-list"
+        id="nav-list-small"
         hidden={windowWidth > 767 ? false : !menuIsExpanded}
       >
         <ul className="nav__list">

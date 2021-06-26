@@ -15,7 +15,11 @@ const VideoDetailPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Video Detail" />
+      <SEO
+        title={`${videoDetails.client} ${
+          videoDetails.title ? `- ${videoDetails.title}` : ''
+        } - ${videoDetails.editor}`}
+      />
       <VideoDetail data={videoDetails} />
       <div className="container">
         <ThreeColGrid list={videosList} editorSlug={editorSlug} />

@@ -71,7 +71,9 @@ TheLookoutPage.propTypes = {
           lookoutHeroHeaderVideo: PropTypes.shape({
             mediaItemUrl: PropTypes.string,
           }),
-          lookoutHeroHeaderVideoFallback: PropTypes.string,
+          lookoutHeroHeaderVideoFallback: PropTypes.shape({
+            mediaItemUrl: PropTypes.string,
+          }),
           lookoutEditors: PropTypes.arrayOf(
             PropTypes.shape({
               image: PropTypes.shape({

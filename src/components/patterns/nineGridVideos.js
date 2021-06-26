@@ -6,6 +6,7 @@ import { Image } from './image';
 import GridImage from './gridImage';
 
 export const NineGridVideos = ({ videosList }) => {
+  console.log('videosList:', videosList);
   const chunk = 3;
   const videos = videosList;
   const chunks = videos.reduce((resultArray, item, index) => {
@@ -37,7 +38,7 @@ export const NineGridVideos = ({ videosList }) => {
                     video[0].title
                   }`}
                   imgSrc={video[0].image.sourceUrl}
-                  linkUrl="/video-detail"
+                  linkUrl={video[0].pagePath}
                   aspectRatio="1600:900"
                 />
               </div>
@@ -48,7 +49,7 @@ export const NineGridVideos = ({ videosList }) => {
                     video[1].title
                   }`}
                   imgSrc={video[1].image.sourceUrl}
-                  linkUrl="/video-detail"
+                  linkUrl={video[1].pagePath}
                   aspectRatio="1600:900"
                 />
               </div>
@@ -59,7 +60,7 @@ export const NineGridVideos = ({ videosList }) => {
                     video[2].title
                   }`}
                   imgSrc={video[2].image.sourceUrl}
-                  linkUrl="/video-detail"
+                  linkUrl={video[2].pagePath}
                   aspectRatio="1600:900"
                 />
               </div>
@@ -74,7 +75,7 @@ export const NineGridVideos = ({ videosList }) => {
               key={video[1].image.sourceUrl}
             >
               <div className="nine-grid-videos__item nine-grid-videos__item--large">
-                <Link to="/video-detail" className="nine-grid-videos__link">
+                <Link to={video[0].pagePath} className="nine-grid-videos__link">
                   <Image
                     srcSmall={video[0].image.sourceUrl}
                     alt={video[0].image.altText}
@@ -100,7 +101,7 @@ export const NineGridVideos = ({ videosList }) => {
                       video[1].title
                     }`}
                     imgSrc={video[1].image.sourceUrl}
-                    linkUrl="/video-detail"
+                    linkUrl={video[1].pagePath}
                     aspectRatio="1600:900"
                   />
                 </div>
@@ -111,7 +112,7 @@ export const NineGridVideos = ({ videosList }) => {
                       video[2].title
                     }`}
                     imgSrc={video[2].image.sourceUrl}
-                    linkUrl="/video-detail"
+                    linkUrl={video[2].pagePath}
                     aspectRatio="1600:900"
                   />
                 </div>
@@ -133,7 +134,7 @@ export const NineGridVideos = ({ videosList }) => {
                     video[0].title
                   }`}
                   imgSrc={video[0].image.sourceUrl}
-                  linkUrl="/video-detail"
+                  linkUrl={video[0].pagePath}
                   aspectRatio="1600:900"
                 />
               </div>
@@ -144,13 +145,13 @@ export const NineGridVideos = ({ videosList }) => {
                     video[1].title
                   }`}
                   imgSrc={video[1].image.sourceUrl}
-                  linkUrl="/video-detail"
+                  linkUrl={video[1].pagePath}
                   aspectRatio="1600:900"
                 />
               </div>
             </div>
             <div className="nine-grid-videos__item nine-grid-videos__item--large">
-              <Link to="/video-detail" className="nine-grid-videos__link">
+              <Link to={video[2].pagePath} className="nine-grid-videos__link">
                 <Image
                   srcSmall={video[2].image.sourceUrl}
                   alt={video[2].image.altText}

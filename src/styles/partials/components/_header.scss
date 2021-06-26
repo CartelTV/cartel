@@ -18,7 +18,7 @@
     }
 
     &.is-open {
-      border-bottom: 3px solid $gold;
+      border-bottom: 3px solid $gold-dark;
       max-height: 235px;
     }
   }
@@ -59,7 +59,7 @@
   }
 
   &__link {
-    color: $gold;
+    color: $gold-dark;
     font-weight: 600;
     letter-spacing: 1px;
     outline: none;
@@ -92,7 +92,7 @@
 .header {
   align-items: center;
   background-color: $bg-clr;
-  border-bottom: 3px solid $gold;
+  border-bottom: 3px solid $gold-dark;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -111,7 +111,7 @@
 
   &__menu-button {
     align-items: center;
-    color: $gold;
+    color: $gold-dark;
     display: flex;
     font-weight: 600;
     letter-spacing: 1px;
@@ -132,7 +132,7 @@
   }
 
   &__logo-wrapper {
-    border-top: 3px solid $gold;
+    border-top: 3px solid $gold-dark;
     display: flex;
     justify-content: center;
     padding-bottom: $space-500;

@@ -35,7 +35,7 @@ footer {
   }
 
   a {
-    border-bottom: 1px solid rgba($gold, 0.5);
+    border-bottom: 1px solid rgba($gold-dark, 0.5);
     color: $link-clr;
     text-decoration: none;
 
@@ -90,7 +90,7 @@ nav {
 }
 
 hr {
-  border-color: $gold;
+  border-color: $gold-dark;
 }
 
 video {
@@ -134,7 +134,7 @@ video {
 }
 
 .page-heading {
-  color: $gold;
+  color: $gold-dark;
   padding-bottom: $space-700;
   padding-left: $space-400;
   padding-top: $space-700;

@@ -1,5 +1,7 @@
 /* eslint-disable no-new */
 import React, { Fragment, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
 import { Layout } from '../components/layout';
@@ -10,7 +12,18 @@ import iconFacebook from '../images/icon-facebook.svg';
 import iconInstagram from '../images/icon-instagram.svg';
 import iconTwitter from '../images/icon-twitter.svg';
 
-const ContactPage = () => {
+const ContactPage = ({ data }) => {
+  const contactData = data.cartel.page.contactPage;
+  const {
+    contactAddress,
+    contactPhoneNumber,
+    contactFacebookUrl,
+    contactInstagramUrl,
+    contactTwitterUrl,
+    contactPersons,
+    contactRepresentation,
+  } = contactData;
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.initMap = () => {
@@ -120,7 +133,7 @@ const ContactPage = () => {
               <ul className="contact__social-list">
                 <li className="contact__social-item">
                   <a
-                    href="http://instagram.com/cartel.tv"
+                    href={contactInstagramUrl}
                     className="contact__social-link"
                   >
                     <img
@@ -131,10 +144,7 @@ const ContactPage = () => {
                   </a>
                 </li>
                 <li className="contact__social-item">
-                  <a
-                    href="http://www.facebook.com/cartel.tv"
-                    className="contact__social-link"
-                  >
+                  <a href={contactFacebookUrl} className="contact__social-link">
                     <img
                       src={iconFacebook}
                       alt="Cartel on Facebook"
@@ -143,10 +153,7 @@ const ContactPage = () => {
                   </a>
                 </li>
                 <li className="contact__social-item">
-                  <a
-                    href="http://cartel-blog.tumblr.com/"
-                    className="contact__social-link"
-                  >
+                  <a href={contactTwitterUrl} className="contact__social-link">
                     <img
                       src={iconTwitter}
                       alt="Cartel on Twitter"
@@ -156,9 +163,7 @@ const ContactPage = () => {
                 </li>
               </ul>
 
-              <address className="contact__address">
-                1708 Berkeley Street, Santa Monica CA 90404
-              </address>
+              <address className="contact__address">{contactAddress}</address>
             </div>
 
             <div className="contact__col">
@@ -167,94 +172,71 @@ const ContactPage = () => {
               <div className="contact__group">
                 <div className="contact__block">
                   <h2>Enquiries</h2>
-                  <a href="tel:13108285555">310-828-5555</a>
+                  <a
+                    href={`tel:1${contactPhoneNumber
+                      .replace(/–/g, '')
+                      .replace(/-/g, '')}`}
+                  >
+                    {contactPhoneNumber}
+                  </a>
                 </div>
 
-                <div className="contact__block">
-                  <p>
-                    <strong>Lauren Bleiweiss</strong>
-                    <br />
-                    Executive Producer / Managing Director
-                    <br />
-                    <a href="mailto:lauren@cartel.tv">lauren@cartel.tv</a>
-                    <br />
-                    <a href="tel:19173748436">917-374-8436</a> (Mobile)
-                  </p>
-                </div>
-                <div className="contact__block">
-                  <p>
-                    <strong>Alaina Zanotti</strong>
-                    <br />
-                    Executive Producer / Head of Sales
-                    <br />
-                    <a href="mailto:alaina@cartel.tv">alaina@cartel.tv</a>
-                    <br />
-                    <a href="tel:13105700918">310-570-0918</a> (Mobile)
-                  </p>
-                </div>
+                {contactPersons.map(person => (
+                  <div
+                    className="contact__block"
+                    key={person.contactPersonName}
+                  >
+                    <p>
+                      <strong>{person.contactPersonName}</strong>
+                      <br />
+                      {person.contactPersonTitle}
+                      <br />
+                      <a href={`mailto:${person.contactPersonEmail}`}>
+                        {person.contactPersonEmail}
+                      </a>
+                      <br />
+                      <a
+                        href={`tel:1${person.contactPersonPhone
+                          .replace(/–/g, '')
+                          .replace(/-/g, '')}`}
+                      >
+                        {person.contactPersonPhone}
+                      </a>
+                    </p>
+                  </div>
+                ))}
               </div>
 
               <div className="contact__group">
                 <h2>Representation</h2>
                 <div className="contact__representation-wrapper">
-                  <div className="contact__block">
-                    <h3>East Coast Sales</h3>
-                    <p>
-                      Tara Averill
-                      <br />
-                      <a href="mailto:tara@representationco.com">
-                        tara@representationco.com
-                      </a>
-                      <br />
-                      <a href="tel:12123438085">212-343-8085</a>
-                    </p>
-
-                    <p>
-                      John Robertson
-                      <br />
-                      <a href="mailto:john@representationco.com">
-                        john@representationco.com
-                      </a>
-                      <br />
-                      <a href="tel:12123438085">212-343-8085</a>
-                    </p>
-                  </div>
-
-                  <div className="contact__block">
-                    <h3>West Coast Sales</h3>
-                    <p>
-                      <strong>Millie Munro</strong>
-                      <br />
-                      <a href="mailto:bueno@wearebueno.com">
-                        bueno@wearebueno.com{' '}
-                      </a>
-                      <br />
-                      <a href="tel:13107955035">310-795-5035</a>
-                    </p>
-
-                    <p>
-                      <strong>Bryan Shrednick</strong>
-                      <br />
-                      <a href="mailto:bueno@wearebueno.com">
-                        bueno@wearebueno.com{' '}
-                      </a>
-                      <br />
-                      <a href="tel:13109804900">310-980-4900</a>
-                    </p>
-                  </div>
-
-                  <div className="contact__block">
-                    <h3>Midwest Sales</h3>
-                    <p>
-                      <strong>Jimmy Waldron</strong>
-                      <br />
-                      <a href="mailto:jimmy@themreps.com">
-                        jimmy@themreps.com{' '}
-                      </a>
-                      <br />
-                      <a href="tel:18477275154">847-727-5154</a> (Mobile)
-                    </p>
-                  </div>
+                  {contactRepresentation.map(group => (
+                    <div
+                      className="contact__block"
+                      key={group.representationGroupName}
+                    >
+                      <h3>{group.representationGroupName}</h3>
+                      {group.representationContactPersons.map(person => (
+                        <p key={person.representationContactName}>
+                          {person.representationContactName}
+                          <br />
+                          <a
+                            href={`mailto:${person.representationContactEmail}`}
+                          >
+                            {person.representationContactEmail}
+                          </a>
+                          <br />
+                          <a
+                            href={`tel:1${person.representationContactPhone
+                              .replace(/–/g, '')
+                              .replace(/-/g, '')}`}
+                          >
+                            {person.representationContactPhone}
+                          </a>
+                        </p>
+                      ))}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -263,6 +245,54 @@ const ContactPage = () => {
       </Layout>
     </Fragment>
   );
+};
+
+export const query = graphql`
+  query {
+    cartel {
+      page(id: "95", idType: DATABASE_ID) {
+        contactPage {
+          contactPhoneNumber
+          contactPersons {
+            contactPersonName
+            contactPersonTitle
+            contactPersonEmail
+            contactPersonPhone
+          }
+          contactRepresentation {
+            representationGroupName
+            representationContactPersons {
+              representationContactName
+              representationContactEmail
+              representationContactPhone
+            }
+          }
+          contactInstagramUrl
+          contactFacebookUrl
+          contactTwitterUrl
+          contactAddress
+        }
+      }
+    }
+  }
+`;
+
+ContactPage.propTypes = {
+  data: PropTypes.shape({
+    cartel: PropTypes.shape({
+      page: PropTypes.shape({
+        contactPage: PropTypes.shape({
+          contactAddress: PropTypes.string,
+          contactFacebookUrl: PropTypes.string,
+          contactInstagramUrl: PropTypes.string,
+          contactPersons: PropTypes.arrayOf(PropTypes.shape({})),
+          contactPhoneNumber: PropTypes.string,
+          contactRepresentation: PropTypes.arrayOf(PropTypes.shape({})),
+          contactTwitterUrl: PropTypes.string,
+        }),
+      }),
+    }),
+  }).isRequired,
 };
 
 export default ContactPage;

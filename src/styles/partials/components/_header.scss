@@ -74,17 +74,10 @@
     &:focus,
     &:hover,
     &.active {
-      &::before {
-        background-color: $aqua;
-        border-radius: 50%;
-        content: '';
-        height: 0.5rem;
-        left: -0.75rem;
-        position: absolute;
-        top: 45%;
-        transform: translateY(-50%);
-        width: 0.5rem;
-      }
+      text-decoration: underline;
+      text-decoration-color: $aqua;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
     }
   }
 }

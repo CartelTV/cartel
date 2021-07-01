@@ -36,7 +36,7 @@
     &:focus,
     &:hover {
       img {
-        filter: grayscale(0);
+        filter: grayscale(0) sepia(0) hue-rotate(0);
       }
     }
   }
@@ -81,6 +81,11 @@
     }
 
     &--large {
+      .nine-grid-videos__text {
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
       @include mq($S) {
         .nine-grid-videos__text {
           font-size: 1.25rem;
@@ -170,8 +175,8 @@
     }
 
     img {
-      filter: grayscale(1);
-      transition: filter 0.33s ease-out;
+      filter: grayscale(1) sepia(0.2) hue-rotate(175deg);
+      transition: filter 0.2s ease-out;
 
       @include mq($M) {
         margin-bottom: $space-300;

@@ -11,13 +11,13 @@
     &:focus,
     &:hover {
       img {
-        filter: grayscale(0);
+        filter: grayscale(0) sepia(0) hue-rotate(0);
       }
     }
 
     img {
-      filter: grayscale(1);
-      transition: filter 0.33s ease-out;
+      filter: grayscale(1) sepia(0.2) hue-rotate(175deg);
+      transition: filter 0.2s ease-out;
     }
   }
 
@@ -39,7 +39,8 @@
   &__text {
     font-family: $font-sans-light;
     font-size: 0.75rem;
-    letter-spacing: 1px;
+    font-weight: bold;
+    letter-spacing: 2px;
     text-align: center;
     text-transform: uppercase;
   }

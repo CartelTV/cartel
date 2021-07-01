@@ -11,12 +11,12 @@
     &:focus,
     &:hover {
       img {
-        filter: grayscale(0) sepia(0) hue-rotate(0);
+        filter: grayscale(0) sepia(0) hue-rotate(0) brightness(1);
       }
     }
 
     img {
-      filter: grayscale(1) sepia(0.2) hue-rotate(175deg);
+      filter: grayscale(1) sepia(0.25) hue-rotate(175deg) brightness(1.25);
       transition: filter 0.2s ease-out;
     }
   }
@@ -42,6 +42,7 @@
     font-weight: bold;
     letter-spacing: 2px;
     text-align: center;
+    text-shadow: 1px 1px 20px $black;
     text-transform: uppercase;
   }
 }

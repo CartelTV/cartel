@@ -10,7 +10,6 @@ import SEO from '../components/seo';
 import iconMapMarker from '../images/map-pin.png';
 import iconFacebook from '../images/icon-facebook.svg';
 import iconInstagram from '../images/icon-instagram.svg';
-import iconTwitter from '../images/icon-twitter.svg';
 
 const ContactPage = ({ data }) => {
   const contactData = data.cartel.page.contactPage;
@@ -19,7 +18,6 @@ const ContactPage = ({ data }) => {
     contactPhoneNumber,
     contactFacebookUrl,
     contactInstagramUrl,
-    contactTwitterUrl,
     contactPersons,
     contactRepresentation,
   } = contactData;
@@ -131,36 +129,34 @@ const ContactPage = ({ data }) => {
             <div className="contact__col">
               <div id="map" />
               <ul className="contact__social-list">
-                <li className="contact__social-item">
-                  <a
-                    href={contactInstagramUrl}
-                    className="contact__social-link"
-                  >
-                    <img
-                      src={iconInstagram}
-                      alt="Cartel on Instagram"
-                      className="contact__social-icon"
-                    />
-                  </a>
-                </li>
-                <li className="contact__social-item">
-                  <a href={contactFacebookUrl} className="contact__social-link">
-                    <img
-                      src={iconFacebook}
-                      alt="Cartel on Facebook"
-                      className="contact__social-icon"
-                    />
-                  </a>
-                </li>
-                <li className="contact__social-item">
-                  <a href={contactTwitterUrl} className="contact__social-link">
-                    <img
-                      src={iconTwitter}
-                      alt="Cartel on Twitter"
-                      className="contact__social-icon"
-                    />
-                  </a>
-                </li>
+                {contactInstagramUrl && (
+                  <li className="contact__social-item">
+                    <a
+                      href={contactInstagramUrl}
+                      className="contact__social-link"
+                    >
+                      <img
+                        src={iconInstagram}
+                        alt="Cartel on Instagram"
+                        className="contact__social-icon"
+                      />
+                    </a>
+                  </li>
+                )}
+                {contactFacebookUrl && (
+                  <li className="contact__social-item">
+                    <a
+                      href={contactFacebookUrl}
+                      className="contact__social-link"
+                    >
+                      <img
+                        src={iconFacebook}
+                        alt="Cartel on Facebook"
+                        className="contact__social-icon"
+                      />
+                    </a>
+                  </li>
+                )}
               </ul>
 
               <address className="contact__address">{contactAddress}</address>
@@ -274,7 +270,6 @@ export const query = graphql`
           }
           contactInstagramUrl
           contactFacebookUrl
-          contactTwitterUrl
           contactAddress
         }
       }
@@ -293,7 +288,6 @@ ContactPage.propTypes = {
           contactPersons: PropTypes.arrayOf(PropTypes.shape({})),
           contactPhoneNumber: PropTypes.string,
           contactRepresentation: PropTypes.arrayOf(PropTypes.shape({})),
-          contactTwitterUrl: PropTypes.string,
         }),
       }),
     }),

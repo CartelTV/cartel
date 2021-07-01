@@ -184,6 +184,11 @@ const ContactPage = ({ data }) => {
                 {contactPersons.map(person => (
                   <div
                     className="contact__block"
+                    style={
+                      contactPersons.length === 1
+                        ? { marginBottom: '7.25rem' }
+                        : null
+                    }
                     key={person.contactPersonName}
                   >
                     <p>

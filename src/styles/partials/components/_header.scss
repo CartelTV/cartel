@@ -143,13 +143,10 @@
   }
 
   &__logo-link {
-    outline: none;
+    outline-color: $gold-dark;
+    outline-offset: $space-200;
     transform-origin: right;
     transition: transform 0.2s ease-out;
-
-    &:focus {
-      border-bottom: 1px solid $aqua;
-    }
   }
 
   &__logo {

@@ -182,7 +182,7 @@
     img {
       filter: grayscale(1) brightness(1.1) sepia(0.25) hue-rotate(175deg)
         opacity(0.9);
-      transition: filter 0.2s ease-out;
+      transition: filter 0.15s ease-out;
 
       @include mq($M) {
         margin-bottom: $space-300;

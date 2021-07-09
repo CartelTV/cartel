@@ -11,13 +11,14 @@
     &:focus,
     &:hover {
       img {
-        filter: grayscale(0) sepia(0) hue-rotate(0) brightness(1);
+        filter: grayscale(0) brightness(1) sepia(0) hue-rotate(0) opacity(1);
       }
     }
 
     img {
-      filter: grayscale(1) sepia(0.25) hue-rotate(175deg) brightness(1.25);
-      transition: filter 0.2s ease-out;
+      filter: grayscale(1) brightness(1.1) sepia(0.25) hue-rotate(175deg)
+        opacity(0.9);
+      transition: filter 0.15s ease-out;
     }
   }
 
@@ -34,6 +35,13 @@
     position: absolute;
     right: 0;
     top: 0;
+
+    &:focus,
+    &:hover {
+      p {
+        opacity: 1;
+      }
+    }
   }
 
   &__text {
@@ -41,8 +49,14 @@
     font-size: 0.75rem;
     font-weight: bold;
     letter-spacing: 2px;
+    opacity: 0;
     text-align: center;
     text-shadow: 1px 1px 20px $black;
     text-transform: uppercase;
+    transition: opacity 0.2s ease-out;
   }
+}
+
+.editors .grid-image__text {
+  opacity: 1;
 }

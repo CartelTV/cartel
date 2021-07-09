@@ -36,7 +36,7 @@
     &:focus,
     &:hover {
       img {
-        filter: grayscale(0) sepia(0) hue-rotate(0) brightness(1);
+        filter: grayscale(0) brightness(1) sepia(0) hue-rotate(0) opacity(1);
       }
     }
   }
@@ -176,7 +176,8 @@
     }
 
     img {
-      filter: grayscale(1) sepia(0.25) hue-rotate(175deg) brightness(1.25);
+      filter: grayscale(1) brightness(1.1) sepia(0.25) hue-rotate(175deg)
+        opacity(0.9);
       transition: filter 0.2s ease-out;
 
       @include mq($M) {

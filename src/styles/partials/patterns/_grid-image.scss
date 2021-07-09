@@ -10,6 +10,10 @@
 
     &:focus,
     &:hover {
+      p {
+        opacity: 1;
+      }
+
       img {
         filter: grayscale(0) brightness(1) sepia(0) hue-rotate(0) opacity(1);
       }
@@ -35,13 +39,6 @@
     position: absolute;
     right: 0;
     top: 0;
-
-    &:focus,
-    &:hover {
-      p {
-        opacity: 1;
-      }
-    }
   }
 
   &__text {

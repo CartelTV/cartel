@@ -35,6 +35,10 @@
 
     &:focus,
     &:hover {
+      p {
+        opacity: 1;
+      }
+
       img {
         filter: grayscale(0) brightness(1) sepia(0) hue-rotate(0) opacity(1);
       }
@@ -191,7 +195,9 @@
   }
 
   &__text {
+    opacity: 0;
     text-align: center;
+
     @include mq($M) {
       font-size: 0.6875rem;
     }

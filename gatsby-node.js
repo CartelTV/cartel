@@ -84,4 +84,52 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
+
+  // Generic pages
+  const {
+    data: {
+      cartel: {
+        pages: { nodes },
+      },
+    },
+  } = await graphql(`
+    query {
+      cartel {
+        pages {
+          nodes {
+            content
+            pageId
+            slug
+            title
+          }
+        }
+      }
+    }
+  `);
+
+  const genericPageTemplate = path.resolve(`./src/templates/genericPage.js`);
+
+  nodes
+    .filter(
+      page =>
+        page.title !== 'Contact' &&
+        page.title !== 'Editors' &&
+        page.title !== 'Music Videos' &&
+        page.title !== 'The Lookout' &&
+        page.title !== 'Work'
+    )
+    .forEach(page => {
+      createPage({
+        // will be the url for the page
+        path: page.slug,
+        // specify the component template of your choice
+        component: slash(genericPageTemplate),
+        // In the ^template's GraphQL query, 'id' will be available
+        // as a GraphQL variable to query for this page's data.
+        context: {
+          id: page.id,
+          pageId: page.pageId,
+        },
+      });
+    });
 };

@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import { graphql, Link, StaticQuery } from 'gatsby';
 import { useWindowWidth } from '@react-hook/window-size';
 
 import cartelTextLogo from '../images/cartel-logo-text.svg';
 
-export const Header = ({ siteTitle }) => {
+export const Header = ({ location, siteTitle }) => {
   const [menuIsExpanded, setMenuIsExpanded] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef();
@@ -45,121 +45,107 @@ export const Header = ({ siteTitle }) => {
   }, [menuIsExpanded, windowWidth]);
 
   return (
-    <div className="container">
-      {' '}
-      <nav
-        className={`nav nav--small ${isOpen ? 'is-open' : ''}`}
-        role="navigation"
-        id="nav-list-small"
-        hidden={windowWidth > 767 ? false : !menuIsExpanded}
-      >
-        <ul className="nav__list">
-          <li className="nav__item">
-            <Link to="/work" className="nav__link" ref={menuRef}>
-              Work
-            </Link>
-          </li>
-          <li className="nav__item">
-            <Link to="/editors" className="nav__link">
-              Editors
-            </Link>
-          </li>
-          <li className="nav__item">
-            <Link to="/the-lookout" className="nav__link">
-              The Lookout
-            </Link>
-          </li>
-          <li className="nav__item">
-            <Link to="/music-videos" className="nav__link">
-              Music Videos
-            </Link>
-          </li>
-          <li className="nav__item">
-            <Link to="/contact" className="nav__link">
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <header className={`header ${isOpen ? 'is-open' : ''}`} role="banner">
-        <button
-          className="header__menu-button"
-          type="button"
-          aria-label="open site navigation"
-          aria-controls="nav-list"
-          aria-expanded={menuIsExpanded}
-          onClick={toggleMenu}
-        >
-          Menu
-        </button>
+    <StaticQuery
+      query={graphql`
+        query {
+          cartel {
+            menus {
+              nodes {
+                menuItems {
+                  edges {
+                    node {
+                      label
+                      path
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={data => (
+        <div className="container">
+          {' '}
+          <nav
+            className={`nav nav--small ${isOpen ? 'is-open' : ''}`}
+            role="navigation"
+            id="nav-list-small"
+            hidden={windowWidth > 767 ? false : !menuIsExpanded}
+          >
+            <ul className="nav__list">
+              {data.cartel.menus.nodes[0].menuItems.edges.map(item => (
+                <li className="nav__item" key={item.node.path}>
+                  <Link
+                    to={item.node.path}
+                    className="nav__link"
+                    ref={
+                      item.node.path === location && location.pathname
+                        ? menuRef
+                        : null
+                    }
+                    tabIndex={menuIsExpanded ? 0 : -1}
+                  >
+                    {item.node.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <header className={`header ${isOpen ? 'is-open' : ''}`} role="banner">
+            <button
+              className="header__menu-button"
+              type="button"
+              aria-label="open site navigation"
+              aria-controls="nav-list"
+              aria-expanded={menuIsExpanded}
+              onClick={toggleMenu}
+            >
+              Menu
+            </button>
 
-        <div className="header__logo-wrapper">
-          <Link className="header__logo-link" to="/">
-            <h1 className="visuallyhidden">{siteTitle}</h1>
-            <img
-              className="header__logo"
-              src={cartelTextLogo}
-              alt="Cartel logo"
-            />
-          </Link>
+            <div className="header__logo-wrapper">
+              <Link className="header__logo-link" to="/">
+                <h1 className="visuallyhidden">{siteTitle}</h1>
+                <img
+                  className="header__logo"
+                  src={cartelTextLogo}
+                  alt="Cartel logo"
+                />
+              </Link>
+            </div>
+
+            <nav
+              className={`nav nav--large ${isOpen ? 'is-open' : ''}`}
+              role="navigation"
+              id="nav-list"
+              hidden={windowWidth > 767 ? false : !menuIsExpanded}
+            >
+              <ul className="nav__list">
+                {data.cartel.menus.nodes[0].menuItems.edges.map(item => (
+                  <li className="nav__item" key={item.node.path}>
+                    <Link
+                      to={item.node.path}
+                      className="nav__link"
+                      activeClassName="active"
+                    >
+                      {item.node.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </header>
         </div>
-
-        <nav
-          className={`nav nav--large ${isOpen ? 'is-open' : ''}`}
-          role="navigation"
-          id="nav-list"
-          hidden={windowWidth > 767 ? false : !menuIsExpanded}
-        >
-          <ul className="nav__list">
-            <li className="nav__item">
-              <Link to="/work" className="nav__link" activeClassName="active">
-                Work
-              </Link>
-            </li>
-            <li className="nav__item">
-              <Link
-                to="/editors"
-                className="nav__link"
-                activeClassName="active"
-              >
-                Editors
-              </Link>
-            </li>
-            <li className="nav__item">
-              <Link
-                to="/the-lookout"
-                className="nav__link"
-                activeClassName="active"
-              >
-                The Lookout
-              </Link>
-            </li>
-            <li className="nav__item">
-              <Link
-                to="/music-videos"
-                className="nav__link"
-                activeClassName="active"
-              >
-                Music Videos
-              </Link>
-            </li>
-            <li className="nav__item">
-              <Link
-                to="/contact"
-                className="nav__link"
-                activeClassName="active"
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-    </div>
+      )}
+    />
   );
 };
 
 Header.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+  }).isRequired,
   siteTitle: PropTypes.string,
 };
 

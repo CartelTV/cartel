@@ -6,11 +6,11 @@ import { Layout } from '../components/layout';
 import SEO from '../components/seo';
 import ThreeColGrid from '../components/patterns/threeColGrid';
 
-const EditorsPage = ({ data }) => {
+const EditorsPage = ({ data, location }) => {
   const { editors } = data.cartel.page.editors;
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title="Editors" />
       <article className="editors">
         <h1 className="visuallyhidden">Editors</h1>
@@ -60,6 +60,7 @@ EditorsPage.propTypes = {
       }),
     }),
   }).isRequired,
+  location: PropTypes.shape({}).isRequired,
 };
 
 export default EditorsPage;

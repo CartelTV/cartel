@@ -7,11 +7,11 @@ import SEO from '../components/seo';
 
 import { NineGridVideos } from '../components/patterns/nineGridVideos';
 
-const MusicVideosPage = ({ data }) => {
+const MusicVideosPage = ({ data, location }) => {
   const musicVideos = data.cartel.page.musicVideos.videos;
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title="Music Videos" />
       <h1 className="visuallyhidden">Work</h1>
       <div className="container">
@@ -61,6 +61,7 @@ MusicVideosPage.propTypes = {
       }),
     }),
   }).isRequired,
+  location: PropTypes.shape({}).isRequired,
 };
 
 export default MusicVideosPage;

@@ -8,7 +8,7 @@ import { Layout } from '../components/layout';
 import SEO from '../components/seo';
 import ThreeColGrid from '../components/patterns/threeColGrid';
 
-const TheLookoutPage = ({ data }) => {
+const TheLookoutPage = ({ data, location }) => {
   const {
     lookoutHeroHeaderVideo,
     lookoutHeroHeaderVideoFallback,
@@ -16,7 +16,7 @@ const TheLookoutPage = ({ data }) => {
   } = data.cartel.page.lookoutPage;
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title="The Lookout" />
       <article className="editors">
         <h1 className="visuallyhidden">Editors</h1>
@@ -88,6 +88,7 @@ TheLookoutPage.propTypes = {
       }),
     }),
   }).isRequired,
+  location: PropTypes.shape({}).isRequired,
 };
 
 export default TheLookoutPage;

@@ -11,7 +11,7 @@ import iconMapMarker from '../images/map-pin.png';
 import iconFacebook from '../images/icon-facebook.svg';
 import iconInstagram from '../images/icon-instagram.svg';
 
-const ContactPage = ({ data }) => {
+const ContactPage = ({ data, location }) => {
   const contactData = data.cartel.page.contactPage;
   const {
     contactAddress,
@@ -122,7 +122,7 @@ const ContactPage = ({ data }) => {
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSQ-2TUSm0yqVfuotzZB44vTTHDQkeUNA&callback=initMap"
         />
       </Helmet>
-      <Layout>
+      <Layout location={location}>
         <SEO title="Contact" />
         <article className="contact">
           <div className="container">
@@ -292,6 +292,7 @@ ContactPage.propTypes = {
       }),
     }),
   }).isRequired,
+  location: PropTypes.shape({}).isRequired,
 };
 
 export default ContactPage;

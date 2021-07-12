@@ -7,7 +7,7 @@ import '../styles/main.scss';
 import { Header } from './header';
 import { Footer } from './footer';
 
-export const Layout = ({ children }) => (
+export const Layout = ({ children, location }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -23,7 +23,7 @@ export const Layout = ({ children }) => (
         <a className="skip-link" href="#main">
           skip to main content
         </a>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={data.site.siteMetadata.title} location={location} />
         <main className="main" id="main" role="main">
           {children}
         </main>
@@ -35,4 +35,9 @@ export const Layout = ({ children }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  location: PropTypes.shape({}),
+};
+
+Layout.defaultProps = {
+  location: {},
 };

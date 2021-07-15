@@ -6,6 +6,11 @@
     @include mq($M) {
       display: flex;
       flex-direction: row;
+
+      @supports (display: grid) {
+        display: grid;
+        grid-template-columns: calc(67% - 0.75rem) calc(33% - 0.75rem);
+      }
     }
   }
 

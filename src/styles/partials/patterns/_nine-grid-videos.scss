@@ -14,15 +14,17 @@
         align-items: center;
 
         &--one {
-          grid-template-columns: 66% 32%;
+          grid-template-columns: calc(67% - 0.75rem) calc(33% - 0.75rem);
         }
 
         &--two {
-          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-columns:
+            calc(33.33333% - 1rem) calc(33.33333% - 1rem)
+            calc(33.33333% - 1rem);
         }
 
         &--three {
-          grid-template-columns: 32% 66%;
+          grid-template-columns: calc(33% - 0.75rem) calc(67% - 0.75rem);
         }
       }
     }
@@ -103,7 +105,16 @@
 
         @supports (display: grid) {
           flex-basis: unset;
+          height: 100%;
           max-width: none;
+        }
+
+        .nine-grid-videos__link {
+          height: 100%;
+        }
+
+        img {
+          height: 100%;
         }
 
         .nine-grid-videos__text {

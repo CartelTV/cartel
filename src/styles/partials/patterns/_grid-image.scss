@@ -20,8 +20,8 @@
     }
 
     img {
-      filter: grayscale(1) brightness(1.1) sepia(0.25) hue-rotate(175deg)
-        opacity(0.9);
+      filter: grayscale(1) brightness(1.5) sepia(0.75) hue-rotate(175deg)
+        opacity(0.75);
       transition: filter 0.15s ease-out;
     }
   }

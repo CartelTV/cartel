@@ -69,7 +69,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const editorObj = editorDetailPages.nodes.find(
       editor => editor.databaseId.toString() === editorId
     );
-    const editorSlug = editorObj.slug;
+    const editorSlug = editorObj && editorObj.slug;
 
     createPage({
       // will be the url for the page

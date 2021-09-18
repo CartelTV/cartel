@@ -24,14 +24,12 @@ const EditorDetailPage = ({ data, location }) => {
 };
 
 export const query = graphql`
-  query($pageId: Int!) {
-    cartel {
-      pages(where: { id: $pageId }) {
-        edges {
-          node {
-            content
-            title
-          }
+  query($pageId: String!) {
+    allWpPage(filter: { id: { eq: $pageId } }) {
+      edges {
+        node {
+          content
+          title
         }
       }
     }

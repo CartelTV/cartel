@@ -48,15 +48,13 @@ export const Header = ({ location, siteTitle }) => {
     <StaticQuery
       query={graphql`
         query {
-          cartel {
-            menus {
-              nodes {
+          allWpMenu {
+            edges {
+              node {
                 menuItems {
-                  edges {
-                    node {
-                      label
-                      path
-                    }
+                  nodes {
+                    label
+                    path
                   }
                 }
               }
@@ -74,19 +72,19 @@ export const Header = ({ location, siteTitle }) => {
             hidden={windowWidth > 767 ? false : !menuIsExpanded}
           >
             <ul className="nav__list">
-              {data.cartel.menus.nodes[0].menuItems.edges.map(item => (
-                <li className="nav__item" key={item.node.path}>
+              {data.allWpMenu.edges[0].node.menuItems.nodes.map(item => (
+                <li className="nav__item" key={item.path}>
                   <Link
-                    to={item.node.path}
+                    to={item.path}
                     className="nav__link"
                     ref={
-                      item.node.path === location && location.pathname
+                      item.path === location && location.pathname
                         ? menuRef
                         : null
                     }
                     tabIndex={menuIsExpanded ? 0 : -1}
                   >
-                    {item.node.label}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -122,14 +120,14 @@ export const Header = ({ location, siteTitle }) => {
               hidden={windowWidth > 767 ? false : !menuIsExpanded}
             >
               <ul className="nav__list">
-                {data.cartel.menus.nodes[0].menuItems.edges.map(item => (
-                  <li className="nav__item" key={item.node.path}>
+                {data.allWpMenu.edges[0].node.menuItems.nodes.map(item => (
+                  <li className="nav__item" key={item.path}>
                     <Link
-                      to={item.node.path}
+                      to={item.path}
                       className="nav__link"
                       activeClassName="active"
                     >
-                      {item.node.label}
+                      {item.label}
                     </Link>
                   </li>
                 ))}

@@ -40,21 +40,23 @@ const TheLookoutPage = ({ data, location }) => {
 
 export const query = graphql`
   query {
-    cartel {
-      page(id: "114", idType: DATABASE_ID) {
-        lookoutPage {
-          lookoutHeroHeaderVideo {
-            mediaItemUrl
-          }
-          lookoutHeroHeaderVideoFallback {
-            mediaItemUrl
-          }
-          lookoutEditors {
-            name
-            pagePath
-            image {
-              altText
-              sourceUrl
+    allWpPage(filter: { databaseId: { eq: 114 } }) {
+      edges {
+        node {
+          lookoutPage {
+            lookoutHeroHeaderVideo {
+              mediaItemUrl
+            }
+            lookoutHeroHeaderVideoFallback {
+              mediaItemUrl
+            }
+            lookoutEditors {
+              name
+              pagePath
+              image {
+                altText
+                sourceUrl
+              }
             }
           }
         }

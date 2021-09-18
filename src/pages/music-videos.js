@@ -23,16 +23,18 @@ const MusicVideosPage = ({ data, location }) => {
 
 export const query = graphql`
   query {
-    cartel {
-      page(id: "52", idType: DATABASE_ID) {
-        musicVideos {
-          videos {
-            artist
-            pagePath
-            title
-            image {
-              altText
-              sourceUrl
+    allWpPage(filter: { databaseId: { eq: 52 } }) {
+      edges {
+        node {
+          musicVideos {
+            videos {
+              artist
+              pagePath
+              title
+              image {
+                altText
+                sourceUrl
+              }
             }
           }
         }

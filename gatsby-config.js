@@ -11,13 +11,40 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
+    // {
+    //   resolve: 'gatsby-source-graphql',
+    //   options: {
+    //     typeName: 'Cartel',
+    //     fieldName: 'cartel',
+    //     url: 'https://admin.cartel.tv/graphql/',
+    //     refetchInterval: 30,
+    //   },
+    // },
     {
-      resolve: 'gatsby-source-graphql',
+      resolve: 'gatsby-source-wordpress',
       options: {
-        typeName: 'Cartel',
-        fieldName: 'cartel',
         url: 'https://admin.cartel.tv/graphql/',
         refetchInterval: 30,
+        schema: {
+          requestConcurrency: 10,
+          timeout: 90000,
+        },
+        type: {
+          MediaItem: {
+            localFile: {
+              requestConcurrency: 1,
+              maxFileSizeBytes: 100000000,
+            },
+          },
+        },
+        includedRoutes: [
+          '/*/*/menus',
+          '/*/*/contact',
+          '/*/*/editors',
+          '/*/*/musicVideos',
+          '/*/*/theLookout',
+          '/*/*/work',
+        ],
       },
     },
     {

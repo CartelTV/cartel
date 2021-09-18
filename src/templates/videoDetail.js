@@ -29,9 +29,9 @@ const VideoDetailPage = ({ data }) => {
 };
 
 export const query = graphql`
-  query($id: ID!, $editorId: Int!) {
-    cartel {
-      videoDetailPage(id: $id) {
+  query($id: String!, $editorId: String!) {
+    allWpVideoDetailPage(filter: { id: { eq: $id } }) {
+      nodes {
         videoDetail {
           agency
           client
@@ -48,17 +48,15 @@ export const query = graphql`
         }
       }
     }
-    cartel {
-      editorDetailPages(where: { id: $editorId }) {
-        nodes {
-          slug
-          editorDetail {
-            editorVideos {
-              image {
-                altText
-                sourceUrl
-                title
-              }
+    allWpEditorDetailPage(filter: { id: { eq: $editorId } }) {
+      nodes {
+        slug
+        editorDetail {
+          editorVideos {
+            image {
+              altText
+              sourceUrl
+              title
             }
           }
         }

@@ -8,7 +8,7 @@ import SEO from '../components/seo';
 import { NineGridVideos } from '../components/patterns/nineGridVideos';
 
 const WorkPage = ({ data, location }) => {
-  const workVideos = data.cartel.page.work.videos;
+  const { workVideos } = data.allWpPage.edges[0].node.work;
 
   return (
     <Layout location={location}>
@@ -23,16 +23,18 @@ const WorkPage = ({ data, location }) => {
 
 export const query = graphql`
   query {
-    cartel {
-      page(id: "40", idType: DATABASE_ID) {
-        work {
-          videos {
-            client
-            title
-            pagePath
-            image {
-              altText
-              sourceUrl
+    allWpPage(filter: { databaseId: { eq: 40 } }) {
+      edges {
+        node {
+          work {
+            workVideos {
+              client
+              pagePath
+              title
+              image {
+                altText
+                sourceUrl
+              }
             }
           }
         }
@@ -43,22 +45,26 @@ export const query = graphql`
 
 WorkPage.propTypes = {
   data: PropTypes.shape({
-    cartel: PropTypes.shape({
-      page: PropTypes.shape({
-        work: PropTypes.shape({
-          videos: PropTypes.arrayOf(
-            PropTypes.shape({
-              client: PropTypes.string,
-              image: PropTypes.shape({
-                altText: PropTypes.string,
-                sourceUrl: PropTypes.string,
-              }),
-              pagePath: PropTypes.string,
-              title: PropTypes.string,
-            })
-          ),
-        }),
-      }),
+    allWpPage: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            work: PropTypes.shape({
+              workVideos: PropTypes.arrayOf(
+                PropTypes.shape({
+                  client: PropTypes.string,
+                  image: PropTypes.shape({
+                    altText: PropTypes.string,
+                    sourceUrl: PropTypes.string,
+                  }),
+                  pagePath: PropTypes.string,
+                  title: PropTypes.string,
+                })
+              ),
+            }),
+          }),
+        })
+      ),
     }),
   }).isRequired,
   location: PropTypes.shape({}).isRequired,

@@ -45,9 +45,9 @@ const EditorDetailPage = ({ data }) => {
 };
 
 export const query = graphql`
-  query($id: ID!) {
-    cartel {
-      editorDetailPage(id: $id) {
+  query($id: String!) {
+    allWpEditorDetailPage(filter: { id: { eq: $id } }) {
+      nodes {
         title
         editorDetail {
           editorLinks {

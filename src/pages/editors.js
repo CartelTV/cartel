@@ -24,16 +24,15 @@ const EditorsPage = ({ data, location }) => {
 
 export const query = graphql`
   query {
-    cartel {
-      page(id: "64", idType: DATABASE_ID) {
-        editors {
+    allWpPage(filter: { databaseId: { eq: 64 } }) {
+      edges {
+        node {
+          id
           editors {
-            image {
-              altText
-              sourceUrl
+            editors {
+              name
+              pagePath
             }
-            name
-            pagePath
           }
         }
       }

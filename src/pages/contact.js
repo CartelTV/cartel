@@ -250,27 +250,29 @@ const ContactPage = ({ data, location }) => {
 
 export const query = graphql`
   query {
-    cartel {
-      page(id: "95", idType: DATABASE_ID) {
-        contactPage {
-          contactPhoneNumber
-          contactPersons {
-            contactPersonName
-            contactPersonTitle
-            contactPersonEmail
-            contactPersonPhone
-          }
-          contactRepresentation {
-            representationGroupName
-            representationContactPersons {
-              representationContactName
-              representationContactEmail
-              representationContactPhone
+    allWpPage(filter: { databaseId: { eq: 95 } }) {
+      edges {
+        node {
+          contactPage {
+            contactPhoneNumber
+            contactPersons {
+              contactPersonName
+              contactPersonTitle
+              contactPersonEmail
+              contactPersonPhone
             }
+            contactRepresentation {
+              representationGroupName
+              representationContactPersons {
+                representationContactName
+                representationContactEmail
+                representationContactPhone
+              }
+            }
+            contactInstagramUrl
+            contactFacebookUrl
+            contactAddress
           }
-          contactInstagramUrl
-          contactFacebookUrl
-          contactAddress
         }
       }
     }

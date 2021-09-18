@@ -1,31 +1,34 @@
 const path = require(`path`);
 const { slash } = require(`gatsby-core-utils`);
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
   // Editor Detail pages
-  const {
-    data: {
-      cartel: { editorDetailPages },
-    },
-  } = await graphql(`
-    query {
-      cartel {
-        editorDetailPages(first: 50) {
-          nodes {
-            databaseId
-            id
-            slug
-          }
+  const editorDetailResult = await graphql(`
+    {
+      allWpEditorDetailPage(limit: 50) {
+        nodes {
+          id
+          slug
+          databaseId
         }
       }
     }
   `);
 
+  if (editorDetailResult.errors) {
+    reporter.error(
+      'There was an error fetching posts',
+      editorDetailResult.errors
+    );
+  }
+
+  const { allWpEditorDetailPage } = editorDetailResult.data;
+
   const editorDetailTemplate = path.resolve(`./src/templates/editorDetail.js`);
 
-  editorDetailPages.nodes.forEach(page => {
+  allWpEditorDetailPage.nodes.forEach(page => {
     createPage({
       // will be the url for the page
       path: page.slug,
@@ -40,36 +43,40 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   // Video Detail pages
-  const {
-    data: {
-      cartel: { videoDetailPages },
-    },
-  } = await graphql(`
-    query {
-      cartel {
-        videoDetailPages(first: 300) {
-          nodes {
-            id
-            slug
-            videoDetail {
-              editor
-              editorId
-            }
+  const videoDetailResult = await graphql(`
+    {
+      allWpVideoDetailPage(limit: 300) {
+        nodes {
+          id
+          slug
+          videoDetail {
+            editor
+            editorId
           }
         }
       }
     }
   `);
 
+  if (videoDetailResult.errors) {
+    reporter.error(
+      'There was an error fetching posts',
+      editorDetailResult.errors
+    );
+  }
+
+  const { allWpVideoDetailPage } = videoDetailResult.data;
+
   const videoDetailTemplate = path.resolve(`./src/templates/videoDetail.js`);
 
-  videoDetailPages.nodes.forEach(page => {
+  allWpVideoDetailPage.nodes.forEach(page => {
     const { editorId } = page.videoDetail;
 
-    const editorObj = editorDetailPages.nodes.find(
-      editor => editor.databaseId.toString() === editorId
+    const editorObj = allWpEditorDetailPage.nodes.find(
+      editor => editor.databaseId.toString() === editorId.trim()
     );
-    const editorSlug = editorObj && editorObj.slug;
+
+    const editorSlug = editorObj.slug;
 
     createPage({
       // will be the url for the page
@@ -86,30 +93,31 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   // Generic pages
-  const {
-    data: {
-      cartel: {
-        pages: { nodes },
-      },
-    },
-  } = await graphql(`
-    query {
-      cartel {
-        pages {
-          nodes {
-            content
-            pageId
-            slug
-            title
-          }
+  const genericPageResult = await graphql(`
+    {
+      allWpPage {
+        nodes {
+          id
+          content
+          slug
+          title
         }
       }
     }
   `);
 
+  if (videoDetailResult.errors) {
+    reporter.error(
+      'There was an error fetching posts',
+      editorDetailResult.errors
+    );
+  }
+
+  const { allWpPage } = genericPageResult.data;
+
   const genericPageTemplate = path.resolve(`./src/templates/genericPage.js`);
 
-  nodes
+  allWpPage.nodes
     .filter(
       page =>
         page.title !== 'Contact' &&

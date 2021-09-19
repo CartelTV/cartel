@@ -42,7 +42,8 @@
       }
 
       img {
-        filter: grayscale(0) brightness(1) sepia(0) hue-rotate(0) opacity(1);
+        filter: grayscale(0) brightness(1) contrast(1) sepia(0) hue-rotate(0)
+          opacity(1);
       }
     }
   }
@@ -191,8 +192,8 @@
     }
 
     img {
-      filter: grayscale(1) brightness(1.5) sepia(0.35) hue-rotate(175deg)
-        opacity(0.75);
+      filter: grayscale(1) brightness(1.1) contrast(1.25) sepia(0.33)
+        hue-rotate(167deg) opacity(0.75);
       transition: filter 0.15s ease-out;
 
       @include mq($M) {

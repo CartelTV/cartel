@@ -12,7 +12,7 @@ import iconFacebook from '../images/icon-facebook.svg';
 import iconInstagram from '../images/icon-instagram.svg';
 
 const ContactPage = ({ data, location }) => {
-  const contactData = data.cartel.page.contactPage;
+  const contactData = data.allWpPage.edges[0].node.contactPage;
   const {
     contactAddress,
     contactPhoneNumber,
@@ -281,17 +281,21 @@ export const query = graphql`
 
 ContactPage.propTypes = {
   data: PropTypes.shape({
-    cartel: PropTypes.shape({
-      page: PropTypes.shape({
-        contactPage: PropTypes.shape({
-          contactAddress: PropTypes.string,
-          contactFacebookUrl: PropTypes.string,
-          contactInstagramUrl: PropTypes.string,
-          contactPersons: PropTypes.arrayOf(PropTypes.shape({})),
-          contactPhoneNumber: PropTypes.string,
-          contactRepresentation: PropTypes.arrayOf(PropTypes.shape({})),
-        }),
-      }),
+    allWpPage: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            contactPage: PropTypes.shape({
+              contactAddress: PropTypes.string,
+              contactFacebookUrl: PropTypes.string,
+              contactInstagramUrl: PropTypes.string,
+              contactPersons: PropTypes.arrayOf(PropTypes.shape({})),
+              contactPhoneNumber: PropTypes.string,
+              contactRepresentation: PropTypes.arrayOf(PropTypes.shape({})),
+            }),
+          }),
+        })
+      ),
     }),
   }).isRequired,
   location: PropTypes.shape({}).isRequired,

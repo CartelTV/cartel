@@ -136,7 +136,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         // as a GraphQL variable to query for this page's data.
         context: {
           id: page.id,
-          pageId: page.pageId,
         },
       });
     });

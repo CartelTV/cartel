@@ -7,7 +7,7 @@ import SEO from '../components/seo';
 import ThreeColGrid from '../components/patterns/threeColGrid';
 
 const EditorsPage = ({ data, location }) => {
-  const { editors } = data.cartel.page.editors;
+  const { editors } = data.allWpPage.edges[0].node.editors;
 
   return (
     <Layout location={location}>
@@ -30,6 +30,10 @@ export const query = graphql`
           id
           editors {
             editors {
+              image {
+                altText
+                sourceUrl
+              }
               name
               pagePath
             }
@@ -42,21 +46,25 @@ export const query = graphql`
 
 EditorsPage.propTypes = {
   data: PropTypes.shape({
-    cartel: PropTypes.shape({
-      page: PropTypes.shape({
-        editors: PropTypes.shape({
-          editors: PropTypes.arrayOf(
-            PropTypes.shape({
-              image: PropTypes.shape({
-                altText: PropTypes.string,
-                sourceUrl: PropTypes.string,
-              }),
-              name: PropTypes.string,
-              pagePath: PropTypes.string,
-            })
-          ),
-        }),
-      }),
+    allWpPage: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            editors: PropTypes.shape({
+              editors: PropTypes.arrayOf(
+                PropTypes.shape({
+                  image: PropTypes.shape({
+                    altText: PropTypes.string,
+                    sourceUrl: PropTypes.string,
+                  }),
+                  name: PropTypes.string,
+                  pagePath: PropTypes.string,
+                })
+              ),
+            }),
+          }),
+        })
+      ),
     }),
   }).isRequired,
   location: PropTypes.shape({}).isRequired,

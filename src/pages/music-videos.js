@@ -8,7 +8,7 @@ import SEO from '../components/seo';
 import { NineGridVideos } from '../components/patterns/nineGridVideos';
 
 const MusicVideosPage = ({ data, location }) => {
-  const musicVideos = data.cartel.page.musicVideos.videos;
+  const musicVideos = data.allWpPage.edges[0].node.musicVideos.videos;
 
   return (
     <Layout location={location}>
@@ -45,22 +45,26 @@ export const query = graphql`
 
 MusicVideosPage.propTypes = {
   data: PropTypes.shape({
-    cartel: PropTypes.shape({
-      page: PropTypes.shape({
-        musicVideos: PropTypes.shape({
-          videos: PropTypes.arrayOf(
-            PropTypes.shape({
-              artist: PropTypes.string,
-              image: PropTypes.shape({
-                altText: PropTypes.string,
-                sourceUrl: PropTypes.string,
-              }),
-              pagePath: PropTypes.string,
-              title: PropTypes.string,
-            })
-          ),
-        }),
-      }),
+    allWpPage: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            musicVideos: PropTypes.shape({
+              videos: PropTypes.arrayOf(
+                PropTypes.shape({
+                  artist: PropTypes.string,
+                  image: PropTypes.shape({
+                    altText: PropTypes.string,
+                    sourceUrl: PropTypes.string,
+                  }),
+                  pagePath: PropTypes.string,
+                  title: PropTypes.string,
+                })
+              ),
+            }),
+          }),
+        })
+      ),
     }),
   }).isRequired,
   location: PropTypes.shape({}).isRequired,

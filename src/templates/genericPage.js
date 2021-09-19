@@ -7,7 +7,7 @@ import { Layout } from '../components/layout';
 import SEO from '../components/seo';
 
 const EditorDetailPage = ({ data, location }) => {
-  const { content, title } = data.cartel.pages.edges[0].node;
+  const { content, title } = data.allWpPage.edges[0].node;
 
   return (
     <Layout location={location}>
@@ -24,8 +24,8 @@ const EditorDetailPage = ({ data, location }) => {
 };
 
 export const query = graphql`
-  query($pageId: String!) {
-    allWpPage(filter: { id: { eq: $pageId } }) {
+  query($id: String!) {
+    allWpPage(filter: { id: { eq: $id } }) {
       edges {
         node {
           content
@@ -38,17 +38,15 @@ export const query = graphql`
 
 EditorDetailPage.propTypes = {
   data: PropTypes.shape({
-    cartel: PropTypes.shape({
-      pages: PropTypes.shape({
-        edges: PropTypes.arrayOf(
-          PropTypes.shape({
-            node: PropTypes.shape({
-              content: PropTypes.string,
-              title: PropTypes.string,
-            }),
-          })
-        ),
-      }),
+    allWpPage: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            content: PropTypes.string,
+            title: PropTypes.string,
+          }),
+        })
+      ),
     }),
   }).isRequired,
   location: PropTypes.shape({}).isRequired,

@@ -7,9 +7,9 @@ import SEO from '../components/seo';
 import ThreeColGrid from '../components/patterns/threeColGrid';
 
 const EditorDetailPage = ({ data }) => {
-  const { title } = data.cartel.editorDetailPage;
-  const links = data.cartel.editorDetailPage.editorDetail.editorLinks;
-  const videos = data.cartel.editorDetailPage.editorDetail.editorVideos;
+  const { title } = data.allWpEditorDetailPage.nodes[0];
+  const links = data.allWpEditorDetailPage.nodes[0].editorDetail.editorLinks;
+  const videos = data.allWpEditorDetailPage.nodes[0].editorDetail.editorVideos;
   const editorSlug = title
     .replace(/ Main/, '')
     .replace(/\s+/g, '-')
@@ -69,30 +69,31 @@ export const query = graphql`
 
 EditorDetailPage.propTypes = {
   data: PropTypes.shape({
-    cartel: PropTypes.shape({
-      editorDetailPage: PropTypes.shape({
-        slug: PropTypes.string,
-        title: PropTypes.string,
-        editorDetail: PropTypes.shape({
-          editorLinks: PropTypes.arrayOf(
-            PropTypes.shape({
-              linkPath: PropTypes.string,
-              linkTitle: PropTypes.string,
-            })
-          ),
-          editorVideos: PropTypes.arrayOf(
-            PropTypes.shape({
-              videoThumbnail: PropTypes.shape({
-                altText: PropTypes.string,
-                sourceUrl: PropTypes.string,
-              }),
-              videoClient: PropTypes.string,
-              videoTitle: PropTypes.string,
-              videoDetailPageUrl: PropTypes.string,
-            })
-          ),
-        }),
-      }),
+    allWpEditorDetailPage: PropTypes.shape({
+      nodes: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string,
+          editorDetail: PropTypes.shape({
+            editorLinks: PropTypes.arrayOf(
+              PropTypes.shape({
+                linkPath: PropTypes.string,
+                linkTitle: PropTypes.string,
+              })
+            ),
+            editorVideos: PropTypes.arrayOf(
+              PropTypes.shape({
+                videoThumbnail: PropTypes.shape({
+                  altText: PropTypes.string,
+                  sourceUrl: PropTypes.string,
+                }),
+                videoClient: PropTypes.string,
+                videoTitle: PropTypes.string,
+                videoDetailPageUrl: PropTypes.string,
+              })
+            ),
+          }),
+        })
+      ),
     }),
   }).isRequired,
 };

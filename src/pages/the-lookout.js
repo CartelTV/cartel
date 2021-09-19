@@ -13,7 +13,7 @@ const TheLookoutPage = ({ data, location }) => {
     lookoutHeroHeaderVideo,
     lookoutHeroHeaderVideoFallback,
     lookoutEditors,
-  } = data.cartel.page.lookoutPage;
+  } = data.allWpPage.edges[0].node.lookoutPage;
 
   return (
     <Layout location={location}>
@@ -67,27 +67,31 @@ export const query = graphql`
 
 TheLookoutPage.propTypes = {
   data: PropTypes.shape({
-    cartel: PropTypes.shape({
-      page: PropTypes.shape({
-        lookoutPage: PropTypes.shape({
-          lookoutHeroHeaderVideo: PropTypes.shape({
-            mediaItemUrl: PropTypes.string,
-          }),
-          lookoutHeroHeaderVideoFallback: PropTypes.shape({
-            mediaItemUrl: PropTypes.string,
-          }),
-          lookoutEditors: PropTypes.arrayOf(
-            PropTypes.shape({
-              image: PropTypes.shape({
-                altText: PropTypes.string,
-                sourceUrl: PropTypes.string,
+    allWpPage: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            lookoutPage: PropTypes.shape({
+              lookoutHeroHeaderVideo: PropTypes.shape({
+                mediaItemUrl: PropTypes.string,
               }),
-              name: PropTypes.string,
-              pagePath: PropTypes.string,
-            })
-          ),
-        }),
-      }),
+              lookoutHeroHeaderVideoFallback: PropTypes.shape({
+                mediaItemUrl: PropTypes.string,
+              }),
+              lookoutEditors: PropTypes.arrayOf(
+                PropTypes.shape({
+                  image: PropTypes.shape({
+                    altText: PropTypes.string,
+                    sourceUrl: PropTypes.string,
+                  }),
+                  name: PropTypes.string,
+                  pagePath: PropTypes.string,
+                })
+              ),
+            }),
+          }),
+        })
+      ),
     }),
   }).isRequired,
   location: PropTypes.shape({}).isRequired,

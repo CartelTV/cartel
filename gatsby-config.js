@@ -4,7 +4,6 @@ module.exports = {
     description: `Cartel is an editing and post-production facility in Santa Monica.`,
     siteUrl: `https://cartel.tv/`,
     socialImage: `/social-image.jpg`,
-    author: `TWITTER HANDLE`,
   },
   plugins: [
     `gatsby-plugin-remove-trailing-slashes`,

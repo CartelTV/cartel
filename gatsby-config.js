@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Cartel`,
-    description: `Cartel is an Editing and Post-Production facility in Santa Monica.`,
+    description: `Cartel is an editing and post-production facility in Santa Monica.`,
     siteUrl: `https://cartel.tv/`,
     socialImage: `ABSOLUTE PATH TO IMAGE IN STATIC FOLDER`,
     author: `TWITTER HANDLE`,
@@ -11,15 +11,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
-    // {
-    //   resolve: 'gatsby-source-graphql',
-    //   options: {
-    //     typeName: 'Cartel',
-    //     fieldName: 'cartel',
-    //     url: 'https://admin.cartel.tv/graphql/',
-    //     refetchInterval: 30,
-    //   },
-    // },
     {
       resolve: 'gatsby-source-wordpress',
       options: {

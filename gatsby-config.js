@@ -3,7 +3,7 @@ module.exports = {
     title: `Cartel`,
     description: `Cartel is an editing and post-production facility in Santa Monica.`,
     siteUrl: `https://cartel.tv/`,
-    socialImage: `ABSOLUTE PATH TO IMAGE IN STATIC FOLDER`,
+    socialImage: `/social-image.jpg`,
     author: `TWITTER HANDLE`,
   },
   plugins: [

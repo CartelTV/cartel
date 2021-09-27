@@ -19,6 +19,7 @@ export const VideoDetail = ({ data }) => {
             }`}
             type="button"
             onClick={() => setVideoIsPlaying(true)}
+            aria-label="play video"
           >
             <img
               src={data.videoStill.sourceUrl}

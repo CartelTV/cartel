@@ -53,8 +53,11 @@ export const query = graphql`
             lookoutEditors {
               name
               pagePath
-              image {
+              colorImage {
                 altText
+                sourceUrl
+              }
+              bwImage {
                 sourceUrl
               }
             }
@@ -80,7 +83,11 @@ TheLookoutPage.propTypes = {
               }),
               lookoutEditors: PropTypes.arrayOf(
                 PropTypes.shape({
-                  image: PropTypes.shape({
+                  colorImage: PropTypes.shape({
+                    altText: PropTypes.string,
+                    sourceUrl: PropTypes.string,
+                  }),
+                  bwImage: PropTypes.shape({
                     altText: PropTypes.string,
                     sourceUrl: PropTypes.string,
                   }),

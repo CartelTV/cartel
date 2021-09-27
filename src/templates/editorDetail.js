@@ -55,10 +55,13 @@ export const query = graphql`
             linkPath
           }
           editorVideos {
-            image {
+            colorImage {
               altText
               sourceUrl
               title
+            }
+            bwImage {
+              sourceUrl
             }
           }
         }

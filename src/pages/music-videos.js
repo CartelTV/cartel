@@ -31,8 +31,11 @@ export const query = graphql`
               artist
               pagePath
               title
-              image {
+              colorImage {
                 altText
+                sourceUrl
+              }
+              bwImage {
                 sourceUrl
               }
             }
@@ -53,8 +56,11 @@ MusicVideosPage.propTypes = {
               videos: PropTypes.arrayOf(
                 PropTypes.shape({
                   artist: PropTypes.string,
-                  image: PropTypes.shape({
+                  colorImage: PropTypes.shape({
                     altText: PropTypes.string,
+                    sourceUrl: PropTypes.string,
+                  }),
+                  bwImage: PropTypes.shape({
                     sourceUrl: PropTypes.string,
                   }),
                   pagePath: PropTypes.string,

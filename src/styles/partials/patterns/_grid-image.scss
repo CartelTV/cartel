@@ -10,20 +10,20 @@
 
     &:focus,
     &:hover {
+      .bw-image {
+        opacity: 0;
+      }
+
       p {
         opacity: 1;
       }
-
-      img {
-        filter: grayscale(0) brightness(1) contrast(1) sepia(0) hue-rotate(0)
-          opacity(1);
-      }
     }
 
-    img {
-      filter: grayscale(1) brightness(1.1) contrast(1.25) sepia(0.33)
-        hue-rotate(167deg) opacity(0.75);
-      transition: filter 0.15s ease-out;
+    .bw-image {
+      opacity: 1;
+      position: absolute;
+      top: 0;
+      transition: opacity 0.15s ease-out;
     }
   }
 

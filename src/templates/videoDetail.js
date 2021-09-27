@@ -53,10 +53,13 @@ export const query = graphql`
         slug
         editorDetail {
           editorVideos {
-            image {
+            colorImage {
               altText
               sourceUrl
               title
+            }
+            bwImage {
+              sourceUrl
             }
           }
         }

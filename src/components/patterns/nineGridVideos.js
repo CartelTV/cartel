@@ -28,37 +28,40 @@ export const NineGridVideos = ({ videosList }) => {
           return (
             <div
               className="nine-grid-videos__row nine-grid-videos__row--two"
-              key={video[0].image.sourceUrl}
+              key={video[0].colorImage.sourceUrl}
             >
               <div className="nine-grid-videos__item">
                 <GridImage
-                  altText={video[0].image.altText}
+                  altText={video[0].colorImage.altText}
                   copy={`${video[0].client || video[0].artist} - ${
                     video[0].title
                   }`}
-                  imgSrc={video[0].image.sourceUrl}
+                  imgSrc={video[0].colorImage.sourceUrl}
+                  imgSrcBW={video[0].bwImage.sourceUrl}
                   linkUrl={video[0].pagePath}
                   aspectRatio="1600:900"
                 />
               </div>
               <div className="nine-grid-videos__item">
                 <GridImage
-                  altText={video[1].image.altText}
+                  altText={video[1].colorImage.altText}
                   copy={`${video[1].client || video[1].artist} - ${
                     video[1].title
                   }`}
-                  imgSrc={video[1].image.sourceUrl}
+                  imgSrc={video[1].colorImage.sourceUrl}
+                  imgSrcBW={video[1].bwImage.sourceUrl}
                   linkUrl={video[1].pagePath}
                   aspectRatio="1600:900"
                 />
               </div>
               <div className="nine-grid-videos__item">
                 <GridImage
-                  altText={video[2].image.altText}
+                  altText={video[2].colorImage.altText}
                   copy={`${video[2].client || video[2].artist} - ${
                     video[2].title
                   }`}
-                  imgSrc={video[2].image.sourceUrl}
+                  imgSrc={video[2].colorImage.sourceUrl}
+                  imgSrcBW={video[2].bwImage.sourceUrl}
                   linkUrl={video[2].pagePath}
                   aspectRatio="1600:900"
                 />
@@ -71,13 +74,20 @@ export const NineGridVideos = ({ videosList }) => {
           return (
             <div
               className="nine-grid-videos__row nine-grid-videos__row--one"
-              key={video[1].image.sourceUrl}
+              key={video[1].colorImage.sourceUrl}
             >
               <div className="nine-grid-videos__item nine-grid-videos__item--large">
                 <Link to={video[0].pagePath} className="nine-grid-videos__link">
                   <Image
-                    srcSmall={video[0].image.sourceUrl}
-                    alt={video[0].image.altText}
+                    srcSmall={video[0].colorImage.sourceUrl}
+                    alt={video[0].colorImage.altText}
+                    aspectRatio="1600:900"
+                    lazyLoad
+                  />
+                  <Image
+                    className="bw-image"
+                    srcSmall={video[0].bwImage.sourceUrl}
+                    alt={video[0].colorImage.altText}
                     aspectRatio="1600:900"
                     lazyLoad
                   />
@@ -95,22 +105,24 @@ export const NineGridVideos = ({ videosList }) => {
               <div className="nine-grid-videos__item nine-grid-videos__item--stacked">
                 <div>
                   <GridImage
-                    altText={video[1].image.altText}
+                    altText={video[1].colorImage.altText}
                     copy={`${video[1].client || video[1].artist} - ${
                       video[1].title
                     }`}
-                    imgSrc={video[1].image.sourceUrl}
+                    imgSrc={video[1].colorImage.sourceUrl}
+                    imgSrcBW={video[1].bwImage.sourceUrl}
                     linkUrl={video[1].pagePath}
                     aspectRatio="1600:900"
                   />
                 </div>
                 <div>
                   <GridImage
-                    altText={video[2].image.altText}
+                    altText={video[2].colorImage.altText}
                     copy={`${video[2].client || video[2].artist} - ${
                       video[2].title
                     }`}
-                    imgSrc={video[2].image.sourceUrl}
+                    imgSrc={video[2].colorImage.sourceUrl}
+                    imgSrcBW={video[2].bwImage.sourceUrl}
                     linkUrl={video[2].pagePath}
                     aspectRatio="1600:900"
                   />
@@ -123,27 +135,29 @@ export const NineGridVideos = ({ videosList }) => {
         return (
           <div
             className="nine-grid-videos__row nine-grid-videos__row--three"
-            key={video[2].image.sourceUrl}
+            key={video[2].colorImage.sourceUrl}
           >
             <div className="nine-grid-videos__item nine-grid-videos__item--stacked">
               <div>
                 <GridImage
-                  altText={video[0].image.altText}
+                  altText={video[0].colorImage.altText}
                   copy={`${video[0].client || video[0].artist} - ${
                     video[0].title
                   }`}
-                  imgSrc={video[0].image.sourceUrl}
+                  imgSrc={video[0].colorImage.sourceUrl}
+                  imgSrcBW={video[0].bwImage.sourceUrl}
                   linkUrl={video[0].pagePath}
                   aspectRatio="1600:900"
                 />
               </div>
               <div>
                 <GridImage
-                  altText={video[1].image.altText}
+                  altText={video[1].colorImage.altText}
                   copy={`${video[1].client || video[1].artist} - ${
                     video[1].title
                   }`}
-                  imgSrc={video[1].image.sourceUrl}
+                  imgSrc={video[1].colorImage.sourceUrl}
+                  imgSrcBW={video[1].bwImage.sourceUrl}
                   linkUrl={video[1].pagePath}
                   aspectRatio="1600:900"
                 />
@@ -152,8 +166,15 @@ export const NineGridVideos = ({ videosList }) => {
             <div className="nine-grid-videos__item nine-grid-videos__item--large">
               <Link to={video[2].pagePath} className="nine-grid-videos__link">
                 <Image
-                  srcSmall={video[2].image.sourceUrl}
-                  alt={video[2].image.altText}
+                  srcSmall={video[2].colorImage.sourceUrl}
+                  alt={video[2].colorImage.altText}
+                  aspectRatio="1600:900"
+                  lazyLoad
+                />
+                <Image
+                  className="bw-image"
+                  srcSmall={video[0].bwImage.sourceUrl}
+                  alt={video[0].colorImage.altText}
                   aspectRatio="1600:900"
                   lazyLoad
                 />

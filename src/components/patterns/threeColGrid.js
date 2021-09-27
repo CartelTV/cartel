@@ -8,10 +8,10 @@ const ThreeColGrid = ({ aspectRatio, editorSlug, list }) => (
     <ul className="three-col-grid__list">
       {list.map(item => {
         const linkUrl = editorSlug
-          ? `/${editorSlug}/${item.image.title
+          ? `/${editorSlug}/${item.colorImage.title
               .replace(/ – /g, '-')
               .replace(/\//g, '-')
-              .replace(/\./g, '-')
+              .replace(/\./g, '')
               .replace(/\u2026/g, '')
               .replace(/’/g, '')
               .replace(/:/g, '')
@@ -20,6 +20,7 @@ const ThreeColGrid = ({ aspectRatio, editorSlug, list }) => (
               .replace(/&/g, '')
               .replace(/\(/g, '')
               .replace(/\)/g, '')
+              .replace(/#/g, '')
               .replace(/\s+/g, '-')
               .replace(/ø/g, 'o')
               .replace(/\$/g, 's')
@@ -29,11 +30,12 @@ const ThreeColGrid = ({ aspectRatio, editorSlug, list }) => (
           : item.pagePath;
 
         return (
-          <li className="three-col-grid__item" key={item.image.sourceUrl}>
+          <li className="three-col-grid__item" key={item.colorImage.sourceUrl}>
             <GridImage
-              altText={item.image.altText}
-              copy={item.image.title || item.title || item.name}
-              imgSrc={item.image.sourceUrl}
+              altText={item.colorImage.altText}
+              copy={item.colorImage.title || item.title || item.name}
+              imgSrc={item.colorImage.sourceUrl}
+              imgSrcBW={item.bwImage && item.bwImage.sourceUrl}
               linkUrl={linkUrl}
               aspectRatio={aspectRatio}
             />
@@ -49,10 +51,13 @@ ThreeColGrid.propTypes = {
   editorSlug: PropTypes.string,
   list: PropTypes.arrayOf(
     PropTypes.shape({
-      image: PropTypes.shape({
+      colorImage: PropTypes.shape({
         altText: PropTypes.string,
         sourceUrl: PropTypes.string,
         title: PropTypes.string,
+      }),
+      bwImage: PropTypes.shape({
+        sourceUrl: PropTypes.string,
       }),
       pagePath: PropTypes.string,
     })

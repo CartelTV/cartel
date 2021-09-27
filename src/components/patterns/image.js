@@ -13,11 +13,10 @@ export const Image = ({
   const height = aspectRatio.split(':')[1];
   const width = aspectRatio.split(':')[0];
   return (
-    <picture>
+    <picture className={className}>
       <source srcSet={srcLarge} media="(min-width: 1200px)" />
       <source srcSet={srcMed} media="(min-width: 720px)" />
       <img
-        className={className}
         src={srcSmall}
         alt={alt}
         height={height}
@@ -31,7 +30,7 @@ export const Image = ({
 Image.propTypes = {
   aspectRatio: PropTypes.string,
   className: PropTypes.string,
-  srcSmall: PropTypes.string.isRequired,
+  srcSmall: PropTypes.string,
   srcMed: PropTypes.string,
   srcLarge: PropTypes.string,
   alt: PropTypes.string.isRequired,
@@ -40,8 +39,9 @@ Image.propTypes = {
 
 Image.defaultProps = {
   aspectRatio: '',
-  className: '',
+  className: null,
   lazyLoad: false,
+  srcSmall: '',
   srcMed: '',
   srcLarge: '',
 };

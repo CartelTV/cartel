@@ -30,8 +30,11 @@ export const query = graphql`
           id
           editors {
             editors {
-              image {
+              colorImage {
                 altText
+                sourceUrl
+              }
+              bwImage {
                 sourceUrl
               }
               name
@@ -53,8 +56,11 @@ EditorsPage.propTypes = {
             editors: PropTypes.shape({
               editors: PropTypes.arrayOf(
                 PropTypes.shape({
-                  image: PropTypes.shape({
+                  colorImage: PropTypes.shape({
                     altText: PropTypes.string,
+                    sourceUrl: PropTypes.string,
+                  }),
+                  bwImage: PropTypes.shape({
                     sourceUrl: PropTypes.string,
                   }),
                   name: PropTypes.string,

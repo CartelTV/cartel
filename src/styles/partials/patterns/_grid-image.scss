@@ -29,7 +29,6 @@
 
   &__item-overlay {
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.33);
     bottom: 0;
     color: $white;
     display: flex;
@@ -40,6 +39,11 @@
     position: absolute;
     right: 0;
     top: 0;
+
+    &:focus,
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.33);
+    }
   }
 
   &__text {

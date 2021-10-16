@@ -173,8 +173,8 @@ export const NineGridVideos = ({ videosList }) => {
                 />
                 <Image
                   className="bw-image"
-                  srcSmall={video[0].bwImage.sourceUrl}
-                  alt={video[0].colorImage.altText}
+                  srcSmall={video[2].bwImage.sourceUrl}
+                  alt={video[2].colorImage.altText}
                   aspectRatio="1600:900"
                   lazyLoad
                 />

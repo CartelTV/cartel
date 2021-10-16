@@ -8,8 +8,9 @@ const ThreeColGrid = ({ aspectRatio, editorSlug, list }) => (
     <ul className="three-col-grid__list">
       {list.map(item => {
         const linkUrl = editorSlug
-          ? `/${editorSlug}/${item.colorImage.title
+          ? `/${editorSlug.replace(/é/g, 'e')}/${item.colorImage.title
               .replace(/ – /g, '-')
+              .replace(/\s\/\s/g, '-')
               .replace(/\//g, '-')
               .replace(/\./g, '')
               .replace(/\u2026/g, '')

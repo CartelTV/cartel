@@ -77,10 +77,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     );
 
     const editorSlug = editorObj.slug;
+    let pageSlug;
+    if (page.slug.endsWith('-2')) {
+      pageSlug = page.slug.substring(0, page.slug.length - 2);
+    } else {
+      pageSlug = page.slug;
+    }
 
     createPage({
       // will be the url for the page
-      path: `${editorSlug}/${page.slug}`,
+      path: `${editorSlug}/${pageSlug}`,
       // specify the component template of your choice
       component: slash(videoDetailTemplate),
       // In the ^template's GraphQL query, 'id' will be available

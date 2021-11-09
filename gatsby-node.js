@@ -70,6 +70,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const videoDetailTemplate = path.resolve(`./src/templates/videoDetail.js`);
 
   allWpVideoDetailPage.nodes.forEach(page => {
+    console.log('page:', page);
     const { editorId } = page.videoDetail;
 
     const editorObj = allWpEditorDetailPage.nodes.find(

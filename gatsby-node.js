@@ -76,7 +76,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       editor => editor.databaseId.toString() === editorId.trim()
     );
 
-    const editorSlug = editorObj.slug;
+    const editorSlug = editorObj && editorObj.slug;
     let pageSlug;
     if (page.slug.endsWith('-2')) {
       pageSlug = page.slug.substring(0, page.slug.length - 2);

@@ -28,6 +28,8 @@ const ThreeColGrid = ({ aspectRatio, editorSlug, list }) => (
               .replace(/\$/g, 's')
               .replace(/é/g, 'e')
               .replace(/ŏ/g, 'o')
+              .replace(/“/g, '')
+              .replace(/”/g, '')
               .toLowerCase()}`
           : item.pagePath;
 

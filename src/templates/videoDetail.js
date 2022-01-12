@@ -10,8 +10,8 @@ import ThreeColGrid from '../components/patterns/threeColGrid';
 const VideoDetailPage = ({ data }) => {
   const videoDetails = data.allWpVideoDetailPage.nodes[0].videoDetail;
   const videosList =
-    data.allWpEditorDetailPage.nodes[0].editorDetail.editorVideos;
-  const editorSlug = data.allWpEditorDetailPage.nodes[0].slug;
+    data.allWpEditorDetailPage?.nodes[0].editorDetail.editorVideos;
+  const editorSlug = data.allWpEditorDetailPage?.nodes[0].slug;
 
   return (
     <Layout>

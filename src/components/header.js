@@ -72,7 +72,7 @@ export const Header = ({ location, siteTitle }) => {
             hidden={windowWidth > 767 ? false : !menuIsExpanded}
           >
             <ul className="nav__list">
-              {data.allWpMenu?.edges[0]?.node?.menuItems.nodes.map(item => (
+              {data.allWpMenu.edges[0].node.menuItems.nodes.map(item => (
                 <li className="nav__item" key={item.path}>
                   <Link
                     to={item.path}

@@ -45,7 +45,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Video Detail pages
   const videoDetailResult = await graphql(`
     {
-      allWpVideoDetailPage(limit: 300) {
+      allWpVideoDetailPage(limit: 600) {
         nodes {
           id
           slug

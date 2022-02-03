@@ -28,8 +28,8 @@ const ContactPage = ({ data, location }) => {
         const map = new window.google.maps.Map(document.getElementById('map'), {
           disableDefaultUI: true,
           center: {
-            lat: 15.1463554,
-            lng: 120.5245996,
+            lat: 34.03314675929526,
+            lng: -118.46453928460603,
           },
           zoom: 14,
           styles: [
@@ -104,7 +104,7 @@ const ContactPage = ({ data, location }) => {
         });
 
         new window.google.maps.Marker({
-          position: { lat: 15.1463554, lng: 120.5245996 },
+          position: { lat: 34.03314675929526, lng: -118.46453928460603 },
           icon: iconMapMarker,
           animation: window.google.maps.Animation.BOUNCE,
           map,

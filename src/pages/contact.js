@@ -106,7 +106,6 @@ const ContactPage = ({ data, location }) => {
         new window.google.maps.Marker({
           position: { lat: 34.03314675929526, lng: -118.46453928460603 },
           icon: iconMapMarker,
-          animation: window.google.maps.Animation.BOUNCE,
           map,
         });
       };

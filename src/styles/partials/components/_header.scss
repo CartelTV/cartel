@@ -67,7 +67,7 @@
     text-decoration: none;
     text-transform: uppercase;
 
-    @include mq($M) {
+    @media (min-width: 820px) {
       font-size: 0.625rem;
     }
 

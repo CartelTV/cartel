@@ -32,7 +32,7 @@ export const VideoDetail = ({ data }) => {
             <div className="video-detail__video-wrapper iframe-container iframe-container-16x9">
               <iframe
                 src={data.videoUrl}
-                title="video title"
+                title={data.title}
                 width="1920"
                 height="1080"
                 frameBorder="0"

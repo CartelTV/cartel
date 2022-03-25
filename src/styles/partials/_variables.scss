@@ -6,12 +6,12 @@
 
 // RESPONSIVE MEDIA QUERIES
 // ------------------------------------------------------------------------------
-$breakpoint-xs: 18.75em; // 300px
-$breakpoint-s: 30em; // 480px
-$breakpoint-m: 48em; // 768px
-$breakpoint-l: 64em; // 1024px
-$breakpoint-xl: 75em; // 1200px
-$breakpoint-xxl: 90em; // 1440px
+$breakpoint-xs: 18.75rem; // 300px
+$breakpoint-s: 30rem; // 480px
+$breakpoint-m: 48rem; // 768px
+$breakpoint-l: 64rem; // 1024px
+$breakpoint-xl: 75rem; // 1200px
+$breakpoint-xxl: 90rem; // 1440px
 
 $XS: 'min-width:' + $breakpoint-xs;
 $S: 'min-width:' + $breakpoint-s;

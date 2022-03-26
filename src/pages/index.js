@@ -1,7 +1,10 @@
+import { useEffect } from 'react';
+import { navigate } from 'gatsby';
+
 const IndexPage = () => {
-  if (typeof window !== 'undefined') {
-    window.location = '/work';
-  }
+  useEffect(() => {
+    navigate('/work');
+  }, []);
 
   return null;
 };

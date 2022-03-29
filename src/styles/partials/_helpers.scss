@@ -12,18 +12,21 @@
   text-align: center;
 }
 
+.gatsby-image-wrapper.alignleft,
 img.alignleft {
   float: left;
   margin-right: 20px;
   margin-bottom: 20px;
 }
 
+.gatsby-image-wrapper.alignright,
 img.alignright {
   float: right;
   margin-left: 20px;
   margin-bottom: 20px;
 }
 
+.gatsby-image-wrapper.aligncenter,
 img.aligncenter {
   margin: 0 auto;
 }

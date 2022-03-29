@@ -1,8 +1,7 @@
 {
-  "name": "pyrographic-design-gatsby-starter",
-  "private": true,
-  "description": "Pyrographic Design boilerplate built with Gatsby.js.",
-  "version": "0.1.0",
+  "name": "cartel-website",
+  "description": "Cartel website: https://cartel.tv",
+  "version": "1.0.0",
   "author": "Pyrographic Design <pyrographicdesign@gmail.com>",
   "dependencies": {
     "@react-hook/window-size": "^3.0.7",

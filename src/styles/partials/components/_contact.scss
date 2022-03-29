@@ -21,11 +21,29 @@
 
   &__group {
     margin-bottom: $space-700;
+
+    h2 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 0.75rem;
+    }
   }
 
   &__block {
     font-size: 0.75rem;
     margin-bottom: $space-300;
+
+    h2 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 0.75rem;
+    }
 
     p {
       margin-bottom: $space-300;

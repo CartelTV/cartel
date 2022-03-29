@@ -66,20 +66,21 @@ h1,
 }
 
 h2,
-.h2,
-h3,
-.h3 {
+.h2 {
   color: $black;
   font-family: $font-sans-bold;
-  font-size: 0.75rem;
+  font-size: 1.5rem;
   letter-spacing: 1px;
   margin-bottom: $space-200;
-  text-transform: uppercase;
 }
 
 h3,
 .h3 {
-  text-transform: none;
+  color: $black;
+  font-family: $font-sans-bold;
+  font-size: 1.125rem;
+  letter-spacing: 1px;
+  margin-bottom: $space-200;
 }
 
 nav {

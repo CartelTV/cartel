@@ -130,7 +130,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         page.title !== 'Editors' &&
         page.title !== 'Music Videos' &&
         page.title !== 'The Lookout' &&
-        page.title !== 'Work'
+        page.title !== 'Work' &&
+        page.title !== 'Cartel Films'
     )
     .forEach(page => {
       createPage({

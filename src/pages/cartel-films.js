@@ -7,7 +7,6 @@ import SEO from '../components/seo';
 
 const CartelFilms = ({ data, location }) => {
   const { films } = data.allWpPage.edges[0].node.cartelFilms;
-  console.log('data:', data);
 
   return (
     <Layout location={location}>

@@ -117,10 +117,13 @@
 
   &__editor-link {
     border: 0;
+    color: $link-clr;
+    text-decoration: none;
 
     &:focus,
     &:hover {
       border-bottom: 1px dotted;
+      color: $link-hover-clr;
     }
   }
 }

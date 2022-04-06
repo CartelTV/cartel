@@ -20,10 +20,12 @@
     }
 
     .bw-image {
+      left: 0;
       opacity: 1;
       position: absolute;
       top: 0;
       transition: opacity 0.15s ease-out;
+      width: 100%;
     }
   }
 

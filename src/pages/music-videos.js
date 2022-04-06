@@ -28,9 +28,14 @@ export const query = graphql`
         node {
           musicVideos {
             videos {
+              agency
               artist
-              pagePath
+              director
+              duration
+              editor
+              productionCompany
               title
+              videoUrl
               colorImage {
                 altText
                 sourceUrl

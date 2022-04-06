@@ -9,6 +9,9 @@ export const VideoDetail = ({ data }) => {
     .replace(/'/g, '')
     .toLowerCase()}`;
 
+  const thumbnail = data?.videoStill?.sourceUrl || data?.colorImage?.sourceUrl;
+  const altText = data?.videoStill?.altText || data?.videoStill?.altText;
+
   return (
     <article className="video-detail">
       <div className="container">
@@ -21,12 +24,7 @@ export const VideoDetail = ({ data }) => {
             onClick={() => setVideoIsPlaying(true)}
             aria-label="play video"
           >
-            <img
-              src={data.videoStill.sourceUrl}
-              alt={data.videoStill.altText}
-              height="422"
-              width="750"
-            />
+            <img src={thumbnail} alt={altText} height="422" width="750" />
           </button>
           {videoIsPlaying && (
             <div className="video-detail__video-wrapper iframe-container iframe-container-16x9">
@@ -44,7 +42,9 @@ export const VideoDetail = ({ data }) => {
 
         <div className="video-detail__text">
           <div className="video-detail__project">
-            <h1 className="video-detail__client">{data.client}</h1>
+            <h1 className="video-detail__client">
+              {data.client || data.artist}
+            </h1>
             {data.title && (
               <p className="video-detail__title">
                 <strong>{data.title}</strong>
@@ -90,7 +90,12 @@ export const VideoDetail = ({ data }) => {
 VideoDetail.propTypes = {
   data: PropTypes.shape({
     agency: PropTypes.string,
+    artist: PropTypes.string,
     client: PropTypes.string,
+    colorImage: PropTypes.shape({
+      altText: PropTypes.string,
+      sourceUrl: PropTypes.string,
+    }),
     director: PropTypes.string,
     duration: PropTypes.string,
     editor: PropTypes.string,

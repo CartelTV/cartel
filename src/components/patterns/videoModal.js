@@ -32,7 +32,6 @@ export const VideoModal = ({ modalIsOpen, handleModalClose, videoData }) => {
       }`}
       className="modal"
       overlayClassName="overlay"
-      bodyOpenClassName="body--modal-is-open"
       shouldCloseOnOverlayClick
     >
       <button

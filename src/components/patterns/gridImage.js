@@ -66,13 +66,14 @@ GridImage.propTypes = {
   altText: PropTypes.string.isRequired,
   aspectRatio: PropTypes.string.isRequired,
   copy: PropTypes.string.isRequired,
+  handleImageClick: PropTypes.func,
   imgSrc: PropTypes.string.isRequired,
   imgSrcBW: PropTypes.string,
   linkUrl: PropTypes.string,
-  handleImageClick: PropTypes.func.isRequired,
 };
 
 GridImage.defaultProps = {
+  handleImageClick: () => {},
   imgSrcBW: null,
   linkUrl: '',
 };

@@ -8,7 +8,12 @@ import { VideoDetail } from './videoDetail';
 
 Modal.setAppElement(`#___gatsby`);
 
-export const VideoModal = ({ modalIsOpen, handleModalClose, videoData }) => {
+export const VideoModal = ({
+  modalIsOpen,
+  setModalIsOpen,
+  handleModalClose,
+  videoData,
+}) => {
   useEffect(() => {
     if (modalIsOpen) {
       // When the modal is shown, we want a fixed body
@@ -43,7 +48,7 @@ export const VideoModal = ({ modalIsOpen, handleModalClose, videoData }) => {
         <span className="visuallyhidden">close</span>
         <img src={iconClose} alt="" />
       </button>
-      <VideoDetail data={videoData} />
+      <VideoDetail data={videoData} setModalIsOpen={setModalIsOpen} />
     </Modal>
   );
 };
@@ -51,6 +56,7 @@ export const VideoModal = ({ modalIsOpen, handleModalClose, videoData }) => {
 VideoModal.propTypes = {
   handleModalClose: PropTypes.func.isRequired,
   modalIsOpen: PropTypes.bool.isRequired,
+  setModalIsOpen: PropTypes.func.isRequired,
   videoData: PropTypes.shape({
     artist: PropTypes.string,
     client: PropTypes.string,

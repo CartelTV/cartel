@@ -216,6 +216,7 @@ export const NineGridVideos = ({ videosList }) => {
       </div>
       <VideoModal
         modalIsOpen={modalIsOpen}
+        setModalIsOpen={setModalIsOpen}
         handleModalClose={handleModalClose}
         videoData={modalData}
       />

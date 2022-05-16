@@ -5,8 +5,8 @@ module.exports = {
     siteUrl: `https://cartel.tv/`,
     socialImage: `/social-image.jpg`,
   },
+  trailingSlash: 'never',
   plugins: [
-    `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
@@ -14,10 +14,9 @@ module.exports = {
       resolve: 'gatsby-source-wordpress',
       options: {
         url: 'https://admin.cartel.tv/graphql/',
-        refetchInterval: 30,
         schema: {
           requestConcurrency: 10,
-          timeout: 90000,
+          timeout: 180000,
         },
         type: {
           MediaItem: {

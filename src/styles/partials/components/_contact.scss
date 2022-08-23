@@ -19,7 +19,8 @@
     }
   }
 
-  &__group {
+  &__group,
+  &__sub-group {
     margin-bottom: $space-700;
 
     h2 {
@@ -29,6 +30,14 @@
 
     h3 {
       font-size: 0.75rem;
+    }
+  }
+
+  &__sub-group {
+    display: flex;
+
+    > .contact__block {
+      flex-basis: 50%;
     }
   }
 

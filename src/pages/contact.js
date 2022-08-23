@@ -176,35 +176,76 @@ const ContactPage = ({ data, location }) => {
                   </a>
                 </div>
 
-                {contactPersons.map(person => (
-                  <div
-                    className="contact__block"
-                    style={
-                      contactPersons.length === 1
-                        ? { marginBottom: '7.25rem' }
-                        : null
-                    }
-                    key={person.contactPersonName}
-                  >
-                    <p>
-                      <strong>{person.contactPersonName}</strong>
-                      <br />
-                      {person.contactPersonTitle}
-                      <br />
-                      <a href={`mailto:${person.contactPersonEmail}`}>
-                        {person.contactPersonEmail}
-                      </a>
-                      <br />
-                      <a
-                        href={`tel:1${person.contactPersonPhone
-                          .replace(/–/g, '')
-                          .replace(/-/g, '')}`}
+                {contactPersons
+                  .filter(
+                    person => person.contactPersonTitle === 'Managing Director'
+                  )
+                  .map(person => (
+                    <div
+                      className="contact__block"
+                      style={
+                        contactPersons.length === 1
+                          ? { marginBottom: '7.25rem' }
+                          : null
+                      }
+                      key={person.contactPersonName}
+                    >
+                      <p>
+                        <strong>{person.contactPersonName}</strong>
+                        <br />
+                        {person.contactPersonTitle}
+                        <br />
+                        <a href={`mailto:${person.contactPersonEmail}`}>
+                          {person.contactPersonEmail}
+                        </a>
+                        <br />
+                        <a
+                          href={`tel:1${person.contactPersonPhone
+                            .replace(/–/g, '')
+                            .replace(/-/g, '')}`}
+                        >
+                          {person.contactPersonPhone}
+                        </a>
+                      </p>
+                    </div>
+                  ))}
+
+                <div className="contact__sub-group">
+                  {contactPersons
+                    .filter(
+                      person =>
+                        person.contactPersonTitle !== 'Managing Director'
+                    )
+                    .map(person => (
+                      <div
+                        className="contact__block"
+                        style={
+                          contactPersons.length === 1
+                            ? { marginBottom: '7.25rem' }
+                            : null
+                        }
+                        key={person.contactPersonName}
                       >
-                        {person.contactPersonPhone}
-                      </a>
-                    </p>
-                  </div>
-                ))}
+                        <p>
+                          <strong>{person.contactPersonName}</strong>
+                          <br />
+                          {person.contactPersonTitle}
+                          <br />
+                          <a href={`mailto:${person.contactPersonEmail}`}>
+                            {person.contactPersonEmail}
+                          </a>
+                          <br />
+                          <a
+                            href={`tel:1${person.contactPersonPhone
+                              .replace(/–/g, '')
+                              .replace(/-/g, '')}`}
+                          >
+                            {person.contactPersonPhone}
+                          </a>
+                        </p>
+                      </div>
+                    ))}
+                </div>
               </div>
 
               <div className="contact__group">

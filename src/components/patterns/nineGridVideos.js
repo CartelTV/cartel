@@ -1,14 +1,11 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 
 import { Image } from './image';
 import GridImage from './gridImage';
-import { VideoModal } from './videoModal';
 
-export const NineGridVideos = ({ videosList }) => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [modalData, setModalData] = useState({});
-
+export const NineGridVideos = ({ location, videosList }) => {
   const chunk = 3;
   const videos = videosList;
   const chunks = videos.reduce((resultArray, item, index) => {
@@ -23,15 +20,6 @@ export const NineGridVideos = ({ videosList }) => {
 
     return resultArray;
   }, []);
-
-  const handleImageClick = videoData => {
-    setModalIsOpen(!modalIsOpen);
-    setModalData(videoData);
-  };
-
-  const handleModalClose = () => {
-    setModalIsOpen(false);
-  };
 
   return (
     <Fragment>
@@ -52,7 +40,9 @@ export const NineGridVideos = ({ videosList }) => {
                     imgSrc={video[0].colorImage.sourceUrl}
                     imgSrcBW={video[0].bwImage.sourceUrl}
                     aspectRatio="1600:900"
-                    handleImageClick={() => handleImageClick(video[0])}
+                    linkUrl={`${location.pathname}/${
+                      video[0].pagePath.split('/')[2]
+                    }`}
                   />
                 </div>
                 <div className="nine-grid-videos__item">
@@ -64,7 +54,9 @@ export const NineGridVideos = ({ videosList }) => {
                     imgSrc={video[1].colorImage.sourceUrl}
                     imgSrcBW={video[1].bwImage.sourceUrl}
                     aspectRatio="1600:900"
-                    handleImageClick={() => handleImageClick(video[1])}
+                    linkUrl={`${location.pathname}/${
+                      video[1].pagePath.split('/')[2]
+                    }`}
                   />
                 </div>
                 <div className="nine-grid-videos__item">
@@ -76,7 +68,9 @@ export const NineGridVideos = ({ videosList }) => {
                     imgSrc={video[2].colorImage.sourceUrl}
                     imgSrcBW={video[2].bwImage.sourceUrl}
                     aspectRatio="1600:900"
-                    handleImageClick={() => handleImageClick(video[2])}
+                    linkUrl={`${location.pathname}/${
+                      video[2].pagePath.split('/')[2]
+                    }`}
                   />
                 </div>
               </div>
@@ -90,9 +84,10 @@ export const NineGridVideos = ({ videosList }) => {
                 key={video[1].colorImage.sourceUrl}
               >
                 <div className="nine-grid-videos__item nine-grid-videos__item--large">
-                  <button
-                    type="button"
-                    onClick={() => handleImageClick(video[0])}
+                  <Link
+                    to={`${location.pathname}/${
+                      video[0].pagePath.split('/')[2]
+                    }`}
                     className="nine-grid-videos__link"
                   >
                     <Image
@@ -117,7 +112,7 @@ export const NineGridVideos = ({ videosList }) => {
                         {video[0].title}
                       </p>
                     </div>
-                  </button>
+                  </Link>
                 </div>
                 <div className="nine-grid-videos__item nine-grid-videos__item--stacked">
                   <div>
@@ -129,7 +124,9 @@ export const NineGridVideos = ({ videosList }) => {
                       imgSrc={video[1].colorImage.sourceUrl}
                       imgSrcBW={video[1].bwImage.sourceUrl}
                       aspectRatio="1600:900"
-                      handleImageClick={() => handleImageClick(video[1])}
+                      linkUrl={`${location.pathname}/${
+                        video[1].pagePath.split('/')[2]
+                      }`}
                     />
                   </div>
                   <div>
@@ -141,7 +138,9 @@ export const NineGridVideos = ({ videosList }) => {
                       imgSrc={video[2].colorImage.sourceUrl}
                       imgSrcBW={video[2].bwImage.sourceUrl}
                       aspectRatio="1600:900"
-                      handleImageClick={() => handleImageClick(video[2])}
+                      linkUrl={`${location.pathname}/${
+                        video[2].pagePath.split('/')[2]
+                      }`}
                     />
                   </div>
                 </div>
@@ -164,7 +163,9 @@ export const NineGridVideos = ({ videosList }) => {
                     imgSrc={video[0].colorImage.sourceUrl}
                     imgSrcBW={video[0].bwImage.sourceUrl}
                     aspectRatio="1600:900"
-                    handleImageClick={() => handleImageClick(video[0])}
+                    linkUrl={`${location.pathname}/${
+                      video[0].pagePath.split('/')[2]
+                    }`}
                   />
                 </div>
                 <div>
@@ -176,14 +177,15 @@ export const NineGridVideos = ({ videosList }) => {
                     imgSrc={video[1].colorImage.sourceUrl}
                     imgSrcBW={video[1].bwImage.sourceUrl}
                     aspectRatio="1600:900"
-                    handleImageClick={() => handleImageClick(video[1])}
+                    linkUrl={`${location.pathname}//${
+                      video[1].pagePath.split('/')[2]
+                    }`}
                   />
                 </div>
               </div>
               <div className="nine-grid-videos__item nine-grid-videos__item--large">
-                <button
-                  type="button"
-                  onClick={() => handleImageClick(video[2])}
+                <Link
+                  to={`${location.pathname}/${video[0].pagePath.split('/')[2]}`}
                   className="nine-grid-videos__link"
                 >
                   <Image
@@ -208,22 +210,17 @@ export const NineGridVideos = ({ videosList }) => {
                       {video[2].title}
                     </p>
                   </div>
-                </button>
+                </Link>
               </div>
             </div>
           );
         })}
       </div>
-      <VideoModal
-        modalIsOpen={modalIsOpen}
-        setModalIsOpen={setModalIsOpen}
-        handleModalClose={handleModalClose}
-        videoData={modalData}
-      />
     </Fragment>
   );
 };
 
 NineGridVideos.propTypes = {
+  location: PropTypes.shape({ pathname: PropTypes.string }).isRequired,
   videosList: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };

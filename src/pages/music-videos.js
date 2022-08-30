@@ -15,7 +15,7 @@ const MusicVideosPage = ({ data, location }) => {
       <SEO title="Music Videos" />
       <h1 className="visuallyhidden">Work</h1>
       <div className="container">
-        <NineGridVideos videosList={musicVideos} />
+        <NineGridVideos videosList={musicVideos} location={location} />
       </div>
     </Layout>
   );
@@ -33,6 +33,7 @@ export const query = graphql`
               director
               duration
               editor
+              pagePath
               productionCompany
               title
               videoUrl

@@ -11,6 +11,20 @@ module.exports = {
   },
   trailingSlash: 'never',
   plugins: [
+    {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: ['G-D0HCFKH40T'],
+        gtagConfig: {
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: true,
+          respectDNT: true,
+        },
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
@@ -75,21 +89,7 @@ module.exports = {
         icon: `src/images/cartel-logo.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: 'gatsby-plugin-google-gtag',
-      options: {
-        trackingIds: [process.env.GA_MEASUREMENT_ID],
-        gtagConfig: {
-          optimize_id: 'OPT_CONTAINER_ID',
-          anonymize_ip: true,
-          cookie_expires: 0,
-        },
-        pluginConfig: {
-          head: true,
-          respectDNT: true,
-        },
-      },
-    },
+
     {
       resolve: `gatsby-plugin-accessibilityjs`,
       options: {

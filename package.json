@@ -5,6 +5,7 @@
   "author": "Pyrographic Design <pyrographicdesign@gmail.com>",
   "dependencies": {
     "@react-hook/window-size": "^3.0.7",
+    "dotenv": "^16.0.2",
     "gatsby": "^4.10",
     "gatsby-plugin-accessibilityjs": "^1.0.3",
     "gatsby-plugin-google-gtag": "^4.22.0",

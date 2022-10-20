@@ -4,26 +4,33 @@ import { graphql } from 'gatsby';
 
 import { Layout } from '../components/layout';
 import SEO from '../components/seo';
+import { VideoDetail } from '../components/patterns/videoDetail';
+import ThreeColGrid from '../components/patterns/threeColGrid';
 
-import { NineGridVideos } from '../components/patterns/nineGridVideos';
-
-const WorkPage = ({ data, location }) => {
+const WorkDetailPage = ({ data, location }) => {
   const { workVideos } = data.allWpPage.edges[0].node.work;
+  const videoDetails = workVideos.filter(
+    video => video.pagePath.split('/')[2] === location.pathname.split('/')[2]
+  )[0];
 
   return (
-    <Layout location={location}>
-      <SEO title="Work" />
-      <h1 className="visuallyhidden">Work</h1>
+    <Layout>
+      <SEO
+        title={`${videoDetails.client} ${
+          videoDetails.title ? `- ${videoDetails.title}` : ''
+        } - ${videoDetails.editor}`}
+      />
+      <VideoDetail data={videoDetails} />
       <div className="container">
-        <NineGridVideos videosList={workVideos} location={location} />
+        <ThreeColGrid list={workVideos} editorSlug="work" />
       </div>
     </Layout>
   );
 };
 
 export const query = graphql`
-  query {
-    allWpPage(filter: { databaseId: { eq: 40 } }) {
+  query($id: Int!) {
+    allWpPage(filter: { databaseId: { eq: $id } }) {
       edges {
         node {
           work {
@@ -40,6 +47,7 @@ export const query = graphql`
               colorImage {
                 altText
                 sourceUrl
+                title
               }
               bwImage {
                 sourceUrl
@@ -52,7 +60,7 @@ export const query = graphql`
   }
 `;
 
-WorkPage.propTypes = {
+WorkDetailPage.propTypes = {
   data: PropTypes.shape({
     allWpPage: PropTypes.shape({
       edges: PropTypes.arrayOf(
@@ -61,16 +69,20 @@ WorkPage.propTypes = {
             work: PropTypes.shape({
               workVideos: PropTypes.arrayOf(
                 PropTypes.shape({
+                  agency: PropTypes.string,
                   client: PropTypes.string,
-                  colorImage: PropTypes.shape({
+                  director: PropTypes.string,
+                  duration: PropTypes.string,
+                  editor: PropTypes.string,
+                  pagePath: PropTypes.string,
+                  productionCompany: PropTypes.string,
+                  title: PropTypes.string,
+                  colorImages: PropTypes.shape({
                     altText: PropTypes.string,
                     sourceUrl: PropTypes.string,
+                    title: PropTypes.string,
                   }),
-                  bwImage: PropTypes.shape({
-                    sourceUrl: PropTypes.string,
-                  }),
-                  pagePath: PropTypes.string,
-                  title: PropTypes.string,
+                  videoUrl: PropTypes.string,
                 })
               ),
             }),
@@ -79,7 +91,9 @@ WorkPage.propTypes = {
       ),
     }),
   }).isRequired,
-  location: PropTypes.shape({}).isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+  }).isRequired,
 };
 
-export default WorkPage;
+export default WorkDetailPage;

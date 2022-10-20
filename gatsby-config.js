@@ -91,6 +91,21 @@ module.exports = {
     },
 
     {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: [process.env.GA_MEASUREMENT_ID],
+        gtagConfig: {
+          optimize_id: 'OPT_CONTAINER_ID',
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: true,
+          respectDNT: true,
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-accessibilityjs`,
       options: {
         injectStyles: false,

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
-export const VideoDetail = ({ data, setModalIsOpen }) => {
+export const VideoDetail = ({ data }) => {
   const [videoIsPlaying, setVideoIsPlaying] = useState(false);
   const editorLink = `/${data.editor
     .replace(' ', '-')
@@ -10,7 +10,7 @@ export const VideoDetail = ({ data, setModalIsOpen }) => {
     .toLowerCase()}`;
 
   const thumbnail = data?.videoStill?.sourceUrl || data?.colorImage?.sourceUrl;
-  const altText = data?.videoStill?.altText || data?.videoStill?.altText;
+  const altText = data?.videoStill?.altText || data?.colorImage?.altText;
 
   return (
     <article className="video-detail">
@@ -60,11 +60,7 @@ export const VideoDetail = ({ data, setModalIsOpen }) => {
 
             <li className="video-detail__meta-item">
               <strong>Editor:</strong>{' '}
-              <Link
-                to={editorLink}
-                onClick={() => setModalIsOpen(false)}
-                className="video-detail__editor-link"
-              >
+              <Link to={editorLink} className="video-detail__editor-link">
                 {data.editor}
               </Link>
             </li>
@@ -111,5 +107,4 @@ VideoDetail.propTypes = {
     }),
     videoUrl: PropTypes.string,
   }).isRequired,
-  setModalIsOpen: PropTypes.func.isRequired,
 };

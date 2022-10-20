@@ -61,7 +61,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (videoDetailResult.errors) {
     reporter.error(
       'There was an error fetching posts',
-      editorDetailResult.errors
+      videoDetailResult.errors
     );
   }
 
@@ -94,6 +94,129 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: {
         id: page.id,
         editorId: parseInt(editorId, 10),
+      },
+    });
+  });
+
+  // Work Detail pages
+  const workDetailResult = await graphql(`
+    query {
+      allWpPage(filter: { databaseId: { eq: 40 } }) {
+        edges {
+          node {
+            work {
+              workVideos {
+                agency
+                client
+                director
+                duration
+                editor
+                pagePath
+                productionCompany
+                title
+                videoUrl
+                bwImage {
+                  sourceUrl
+                }
+                colorImage {
+                  altText
+                  sourceUrl
+                  title
+                }
+                bwImage {
+                  sourceUrl
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (workDetailResult.errors) {
+    reporter.error(
+      'There was an error fetching posts',
+      workDetailResult.errors
+    );
+  }
+
+  const { workVideos } = workDetailResult.data.allWpPage.edges[0].node.work;
+
+  const workDetailTemplate = path.resolve(`./src/templates/workDetail.js`);
+
+  workVideos.forEach(page => {
+    createPage({
+      // will be the url for the page
+      path: `/work/${page.pagePath.split('/')[2]}`,
+      // specify the component template of your choice
+      component: slash(workDetailTemplate),
+      // In the ^template's GraphQL query, 'id' will be available
+      // as a GraphQL variable to query for this page's data.
+      context: {
+        id: 40,
+      },
+    });
+  });
+
+  // Music Video Detail pages
+  const musicVideoDetailResult = await graphql(`
+    query {
+      allWpPage(filter: { databaseId: { eq: 52 } }) {
+        edges {
+          node {
+            musicVideos {
+              videos {
+                agency
+                artist
+                bwImage {
+                  sourceUrl
+                }
+                colorImage {
+                  altText
+                  sourceUrl
+                  title
+                }
+                director
+                duration
+                editor
+                pagePath
+                productionCompany
+                title
+                videoUrl
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (musicVideoDetailResult.errors) {
+    reporter.error(
+      'There was an error fetching posts',
+      musicVideoDetailResult.errors
+    );
+  }
+
+  const {
+    videos,
+  } = musicVideoDetailResult.data.allWpPage.edges[0].node.musicVideos;
+
+  const musicVideoDetailTemplate = path.resolve(
+    `./src/templates/musicVideoDetail.js`
+  );
+
+  videos.forEach(page => {
+    createPage({
+      // will be the url for the page
+      path: `/music-videos/${page.pagePath.split('/')[2]}`,
+      // specify the component template of your choice
+      component: slash(musicVideoDetailTemplate),
+      // In the ^template's GraphQL query, 'id' will be available
+      // as a GraphQL variable to query for this page's data.
+      context: {
+        id: 52,
       },
     });
   });

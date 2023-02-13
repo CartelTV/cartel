@@ -8,6 +8,7 @@ import GridImage from './gridImage';
 export const NineGridVideos = ({ location, videosList }) => {
   const chunk = 3;
   const videos = videosList;
+  console.log('videos:', videos);
   const chunks = videos.reduce((resultArray, item, index) => {
     const chunkIndex = Math.floor(index / chunk);
 
@@ -25,6 +26,7 @@ export const NineGridVideos = ({ location, videosList }) => {
     <Fragment>
       <div className="nine-grid-videos">
         {chunks.map((video, index) => {
+          // middle row
           if (index % 2) {
             return (
               <div
@@ -77,6 +79,7 @@ export const NineGridVideos = ({ location, videosList }) => {
             );
           }
 
+          // top row
           if (index % 4 === 0) {
             return (
               <div
@@ -148,6 +151,7 @@ export const NineGridVideos = ({ location, videosList }) => {
             );
           }
 
+          // bottom row
           return (
             <div
               className="nine-grid-videos__row nine-grid-videos__row--three"
@@ -177,7 +181,7 @@ export const NineGridVideos = ({ location, videosList }) => {
                     imgSrc={video[1].colorImage.sourceUrl}
                     imgSrcBW={video[1].bwImage.sourceUrl}
                     aspectRatio="1600:900"
-                    linkUrl={`${location.pathname}//${
+                    linkUrl={`${location.pathname}/${
                       video[1].pagePath.split('/')[2]
                     }`}
                   />
@@ -185,7 +189,7 @@ export const NineGridVideos = ({ location, videosList }) => {
               </div>
               <div className="nine-grid-videos__item nine-grid-videos__item--large">
                 <Link
-                  to={`${location.pathname}/${video[0].pagePath.split('/')[2]}`}
+                  to={`${location.pathname}/${video[2].pagePath.split('/')[2]}`}
                   className="nine-grid-videos__link"
                 >
                   <Image

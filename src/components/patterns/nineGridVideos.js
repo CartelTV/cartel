@@ -8,7 +8,6 @@ import GridImage from './gridImage';
 export const NineGridVideos = ({ location, videosList }) => {
   const chunk = 3;
   const videos = videosList;
-  console.log('videos:', videos);
   const chunks = videos.reduce((resultArray, item, index) => {
     const chunkIndex = Math.floor(index / chunk);
 

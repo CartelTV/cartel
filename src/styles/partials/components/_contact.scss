@@ -1,58 +1,73 @@
 .contact {
-  > .container {
-    @include mq($M) {
-      display: flex;
+  h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+
+    &.contact__list-heading {
+      margin-bottom: $space-500;
     }
   }
 
-  &__col {
-    &:first-child {
-      margin-bottom: $space-500;
-    }
+  h3 {
+    font-size: 0.75rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: $space-700;
+    padding-left: $space-400;
+    padding-right: $space-400;
 
     @include mq($M) {
-      flex-basis: 50%;
+      grid-template-columns: repeat(3, 1fr);
+    }
 
-      &:first-child {
-        margin-right: $space-500;
+    &-column {
+      &:nth-of-type(2) {
+        @include mq($M) {
+          text-align: center;
+        }
+      }
+
+      &:last-of-type {
+        @include mq($M) {
+          justify-self: end;
+        }
       }
     }
   }
 
-  &__group,
-  &__sub-group {
-    margin-bottom: $space-700;
-
-    h2 {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-    }
-
-    h3 {
-      font-size: 0.75rem;
-    }
+  &__team-list {
+    display: flex;
+    flex-direction: column;
+    gap: $space-600;
+    margin-bottom: $space-750;
   }
 
-  &__sub-group {
+  &__representation-list {
     display: flex;
+    flex-direction: column;
+    gap: $space-400;
+  }
 
-    > .contact__block {
-      flex-basis: 50%;
-    }
+  &__enquiries-group {
+    display: flex;
+    flex-direction: column;
+    gap: $space-750;
+  }
+
+  &__enquiries-group-heading {
+    margin-top: $space-600;
+  }
+
+  &__enquiries-phone-number {
+    font-size: 0.75rem;
   }
 
   &__block {
     font-size: 0.75rem;
     margin-bottom: $space-300;
-
-    h2 {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-    }
-
-    h3 {
-      font-size: 0.75rem;
-    }
 
     p {
       margin-bottom: $space-300;
@@ -88,28 +103,23 @@
   }
 
   &__address {
-    font-size: 0.75rem;
-  }
+    font-weight: 600;
+    line-height: 1.2;
 
-  &__representation-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: $space-300;
+    &-title {
+      color: $black;
+      font-size: 1.25rem;
+    }
 
-    > .contact__block {
-      flex-basis: 100%;
+    &-street {
+      color: $gold-dark;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+    }
 
-      @include mq($M) {
-        flex-basis: 50%;
-      }
+    &-city {
+      color: $gold-dark;
+      font-size: 0.75rem;
     }
   }
-}
-
-#map {
-  background-color: $color-grey-8;
-  height: 0;
-  margin-bottom: $space-300;
-  padding-bottom: 56.25%;
-  width: 100%;
 }

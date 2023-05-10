@@ -6,17 +6,22 @@
   border-top: 3px solid $gold-dark;
   display: flex;
   flex-direction: column;
+  gap: $space-500;
   justify-content: center;
+  margin-top: $space-100;
   padding: $space-400;
+  padding: $space-500;
   position: relative;
 
-  @include mq($M) {
+  @include mq($S) {
+    flex-direction: row;
+    justify-content: space-around;
     padding: $space-500;
+    padding-top: $space-600;
   }
 
   &__logo {
     max-width: 48px;
-    padding-bottom: $space-400;
   }
 
   &__address {
@@ -47,5 +52,9 @@
         color: $text-clr;
       }
     }
+  }
+
+  .contact__address {
+    text-align: center;
   }
 }

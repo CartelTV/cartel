@@ -19,7 +19,7 @@
     padding-left: $space-400;
     padding-right: $space-400;
 
-    @include mq($M) {
+    @include mq($S) {
       grid-template-columns: repeat(3, 1fr);
     }
 
@@ -55,6 +55,10 @@
     display: flex;
     flex-direction: column;
     gap: $space-750;
+
+    @include mq($S) {
+      align-items: center;
+    }
   }
 
   &__enquiries-group-heading {
@@ -105,6 +109,10 @@
   &__address {
     font-weight: 600;
     line-height: 1.2;
+
+    @include mq($S) {
+      text-align: center;
+    }
 
     &-title {
       color: $black;

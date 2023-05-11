@@ -24,14 +24,20 @@
     }
 
     &-column {
+      display: flex;
+      flex-direction: column;
+
       &:nth-of-type(2) {
-        @include mq($M) {
+        order: 3;
+
+        @include mq($S) {
+          order: unset;
           text-align: center;
         }
       }
 
       &:last-of-type {
-        @include mq($M) {
+        @include mq($S) {
           justify-self: end;
         }
       }
@@ -41,8 +47,13 @@
   &__team-list {
     display: flex;
     flex-direction: column;
-    gap: $space-600;
-    margin-bottom: $space-750;
+    gap: $space-400;
+    margin-bottom: 0;
+
+    @include mq($S) {
+      gap: $space-600;
+      margin-bottom: $space-750;
+    }
   }
 
   &__representation-list {
@@ -54,15 +65,20 @@
   &__enquiries-group {
     display: flex;
     flex-direction: column;
-    gap: $space-750;
+    gap: $space-400;
+    margin-bottom: $space-400;
 
     @include mq($S) {
       align-items: center;
+      gap: $space-750;
+      margin-bottom: 0;
     }
   }
 
   &__enquiries-group-heading {
-    margin-top: $space-600;
+    @include mq($S) {
+      margin-top: $space-600;
+    }
   }
 
   &__enquiries-phone-number {
@@ -81,7 +97,13 @@
   &__social {
     &-list {
       display: flex;
-      margin-bottom: $space-300;
+      margin-bottom: $space-700 !important;
+      order: -1;
+
+      @include mq($S) {
+        margin-bottom: 0 !important;
+        order: unset;
+      }
     }
 
     &-item {

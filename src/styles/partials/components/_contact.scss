@@ -129,7 +129,6 @@
   }
 
   &__address {
-    font-weight: 600;
     line-height: 1.2;
 
     @include mq($S) {
@@ -138,12 +137,13 @@
 
     &-title {
       color: $black;
-      font-size: 1.25rem;
+      font-size: 0.75rem;
+      font-weight: 600;
     }
 
     &-street {
       color: $gold-dark;
-      font-size: 0.875rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
     }
 

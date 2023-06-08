@@ -14,8 +14,9 @@
   position: relative;
 
   @include mq($S) {
-    flex-direction: row;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
     padding: $space-500;
     padding-top: $space-600;
   }
